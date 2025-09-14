@@ -43,33 +43,25 @@
     .location-img {
       width: 100%;
       max-width: 250px;
-      /* Ajuste a margem superior para que a imagem suba */
       margin: -15px auto 10px auto;
       display: block;
     }
 
     /* Nova seção para a biografia com fundo diferente */
     .about-me-section {
-        background-color: #f8b5c1; /* Fundo diferente para a seção */
+        background-color: #f8b5c1;
         padding: 20px;
         max-width: 600px;
-        margin: 20px auto; /* Adicionei uma margem para separação */
+        margin: 20px auto;
         border-radius: 12px;
     }
     
     .about-me-content {
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
         align-items: center;
         gap: 15px;
         width: 100%;
-    }
-
-    /* Layout para PC e Celular - Biografia e texto lado a lado */
-    .about-me-content {
-        flex-direction: row;
-        align-items: center;
-        text-align: left;
     }
     
     .about-me-image {
@@ -77,13 +69,12 @@
         height: 150px;
         border-radius: 50%;
         object-fit: cover;
-        margin-right: 20px; /* Espaço entre a imagem e o texto */
     }
-
-    .about-me-text {
-        font-size: 16px;
-        line-height: 1.5;
-        flex: 1; /* Permite que o texto ocupe o espaço restante */
+    
+    .about-me-secondary-image {
+        width: 200px; /* Ajuste o tamanho conforme a sua imagem */
+        height: auto;
+        border-radius: 8px;
     }
 
     nav {
@@ -99,7 +90,7 @@
         margin: 5px;
         cursor: pointer;
         transition: transform 0.2s ease;
-        outline: none; /* Remove o contorno azul ao clicar */
+        outline: none;
     }
 
     .nav-image:hover {
@@ -121,7 +112,6 @@
       display: block;
     }
 
-    /* Estilo de lista com imagem ao lado */
     .catalogo-list {
       display: flex;
       flex-direction: column;
@@ -165,7 +155,6 @@
         color: #ff4b8a;
     }
 
-    /* Estilo para grid - Mantido para massas */
     .catalogo-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
@@ -220,7 +209,7 @@
   <section class="about-me-section">
       <div class="about-me-content">
         <img src="URL-IMAGEM-YASMIM" alt="Yasmim Loureiro" class="about-me-image">
-        <p class="about-me-text">Olá, eu sou a **Yasmim Loureiro**, confeiteira apaixonada por transformar sonhos em doces. Minha missão é adoçar momentos especiais com carinho e ingredientes de alta qualidade. Venha comigo nessa jornada deliciosa!</p>
+        <img src="URL-IMAGEM-BIO-TEXTO" alt="Descrição da biografia" class="about-me-secondary-image">
       </div>
   </section>
 
