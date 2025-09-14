@@ -30,38 +30,33 @@
     }
 
     .logo-container {
-  width: 250px;
-  /* Não precisa de height, assim a imagem não achata */
-  margin: -75px auto 20px;
-  text-align: center; /* Para centralizar a imagem dentro do container */
-}
+      width: 250px;
+      margin: -75px auto 20px;
+      text-align: center;
+    }
 
-.logo-container img {
-  width: 100%;
-  height: auto;
-  /* Mantém a proporção natural */
-}
+    .logo-container img {
+      width: 100%;
+      height: auto;
+    }
 
     .location-img {
       width: 80%;
       max-width: 250px;
-      margin: 70px auto 10px auto; /* empurra para baixo da logo */
+      margin: 70px auto 10px auto;
       display: block;
     }
 
     nav {
       margin: 15px 0;
     }
-
-    nav button {
-      background-color: #ff4b8a;
-      color: white;
-      border: none;
-      border-radius: 20px;
-      padding: 10px 15px;
-      margin: 5px;
-      font-size: 16px;
-      cursor: pointer;
+    
+    .nav-image {
+        max-width: 150px;
+        width: 100%;
+        height: auto;
+        margin: 5px;
+        cursor: pointer;
     }
 
     section {
@@ -117,20 +112,19 @@
 </head>
 <body>
 
-  <!-- Banner e logo sobreposta -->
   <div class="banner-container">
     <img src="assets/Screenshot_2025-09-14-15-32-42-350_com.canva.editor~2.jpg" alt="Banner" class="banner">
-    <img src="assets/1000059258-removebg-preview.png" alt="Logo" class="logo-container">
+    <div class="logo-container">
+      <img src="assets/1000059258-removebg-preview.png" alt="Logo">
+    </div>
   </div>
 
-  <!-- Localização -->
-  <img src="URL-DA-IMAGEM-LOCALIZACAO" alt="Localização" class="location-img">
+  <img src="assets/1000059268-removebg-preview.png" alt="Localização" class="location-img">
 
-  <!-- Botões -->
   <nav>
-    <button onclick="scrollToSection('catalogo')">Catálogo</button>
-    <button onclick="scrollToSection('monte')">Monte seu Bolo</button>
-    <button onclick="scrollToSection('contato')">Contato</button>
+    <img src="assets/1000059270-removebg-preview.png" alt="Catálogo" class="nav-image" onclick="scrollToSection('catalogo')">
+    <img src="assets/1000059273-removebg-preview.png" alt="Monte seu Bolo" class="nav-image" onclick="scrollToSection('monte')">
+    <img src="assets/1000059271-removebg-preview.png" alt="Contato" class="nav-image" onclick="scrollToSection('contato')">
   </nav>
 
   <section id="catalogo">
