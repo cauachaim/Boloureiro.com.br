@@ -1,1 +1,170 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Balancetes - Bolos Artesanais</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #ffe4ec;
+      color: #4a2b36;
+      text-align: center;
+    }
 
+    header {
+      background: #ffb6c1;
+      padding: 30px;
+      border-radius: 0 0 30px 30px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    header img {
+      width: 120px;
+      height: 120px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 3px solid white;
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    }
+
+    nav {
+      margin-top: 20px;
+    }
+
+    nav button {
+      margin: 10px;
+      padding: 10px 20px;
+      border: none;
+      background-color: #ff69b4;
+      color: white;
+      font-weight: bold;
+      border-radius: 25px;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+
+    nav button:hover {
+      background-color: #e75799;
+    }
+
+    .catalogo, .simulador, .contato {
+      display: none;
+      padding: 20px;
+    }
+
+    .ativo {
+      display: block;
+      animation: fadeIn 0.4s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    select, input {
+      margin: 10px;
+      padding: 10px;
+      border-radius: 10px;
+      border: 1px solid #ccc;
+    }
+
+    .resultado {
+      margin-top: 15px;
+      font-size: 1.2rem;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="logo.png" alt="Logo Balancetes">
+    <h1>Balancetes Bolos</h1>
+    <p>Delícias para todos os momentos</p>
+    <nav>
+      <button onclick="mostrar('catalogo')">Catálogo</button>
+      <button onclick="mostrar('simulador')">Simular Preço</button>
+      <button onclick="mostrar('contato')">Contato</button>
+    </nav>
+  </header>
+
+  <!-- Catálogo -->
+  <section id="catalogo" class="catalogo">
+    <h2>Massas</h2>
+    <p>Massa branca, Massa de chocolate, Red Velvet</p>
+
+    <h2>Recheios Tradicionais</h2>
+    <p>Brigadeiro, Brigadeiro branco, Ninho, Doce de Leite, Amendoim, Coco, 4 leites</p>
+
+    <h2>Recheios Especiais (+R$5)</h2>
+    <p>Brigadeiro amargo, Ganache de chocolate, Ganache branco, Maracujá, Geleia de frutas</p>
+
+    <h2>Adicionais</h2>
+    <p>Frutas (R$6), Chocolate (R$8), Nozes (R$12), Nutella (R$10), +20% por camada extra</p>
+
+    <h2>Tamanhos</h2>
+    <p>10x10 (5 fatias) - R$30</p>
+    <p>15x10 (12-15 fatias) - R$60</p>
+    <p>20x10 (20-25 fatias) - R$85</p>
+  </section>
+
+  <!-- Simulador -->
+  <section id="simulador" class="simulador">
+    <h2>Simule seu Bolo</h2>
+    <label for="tamanho">Tamanho:</label>
+    <select id="tamanho">
+      <option value="30">10x10 - R$30</option>
+      <option value="60">15x10 - R$60</option>
+      <option value="85">20x10 - R$85</option>
+    </select>
+
+    <label for="recheio">Recheio especial (+R$5):</label>
+    <input type="checkbox" id="recheio">
+
+    <label for="adicionais">Adicionais:</label>
+    <select id="adicionais" multiple>
+      <option value="6">Frutas (R$6)</option>
+      <option value="8">Chocolate (R$8)</option>
+      <option value="12">Nozes (R$12)</option>
+      <option value="10">Nutella (R$10)</option>
+    </select>
+
+    <button onclick="calcular()">Calcular</button>
+    <p class="resultado" id="resultado"></p>
+    <button id="whatsapp" style="display:none;">Enviar para WhatsApp</button>
+  </section>
+
+  <!-- Contato -->
+  <section id="contato" class="contato">
+    <h2>Fale Conosco</h2>
+    <p>Faça seu pedido pelo WhatsApp:</p>
+    <p><a href="https://wa.me/5522999290349" target="_blank">Clique aqui para conversar</a></p>
+  </section>
+
+  <script>
+    function mostrar(secao) {
+      document.querySelectorAll('section').forEach(s => s.classList.remove('ativo'));
+      document.getElementById(secao).classList.add('ativo');
+    }
+
+    function calcular() {
+      let valor = parseFloat(document.getElementById('tamanho').value);
+      if (document.getElementById('recheio').checked) valor += 5;
+
+      const adicionais = Array.from(document.getElementById('adicionais').selectedOptions);
+      adicionais.forEach(opt => valor += parseFloat(opt.value));
+
+      document.getElementById('resultado').innerText = "Total: R$ " + valor.toFixed(2);
+
+      const msg = `Olá! Quero simular um bolo. O valor ficou R$${valor.toFixed(2)}.`;
+      const link = `https://wa.me/5522999290349?text=${encodeURIComponent(msg)}`;
+
+      const btn = document.getElementById('whatsapp');
+      btn.style.display = 'inline-block';
+      btn.onclick = () => window.open(link, '_blank');
+    }
+  </script>
+</body>
+</html>
