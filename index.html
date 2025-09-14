@@ -44,8 +44,33 @@
       width: 100%;
       max-width: 250px;
       /* Ajuste a margem superior para que a imagem suba */
-      margin: 5px auto 10px auto;
+      margin: 10px auto 10px auto;
       display: block;
+    }
+
+    /* Nova seção para a biografia */
+    .about-me-section {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 20px;
+        max-width: 600px;
+        margin: 0 auto;
+    }
+    
+    .about-me-image {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        object-fit: cover;
+        margin: 0 auto;
+    }
+
+    .about-me-text {
+        font-size: 16px;
+        line-height: 1.5;
+        text-align: justify;
     }
 
     nav {
@@ -57,11 +82,20 @@
     }
     
     .nav-image {
-        /* Ajuste o tamanho para que as 3 imagens caibam em uma linha */
+        /* Adiciona transição e efeitos de clique/hover */
         max-width: 30%;
         height: auto;
         margin: 5px;
         cursor: pointer;
+        transition: transform 0.2s ease;
+    }
+
+    .nav-image:hover {
+        transform: scale(1.05);
+    }
+    
+    .nav-image:active {
+        transform: scale(0.95);
     }
 
     section {
@@ -73,6 +107,30 @@
       max-width: 80%;
       margin: 10px auto;
       display: block;
+    }
+
+    .sub-section-title {
+        font-size: 1.2em;
+        color: #ff4b8a;
+        margin-top: 20px;
+        margin-bottom: 5px;
+    }
+    
+    .catalogo-list {
+        list-style: none;
+        padding: 0;
+        margin: 0 auto;
+        max-width: 400px;
+        text-align: left;
+    }
+
+    .catalogo-list li {
+        background-color: white;
+        padding: 10px;
+        border-radius: 8px;
+        margin-bottom: 10px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        font-weight: bold;
     }
 
     .catalogo-grid {
@@ -126,6 +184,11 @@
 
   <img src="assets/1000059268-removebg-preview.png" alt="Localização" class="location-img">
 
+  <section class="about-me-section">
+      <img src="URL-IMAGEM-YASMIM" alt="Yasmim Loureiro" class="about-me-image">
+      <p class="about-me-text">Olá, eu sou a **Yasmim Loureiro**, confeiteira apaixonada por transformar sonhos em doces. Minha missão é adoçar momentos especiais com carinho e ingredientes de alta qualidade. Venha comigo nessa jornada deliciosa!</p>
+  </section>
+
   <nav>
     <img src="assets/1000059270-removebg-preview.png" alt="Catálogo" class="nav-image" onclick="scrollToSection('catalogo')">
     <img src="assets/1000059273-removebg-preview.png" alt="Monte seu Bolo" class="nav-image" onclick="scrollToSection('monte')">
@@ -134,8 +197,8 @@
 
   <section id="catalogo">
     <img src="assets/1000059272-removebg-preview.png" alt="Catálogo" class="section-title">
+    
     <img src="assets/1000059274-removebg-preview.png" alt="Massas" class="section-title">
-
     <div class="catalogo-grid">
       <div class="card">
         <img src="URL-IMAGEM-MASSA-BRANCA" alt="Massa Branca">
@@ -150,6 +213,50 @@
         <p>Red Velvet</p>
       </div>
     </div>
+
+    <img src="URL-IMAGEM-TITULO-RECHEIOS" alt="Recheios" class="section-title">
+    <ul class="catalogo-list">
+      <li>**Tradicionais:**</li>
+      <li>Brigadeiro</li>
+      <li>Brigadeiro branco</li>
+      <li>Ninho</li>
+      <li>Doce de Leite</li>
+      <li>Amendoim</li>
+      <li>Coco</li>
+      <li>4 leites</li>
+    </ul>
+    <ul class="catalogo-list">
+      <li>**Especiais:** (acréscimo R$5,00)</li>
+      <li>Brigadeiro amargo</li>
+      <li>Ganache de chocolate</li>
+      <li>Ganache de chocolate branco</li>
+      <li>Maracujá</li>
+      <li>Geleia de Frutas</li>
+    </ul>
+
+    <img src="URL-IMAGEM-TITULO-ADICIONAIS" alt="Adicionais" class="section-title">
+    <ul class="catalogo-list">
+      <li>Frutas frescas (R$ 6,00)</li>
+      <li>Pedaços de chocolate (R$ 8,00)</li>
+      <li>Castanhas ou nozes (R$ 12,00)</li>
+      <li>Nutella (R$ 10,00)</li>
+      <li>camada extra de recheio (20% do valor total do bolo)</li>
+      <li>Topper (R$ 10,00)</li>
+    </ul>
+
+    <img src="URL-IMAGEM-TITULO-COBERTURA" alt="Cobertura" class="section-title">
+    <ul class="catalogo-list">
+      <li>Chantilly ou Chantininho</li>
+      <li>Ganache</li>
+    </ul>
+
+    <img src="URL-IMAGEM-TITULO-TAMANHOS" alt="Tamanhos" class="section-title">
+    <ul class="catalogo-list">
+      <li>**10x10:** (5 fatias) - R$ 30,00</li>
+      <li>**15x10:** (12/15 fatias) - R$ 60,00</li>
+      <li>**20x10:** (20/25 fatias) - R$ 85,00</li>
+    </ul>
+
   </section>
 
   <section id="monte">
