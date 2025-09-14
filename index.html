@@ -43,19 +43,18 @@
     .location-img {
       width: 100%;
       max-width: 250px;
-      margin: 5px auto 10px auto;
+      /* Ajuste a margem superior para que a imagem suba */
+      margin: -15px auto 10px auto;
       display: block;
     }
 
-    /* Nova seção para a biografia */
+    /* Nova seção para a biografia com fundo diferente */
     .about-me-section {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
+        background-color: #f8b5c1; /* Fundo diferente para a seção */
         padding: 20px;
         max-width: 600px;
-        margin: 0 auto;
+        margin: 20px auto; /* Adicionei uma margem para separação */
+        border-radius: 12px;
     }
     
     .about-me-content {
@@ -66,12 +65,11 @@
         width: 100%;
     }
 
-    /* Layout para PC - Biografia e texto lado a lado */
-    @media (min-width: 768px) {
-        .about-me-content {
-            flex-direction: row;
-            text-align: left;
-        }
+    /* Layout para PC e Celular - Biografia e texto lado a lado */
+    .about-me-content {
+        flex-direction: row;
+        align-items: center;
+        text-align: left;
     }
     
     .about-me-image {
@@ -79,13 +77,13 @@
         height: 150px;
         border-radius: 50%;
         object-fit: cover;
-        margin: 0 auto;
+        margin-right: 20px; /* Espaço entre a imagem e o texto */
     }
 
     .about-me-text {
         font-size: 16px;
         line-height: 1.5;
-        text-align: justify;
+        flex: 1; /* Permite que o texto ocupe o espaço restante */
     }
 
     nav {
@@ -123,6 +121,51 @@
       display: block;
     }
 
+    /* Estilo de lista com imagem ao lado */
+    .catalogo-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 0;
+      list-style: none;
+    }
+
+    .list-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: white;
+      border-radius: 12px;
+      padding: 10px 20px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      text-align: left;
+    }
+    
+    .list-item-content {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .list-item-image {
+        width: 70px;
+        height: 70px;
+        border-radius: 8px;
+        object-fit: cover;
+    }
+    
+    .list-item p {
+        margin: 0;
+        font-weight: bold;
+    }
+    
+    .list-item-price {
+        font-size: 0.9em;
+        color: #ff4b8a;
+    }
+
+    /* Estilo para grid - Mantido para massas */
     .catalogo-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
@@ -207,110 +250,175 @@
     </div>
 
     <img src="URL-IMAGEM-TITULO-RECHEIOS" alt="Recheios" class="section-title">
-    <div class="catalogo-grid">
-      <div class="card">
-        <img src="URL-IMAGEM-BRIGADEIRO" alt="Brigadeiro">
-        <p>Brigadeiro</p>
+    <div class="catalogo-list">
+      <div class="list-item">
+        <div class="list-item-content">
+          <p>Brigadeiro</p>
+        </div>
+        <img src="URL-IMAGEM-BRIGADEIRO" alt="Brigadeiro" class="list-item-image">
       </div>
-      <div class="card">
-        <img src="URL-IMAGEM-BRIGADEIRO-BRANCO" alt="Brigadeiro branco">
-        <p>Brigadeiro branco</p>
+      <div class="list-item">
+        <div class="list-item-content">
+          <p>Brigadeiro branco</p>
+        </div>
+        <img src="URL-IMAGEM-BRIGADEIRO-BRANCO" alt="Brigadeiro branco" class="list-item-image">
       </div>
-      <div class="card">
-        <img src="URL-IMAGEM-NINHO" alt="Ninho">
-        <p>Ninho</p>
+      <div class="list-item">
+        <div class="list-item-content">
+          <p>Ninho</p>
+        </div>
+        <img src="URL-IMAGEM-NINHO" alt="Ninho" class="list-item-image">
       </div>
-      <div class="card">
-        <img src="URL-IMAGEM-DOCE-DE-LEITE" alt="Doce de Leite">
-        <p>Doce de Leite</p>
+      <div class="list-item">
+        <div class="list-item-content">
+          <p>Doce de Leite</p>
+        </div>
+        <img src="URL-IMAGEM-DOCE-DE-LEITE" alt="Doce de Leite" class="list-item-image">
       </div>
-      <div class="card">
-        <img src="URL-IMAGEM-AMENDOIM" alt="Amendoim">
-        <p>Amendoim</p>
+      <div class="list-item">
+        <div class="list-item-content">
+          <p>Amendoim</p>
+        </div>
+        <img src="URL-IMAGEM-AMENDOIM" alt="Amendoim" class="list-item-image">
       </div>
-      <div class="card">
-        <img src="URL-IMAGEM-COCO" alt="Coco">
-        <p>Coco</p>
+      <div class="list-item">
+        <div class="list-item-content">
+          <p>Coco</p>
+        </div>
+        <img src="URL-IMAGEM-COCO" alt="Coco" class="list-item-image">
       </div>
-      <div class="card">
-        <img src="URL-IMAGEM-4-LEITES" alt="4 leites">
-        <p>4 leites</p>
+      <div class="list-item">
+        <div class="list-item-content">
+          <p>4 leites</p>
+        </div>
+        <img src="URL-IMAGEM-4-LEITES" alt="4 leites" class="list-item-image">
       </div>
-      <div class="card">
-        <img src="URL-IMAGEM-BRIGADEIRO-AMARGO" alt="Brigadeiro amargo">
-        <p>Brigadeiro amargo (R$5,00)</p>
+    </div>
+    
+    <img src="URL-IMAGEM-TITULO-RECHEIOS-ESPECIAIS" alt="Recheios Especiais" class="section-title">
+    <div class="catalogo-list">
+      <div class="list-item">
+        <div class="list-item-content">
+          <p>Brigadeiro amargo</p>
+          <span class="list-item-price">+ R$ 5,00</span>
+        </div>
+        <img src="URL-IMAGEM-BRIGADEIRO-AMARGO" alt="Brigadeiro amargo" class="list-item-image">
       </div>
-      <div class="card">
-        <img src="URL-IMAGEM-GANACHE-CHOCOLATE" alt="Ganache de chocolate">
-        <p>Ganache de chocolate (R$5,00)</p>
+      <div class="list-item">
+        <div class="list-item-content">
+          <p>Ganache de chocolate</p>
+          <span class="list-item-price">+ R$ 5,00</span>
+        </div>
+        <img src="URL-IMAGEM-GANACHE-CHOCOLATE" alt="Ganache de chocolate" class="list-item-image">
       </div>
-      <div class="card">
-        <img src="URL-IMAGEM-GANACHE-BRANCO" alt="Ganache de chocolate branco">
-        <p>Ganache de chocolate branco (R$5,00)</p>
+      <div class="list-item">
+        <div class="list-item-content">
+          <p>Ganache de chocolate branco</p>
+          <span class="list-item-price">+ R$ 5,00</span>
+        </div>
+        <img src="URL-IMAGEM-GANACHE-BRANCO" alt="Ganache de chocolate branco" class="list-item-image">
       </div>
-      <div class="card">
-        <img src="URL-IMAGEM-MARACUJA" alt="Maracujá">
-        <p>Maracujá (R$5,00)</p>
+      <div class="list-item">
+        <div class="list-item-content">
+          <p>Maracujá</p>
+          <span class="list-item-price">+ R$ 5,00</span>
+        </div>
+        <img src="URL-IMAGEM-MARACUJA" alt="Maracujá" class="list-item-image">
       </div>
-      <div class="card">
-        <img src="URL-IMAGEM-GELEIA-FRUTAS" alt="Geleia de Frutas">
-        <p>Geleia de Frutas (R$5,00)</p>
+      <div class="list-item">
+        <div class="list-item-content">
+          <p>Geleia de Frutas</p>
+          <span class="list-item-price">+ R$ 5,00</span>
+        </div>
+        <img src="URL-IMAGEM-GELEIA-FRUTAS" alt="Geleia de Frutas" class="list-item-image">
       </div>
     </div>
 
+
     <img src="URL-IMAGEM-TITULO-COBERTURA" alt="Cobertura" class="section-title">
-    <div class="catalogo-grid">
-        <div class="card">
-            <img src="URL-IMAGEM-CHANTININHO" alt="Chantilly ou Chantininho">
-            <p>Chantilly ou Chantininho</p>
+    <div class="catalogo-list">
+        <div class="list-item">
+            <div class="list-item-content">
+              <p>Chantilly ou Chantininho</p>
+            </div>
+            <img src="URL-IMAGEM-CHANTININHO" alt="Chantilly ou Chantininho" class="list-item-image">
         </div>
-        <div class="card">
-            <img src="URL-IMAGEM-GANACHE" alt="Ganache">
-            <p>Ganache</p>
+        <div class="list-item">
+            <div class="list-item-content">
+              <p>Ganache</p>
+            </div>
+            <img src="URL-IMAGEM-GANACHE" alt="Ganache" class="list-item-image">
         </div>
     </div>
 
     <img src="URL-IMAGEM-TITULO-ADICIONAIS" alt="Adicionais" class="section-title">
-    <div class="catalogo-grid">
-        <div class="card">
-            <img src="URL-IMAGEM-FRUTAS" alt="Frutas frescas">
-            <p>Frutas frescas (R$ 6,00)</p>
+    <div class="catalogo-list">
+        <div class="list-item">
+            <div class="list-item-content">
+              <p>Frutas frescas</p>
+              <span class="list-item-price">R$ 6,00</span>
+            </div>
+            <img src="URL-IMAGEM-FRUTAS" alt="Frutas frescas" class="list-item-image">
         </div>
-        <div class="card">
-            <img src="URL-IMAGEM-PEDACOS-CHOCOLATE" alt="Pedaços de chocolate">
-            <p>Pedaços de chocolate (R$ 8,00)</p>
+        <div class="list-item">
+            <div class="list-item-content">
+              <p>Pedaços de chocolate</p>
+              <span class="list-item-price">R$ 8,00</span>
+            </div>
+            <img src="URL-IMAGEM-PEDACOS-CHOCOLATE" alt="Pedaços de chocolate" class="list-item-image">
         </div>
-        <div class="card">
-            <img src="URL-IMAGEM-CASTANHAS" alt="Castanhas ou nozes">
-            <p>Castanhas ou nozes (R$ 12,00)</p>
+        <div class="list-item">
+            <div class="list-item-content">
+              <p>Castanhas ou nozes</p>
+              <span class="list-item-price">R$ 12,00</span>
+            </div>
+            <img src="URL-IMAGEM-CASTANHAS" alt="Castanhas ou nozes" class="list-item-image">
         </div>
-        <div class="card">
-            <img src="URL-IMAGEM-NUTELLA" alt="Nutella">
-            <p>Nutella (R$ 10,00)</p>
+        <div class="list-item">
+            <div class="list-item-content">
+              <p>Nutella</p>
+              <span class="list-item-price">R$ 10,00</span>
+            </div>
+            <img src="URL-IMAGEM-NUTELLA" alt="Nutella" class="list-item-image">
         </div>
-        <div class="card">
-            <img src="URL-IMAGEM-CAMADA-EXTRA" alt="Camada extra de recheio">
-            <p>Camada extra de recheio (20%)</p>
+        <div class="list-item">
+            <div class="list-item-content">
+              <p>Camada extra de recheio</p>
+              <span class="list-item-price">20% do valor do bolo</span>
+            </div>
+            <img src="URL-IMAGEM-CAMADA-EXTRA" alt="Camada extra de recheio" class="list-item-image">
         </div>
-        <div class="card">
-            <img src="URL-IMAGEM-TOPPER" alt="Topper">
-            <p>Topper (R$ 10,00)</p>
+        <div class="list-item">
+            <div class="list-item-content">
+              <p>Topper</p>
+              <span class="list-item-price">R$ 10,00</span>
+            </div>
+            <img src="URL-IMAGEM-TOPPER" alt="Topper" class="list-item-image">
         </div>
     </div>
 
     <img src="URL-IMAGEM-TITULO-TAMANHOS" alt="Tamanhos" class="section-title">
-    <div class="catalogo-grid">
-        <div class="card">
-            <img src="URL-IMAGEM-TAMANHO-10" alt="10x10">
-            <p>10x10 (5 fatias) - R$ 30,00</p>
+    <div class="catalogo-list">
+        <div class="list-item">
+            <div class="list-item-content">
+              <p>10x10</p>
+              <span class="list-item-price">5 fatias - R$ 30,00</span>
+            </div>
+            <img src="URL-IMAGEM-TAMANHO-10" alt="10x10" class="list-item-image">
         </div>
-        <div class="card">
-            <img src="URL-IMAGEM-TAMANHO-15" alt="15x10">
-            <p>15x10 (12/15 fatias) - R$ 60,00</p>
+        <div class="list-item">
+            <div class="list-item-content">
+              <p>15x10</p>
+              <span class="list-item-price">12/15 fatias - R$ 60,00</span>
+            </div>
+            <img src="URL-IMAGEM-TAMANHO-15" alt="15x10" class="list-item-image">
         </div>
-        <div class="card">
-            <img src="URL-IMAGEM-TAMANHO-20" alt="20x10">
-            <p>20x10 (20/25 fatias) - R$ 85,00</p>
+        <div class="list-item">
+            <div class="list-item-content">
+              <p>20x10</p>
+              <span class="list-item-price">20/25 fatias - R$ 85,00</span>
+            </div>
+            <img src="URL-IMAGEM-TAMANHO-20" alt="20x10" class="list-item-image">
         </div>
     </div>
   </section>
