@@ -43,17 +43,22 @@
     .location-img {
       width: 80%;
       max-width: 250px;
-      margin: 70px auto 10px auto;
+      /* Ajuste a margem superior para que a imagem suba */
+      margin: 20px auto 10px auto;
       display: block;
     }
 
     nav {
       margin: 15px 0;
+      /* Faz os itens ficarem lado a lado */
+      display: flex; 
+      justify-content: center;
+      flex-wrap: wrap; /* Permite quebra de linha se a tela for muito pequena */
     }
     
     .nav-image {
-        max-width: 150px;
-        width: 100%;
+        /* Ajuste o tamanho para que as 3 imagens caibam em uma linha */
+        max-width: 30%;
         height: auto;
         margin: 5px;
         cursor: pointer;
