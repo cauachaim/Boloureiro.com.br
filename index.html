@@ -30,21 +30,17 @@
     }
 
     .logo-container {
-  width: 150px; /* ajuste o tamanho se quiser maior ou menor */
+  wi.logo-container {
+  width: 150px;       /* tamanho do círculo */
   height: 150px;
-  border-radius: 50%;
-  overflow: hidden;
-  border: 4px solid #fff; /* deixa a borda branca */
-  margin: -75px auto 20px; /* sobrepõe o banner e centraliza */
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  margin: -75px auto 20px;
 }
 
 .logo-container img {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
+  height: auto;       /* mantém a proporção original */
+  display: block;
+  border-radius: 50%; /* só garante o formato se a imagem tiver bordas */
 }
 
     .location-img {
