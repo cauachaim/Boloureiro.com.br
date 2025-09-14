@@ -13,9 +13,20 @@
       scroll-behavior: smooth;
     }
 
-    header {
-      background-color: #f8b5c1;
-      padding: 20px 0;
+    /* Container do banner + logo */
+    .banner-container {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+
+    .banner {
+      width: 100%;
+      max-height: 200px;
+      object-fit: cover;
+      display: block;
     }
 
     .logo {
@@ -23,20 +34,16 @@
       height: 120px;
       border-radius: 50%;
       object-fit: cover;
-    }
-
-    .banner {
-      width: 90%;
-      max-width: 350px;
-      margin: 10px auto;
-      display: block;
-      border-radius: 15px;
+      position: absolute;
+      bottom: -60px; /* metade do tamanho da logo para sobrepor */
+      border: 5px solid #ffe4ec; /* borda para dar destaque */
+      background-color: white;
     }
 
     .location-img {
       width: 80%;
       max-width: 250px;
-      margin: 10px auto;
+      margin: 70px auto 10px auto; /* empurra para baixo da logo */
       display: block;
     }
 
@@ -108,29 +115,24 @@
 </head>
 <body>
 
-  <header>
-    <!-- Logo circular -->
-    <img src="assets/1000059258-removebg-preview.png" alt="Logo" class="logo">
-
-    <!-- Banner imagem -->
+  <!-- Banner e logo sobreposta -->
+  <div class="banner-container">
     <img src="assets/Screenshot_2025-09-14-15-32-42-350_com.canva.editor~2.jpg" alt="Banner" class="banner">
+    <img src="assets/1000059258-removebg-preview.png" alt="Logo" class="logo">
+  </div>
 
-    <!-- Localização como imagem -->
-    <img src="URL-DA-IMAGEM-LOCALIZACAO" alt="Localização" class="location-img">
+  <!-- Localização -->
+  <img src="URL-DA-IMAGEM-LOCALIZACAO" alt="Localização" class="location-img">
 
-    <!-- Botões de navegação -->
-    <nav>
-      <button onclick="scrollToSection('catalogo')">Catálogo</button>
-      <button onclick="scrollToSection('monte')">Monte seu Bolo</button>
-      <button onclick="scrollToSection('contato')">Contato</button>
-    </nav>
-  </header>
+  <!-- Botões -->
+  <nav>
+    <button onclick="scrollToSection('catalogo')">Catálogo</button>
+    <button onclick="scrollToSection('monte')">Monte seu Bolo</button>
+    <button onclick="scrollToSection('contato')">Contato</button>
+  </nav>
 
   <section id="catalogo">
-    <!-- Título catálogo como imagem -->
     <img src="URL-IMAGEM-TITULO-CATALOGO" alt="Catálogo" class="section-title">
-
-    <!-- Título massas como imagem -->
     <img src="URL-IMAGEM-TITULO-MASSAS" alt="Massas" class="section-title">
 
     <div class="catalogo-grid">
@@ -152,12 +154,11 @@
   <section id="monte">
     <img src="URL-IMAGEM-TITULO-MONTE" alt="Monte seu Bolo" class="section-title">
     <p>Aqui você vai poder escolher massa, recheio e cobertura e no final calcular o valor.</p>
-    <!-- Aqui depois podemos colocar o sistema de seleção e soma -->
   </section>
 
   <footer id="contato">
     <h3>Contato</h3>
-    <a href="https://wa.me/55SEU_NUMERO" target="_blank">WhatsApp</a>
+    <a href="https://wa.me/5522999290349" target="_blank">WhatsApp</a>
     <a href="https://instagram.com/SEU_INSTAGRAM" target="_blank">Instagram</a>
   </footer>
 
