@@ -5,160 +5,257 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Balancetes - Bolos Artesanais</title>
   <style>
+    :root {
+      --rosa-fundo: #ffe4ec;
+      --rosa-destaque: #ffb6c1;
+      --rosa-botao: #ff69b4;
+      --rosa-botao-hover: #e75799;
+      --texto: #4a2b36;
+    }
+
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
-      background-color: #ffe4ec;
-      color: #4a2b36;
-      text-align: center;
+      font-family: 'Arial', sans-serif;
+      background-color: var(--rosa-fundo);
+      color: var(--texto);
+      scroll-behavior: smooth;
     }
 
     header {
-      background: #ffb6c1;
-      padding: 30px;
+      background: var(--rosa-destaque);
+      text-align: center;
+      padding: 20px 10px 40px;
       border-radius: 0 0 30px 30px;
       box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     }
 
-    header img {
+    .banner {
+      width: 100%;
+      max-height: 200px;
+      object-fit: cover;
+      border-radius: 20px;
+      margin-bottom: 10px;
+    }
+
+    .logo-circulo {
       width: 120px;
       height: 120px;
-      object-fit: cover;
       border-radius: 50%;
-      border: 3px solid white;
+      border: 4px solid white;
+      object-fit: cover;
       box-shadow: 0 0 10px rgba(0,0,0,0.2);
+      margin: -60px auto 10px;
+      display: block;
+      background: white;
     }
 
     nav {
-      margin-top: 20px;
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin: 10px 0;
     }
 
-    nav button {
-      margin: 10px;
-      padding: 10px 20px;
-      border: none;
-      background-color: #ff69b4;
+    nav a {
+      padding: 8px 16px;
+      background: var(--rosa-botao);
       color: white;
+      border-radius: 20px;
+      text-decoration: none;
       font-weight: bold;
-      border-radius: 25px;
-      cursor: pointer;
       transition: 0.2s;
     }
 
-    nav button:hover {
-      background-color: #e75799;
+    nav a:hover {
+      background: var(--rosa-botao-hover);
     }
 
-    .catalogo, .simulador, .contato {
-      display: none;
-      padding: 20px;
+    section {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 30px 15px;
+      text-align: center;
     }
 
-    .ativo {
-      display: block;
-      animation: fadeIn 0.4s ease-in-out;
+    h2 {
+      margin-bottom: 15px;
+      font-size: 1.8rem;
     }
 
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 15px;
+      margin-top: 10px;
     }
 
-    select, input {
-      margin: 10px;
+    .card {
+      background: white;
+      border-radius: 15px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
       padding: 10px;
+      transition: 0.2s;
+    }
+
+    .card:hover {
+      transform: scale(1.05);
+    }
+
+    .card img {
+      width: 100%;
+      height: 100px;
+      object-fit: cover;
       border-radius: 10px;
+    }
+
+    /* Monte seu bolo */
+    .opcoes {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-top: 15px;
+    }
+
+    select, input[type="checkbox"] {
+      padding: 8px;
+      border-radius: 8px;
       border: 1px solid #ccc;
     }
 
-    .resultado {
+    button {
+      background: var(--rosa-botao);
+      color: white;
+      border: none;
+      border-radius: 20px;
+      padding: 10px 20px;
+      font-weight: bold;
+      cursor: pointer;
       margin-top: 15px;
-      font-size: 1.2rem;
+      transition: 0.2s;
+    }
+
+    button:hover {
+      background: var(--rosa-botao-hover);
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      font-size: 0.9rem;
+      background: var(--rosa-destaque);
+      border-radius: 20px 20px 0 0;
+    }
+
+    footer a {
+      display: inline-block;
+      margin: 5px;
+      text-decoration: none;
+      color: var(--texto);
       font-weight: bold;
     }
   </style>
 </head>
 <body>
+
+  <!-- HEADER -->
   <header>
-    <img src="logo.png" alt="Logo Balancetes">
-    <h1>Balancetes Bolos</h1>
-    <p>Delícias para todos os momentos</p>
+    <img src="banner.jpg" alt="Banner" class="banner">
+    <img src="logo.png" alt="Logo" class="logo-circulo">
     <nav>
-      <button onclick="mostrar('catalogo')">Catálogo</button>
-      <button onclick="mostrar('simulador')">Simular Preço</button>
-      <button onclick="mostrar('contato')">Contato</button>
+      <a href="#catalogo">Catálogo</a>
+      <a href="#monte">Monte seu Bolo</a>
+      <a href="#contato">Contato</a>
     </nav>
   </header>
 
-  <!-- Catálogo -->
-  <section id="catalogo" class="catalogo">
-    <h2>Massas</h2>
-    <p>Massa branca, Massa de chocolate, Red Velvet</p>
+  <!-- CATÁLOGO -->
+  <section id="catalogo">
+    <h2>Catálogo</h2>
 
-    <h2>Recheios Tradicionais</h2>
-    <p>Brigadeiro, Brigadeiro branco, Ninho, Doce de Leite, Amendoim, Coco, 4 leites</p>
+    <h3>Massas</h3>
+    <div class="grid">
+      <div class="card"><img src="imagens/massa-branca.jpg"><p>Massa Branca</p></div>
+      <div class="card"><img src="imagens/massa-chocolate.jpg"><p>Massa de Chocolate</p></div>
+      <div class="card"><img src="imagens/red-velvet.jpg"><p>Red Velvet</p></div>
+    </div>
 
-    <h2>Recheios Especiais (+R$5)</h2>
-    <p>Brigadeiro amargo, Ganache de chocolate, Ganache branco, Maracujá, Geleia de frutas</p>
-
-    <h2>Adicionais</h2>
-    <p>Frutas (R$6), Chocolate (R$8), Nozes (R$12), Nutella (R$10), +20% por camada extra</p>
-
-    <h2>Tamanhos</h2>
-    <p>10x10 (5 fatias) - R$30</p>
-    <p>15x10 (12-15 fatias) - R$60</p>
-    <p>20x10 (20-25 fatias) - R$85</p>
+    <h3>Recheios</h3>
+    <div class="grid">
+      <div class="card"><img src="imagens/brigadeiro.jpg"><p>Brigadeiro</p></div>
+      <div class="card"><img src="imagens/ninho.jpg"><p>Ninho</p></div>
+      <div class="card"><img src="imagens/doce-de-leite.jpg"><p>Doce de Leite</p></div>
+      <div class="card"><img src="imagens/ganache.jpg"><p>Ganache de Chocolate</p></div>
+    </div>
   </section>
 
-  <!-- Simulador -->
-  <section id="simulador" class="simulador">
-    <h2>Simule seu Bolo</h2>
-    <label for="tamanho">Tamanho:</label>
-    <select id="tamanho">
-      <option value="30">10x10 - R$30</option>
-      <option value="60">15x10 - R$60</option>
-      <option value="85">20x10 - R$85</option>
-    </select>
+  <!-- MONTE SEU BOLO -->
+  <section id="monte">
+    <h2>Monte seu Bolo</h2>
+    <div class="opcoes">
+      <label>Tamanho:
+        <select id="tamanho">
+          <option value="30">10x10 - R$30</option>
+          <option value="60">15x10 - R$60</option>
+          <option value="85">20x10 - R$85</option>
+        </select>
+      </label>
 
-    <label for="recheio">Recheio especial (+R$5):</label>
-    <input type="checkbox" id="recheio">
+      <label>Recheio especial (+R$5):
+        <input type="checkbox" id="recheio">
+      </label>
 
-    <label for="adicionais">Adicionais:</label>
-    <select id="adicionais" multiple>
-      <option value="6">Frutas (R$6)</option>
-      <option value="8">Chocolate (R$8)</option>
-      <option value="12">Nozes (R$12)</option>
-      <option value="10">Nutella (R$10)</option>
-    </select>
+      <label>Adicionais:</label>
+      <select id="adicionais" multiple>
+        <option value="6">Frutas (R$6)</option>
+        <option value="8">Chocolate (R$8)</option>
+        <option value="12">Nozes (R$12)</option>
+        <option value="10">Nutella (R$10)</option>
+      </select>
 
-    <button onclick="calcular()">Calcular</button>
-    <p class="resultado" id="resultado"></p>
-    <button id="whatsapp" style="display:none;">Enviar para WhatsApp</button>
+      <button onclick="calcular()">Calcular</button>
+      <p id="resultado"></p>
+      <button id="whatsapp" style="display:none;">Enviar para WhatsApp</button>
+    </div>
   </section>
 
-  <!-- Contato -->
-  <section id="contato" class="contato">
-    <h2>Fale Conosco</h2>
-    <p>Faça seu pedido pelo WhatsApp:</p>
-    <p><a href="https://wa.me/5522999290349" target="_blank">Clique aqui para conversar</a></p>
+  <!-- CONTATO -->
+  <section id="contato">
+    <h2>Contato</h2>
+    <p>Siga-nos nas redes sociais:</p>
+    <a href="https://wa.me/5522999290349" target="_blank">WhatsApp</a> |
+    <a href="https://instagram.com/" target="_blank">Instagram</a>
   </section>
+
+  <footer>
+    <p>© 2025 Balancetes - Todos os direitos reservados</p>
+  </footer>
 
   <script>
-    function mostrar(secao) {
-      document.querySelectorAll('section').forEach(s => s.classList.remove('ativo'));
-      document.getElementById(secao).classList.add('ativo');
-    }
-
     function calcular() {
       let valor = parseFloat(document.getElementById('tamanho').value);
-      if (document.getElementById('recheio').checked) valor += 5;
+      let descricao = `Tamanho: ${document.getElementById('tamanho').selectedOptions[0].text}\n`;
+
+      if (document.getElementById('recheio').checked) {
+        valor += 5;
+        descricao += "Recheio especial: Sim (+R$5)\n";
+      } else {
+        descricao += "Recheio especial: Não\n";
+      }
 
       const adicionais = Array.from(document.getElementById('adicionais').selectedOptions);
-      adicionais.forEach(opt => valor += parseFloat(opt.value));
+      if (adicionais.length > 0) {
+        descricao += "Adicionais: ";
+        adicionais.forEach(opt => {
+          valor += parseFloat(opt.value);
+          descricao += `${opt.text}, `;
+        });
+        descricao = descricao.slice(0, -2) + "\n";
+      }
 
-      document.getElementById('resultado').innerText = "Total: R$ " + valor.toFixed(2);
+      document.getElementById('resultado').innerText = `Total: R$ ${valor.toFixed(2)}`;
 
-      const msg = `Olá! Quero simular um bolo. O valor ficou R$${valor.toFixed(2)}.`;
+      const msg = `Olá! Montei meu bolo:\n${descricao}\nTotal: R$${valor.toFixed(2)}`;
       const link = `https://wa.me/5522999290349?text=${encodeURIComponent(msg)}`;
 
       const btn = document.getElementById('whatsapp');
@@ -166,5 +263,6 @@
       btn.onclick = () => window.open(link, '_blank');
     }
   </script>
+
 </body>
 </html>
