@@ -29,16 +29,23 @@
       display: block;
     }
 
-    .logo {
-      width: 120px;
-      height: 120px;
-      border-radius: 50%;
-      object-fit: cover;
-      position: absolute;
-      bottom: -60px; /* metade do tamanho da logo para sobrepor */
-      border: 5px solid #ffe4ec; /* borda para dar destaque */
-      background-color: white;
-    }
+    .logo-container {
+  width: 150px; /* ajuste o tamanho se quiser maior ou menor */
+  height: 150px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 4px solid #fff; /* deixa a borda branca */
+  margin: -75px auto 20px; /* sobrepõe o banner e centraliza */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
 
     .location-img {
       width: 80%;
@@ -118,7 +125,7 @@
   <!-- Banner e logo sobreposta -->
   <div class="banner-container">
     <img src="assets/Screenshot_2025-09-14-15-32-42-350_com.canva.editor~2.jpg" alt="Banner" class="banner">
-    <img src="assets/1000059258-removebg-preview.png" alt="Logo" class="logo">
+    <img src="assets/1000059258-removebg-preview.png" alt="Logo" class="logo-container">
   </div>
 
   <!-- Localização -->
