@@ -51,11 +51,11 @@
     
     .top-nav-links {
         display: flex;
-        justify-content: flex-end; /* Alinha os botões à direita */
+        justify-content: flex-end;
         align-items: center;
-        flex: 1; /* Ocupa o espaço restante */
-        margin-left: auto; /* Cria o espaçamento maior no centro */
-        gap: 10px; /* Espaçamento entre os botões */
+        flex: 1;
+        margin-left: auto;
+        gap: 10px;
     }
     
     .top-nav a {
@@ -111,21 +111,40 @@
       display: block;
     }
 
-    /* Seção de biografia - Corrigida para manter a proporção */
+    /* Seção de biografia */
     .about-me-section {
-        /* A imagem será o fundo, garantindo proporção */
-        background-image: url('assets/Screenshot_2025-09-14-22-30-18-053_com.canva.editor~3.jpg');
-        background-size: contain; 
-        background-position: center;
-        background-repeat: no-repeat;
-        
-        padding: 0;
+        background-color: #f8b5c1;
+        padding: 20px;
         max-width: 600px;
         margin: 20px auto;
         border-radius: 12px;
-        /* A altura agora é responsiva, baseada na proporção da imagem */
-        padding-top: 41.67%; /* 250px / 600px * 100% (proporção da imagem) */
-        position: relative;
+        display: flex;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .about-me-image {
+        width: 150px;
+        height: auto;
+        flex-shrink: 0;
+    }
+    
+    .about-me-text-content {
+        flex: 1;
+        font-size: 14px;
+        line-height: 1.5;
+        text-align: justify;
+    }
+
+    @media (max-width: 600px) {
+        .about-me-section {
+            flex-direction: column;
+            text-align: center;
+        }
+
+        .about-me-image {
+            margin-bottom: 10px;
+        }
     }
 
     nav {
@@ -292,7 +311,15 @@
   <img src="assets/1000059268-removebg-preview.png" alt="Localização" class="location-img">
 
   <section id="about-me-section" class="about-me-section">
-</section>
+      <div class="about-me-content">
+          <img src="assets/1000059366-removebg-preview.png" alt="Yasmim Loureiro" class="about-me-image">
+          <div class="about-me-text-content">
+              <p>Oii, eu sou a Yasmim Loureiro!</p>
+              <p>A confeitaria sempre foi minha paixão, e hoje transformo esse amor em bolos preparados com carinho e dedicação. Cada detalhe é pensado para que o seu momento seja inesquecível - seja um aniversário, uma comemoração especial ou simplesmente para adoçar o seu dia.</p>
+              <p>Faça já sua encomenda e deixe seus momentos mais especiais com um bolo feito por mim!</p>
+          </div>
+      </div>
+  </section>
 
   <nav id="nav">
     <img src="assets/1000059270-removebg-preview.png" alt="Catálogo" class="nav-image" onclick="scrollToSection('catalogo')">
