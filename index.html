@@ -33,7 +33,18 @@
       z-index: 1000;
     }
     
+    .top-nav .logos-container {
+        display: flex;
+        align-items: center;
+        gap: 10px; /* Espaço entre as logos */
+    }
+
     .top-nav .logo {
+        height: 60px;
+        width: auto;
+    }
+
+    .top-nav .new-logo {
         height: 60px;
         width: auto;
     }
@@ -43,7 +54,7 @@
         justify-content: space-around;
         align-items: center;
         flex: 1;
-        max-width: 250px; /* Limita a largura dos links para não quebrar */
+        max-width: 250px;
     }
     
     .top-nav a {
@@ -93,14 +104,14 @@
     .location-img {
       width: 100%;
       max-width: 250px;
-      margin: -5px auto 5px auto;
+      margin: -15px auto 10px auto;
       display: block;
     }
 
-    /* Seção de biografia - Agora a imagem é o fundo, sem ser cortada */
+    /* Seção de biografia */
     .about-me-section {
         background-image: url('assets/Screenshot_2025-09-14-22-30-18-053_com.canva.editor~3.jpg');
-        background-size: contain; /* Garante que a imagem inteira seja visível */
+        background-size: contain;
         background-position: center;
         background-repeat: no-repeat;
         
@@ -108,11 +119,11 @@
         max-width: 600px;
         margin: 20px auto;
         border-radius: 12px;
-        height: 250px; /* Altura ajustada para caber a imagem */
+        height: 250px;
     }
     
     .about-me-combined-image {
-        display: none; /* A imagem original agora está no background */
+        display: none;
     }
 
     nav {
@@ -258,11 +269,14 @@
 <body>
 
   <header class="top-nav">
-      <img src="assets/1000059258-removebg-preview.png" alt="Logo Boloure" class="logo">
+      <div class="logos-container">
+          <img src="assets/1000059258-removebg-preview.png" alt="Logo Boloure" class="logo">
+          <img src="assets/1000059510-removebg-preview.png" alt="Bolo Adicional" class="new-logo">
+      </div>
       <div class="top-nav-links">
-          <a href="#about-me-section">Sobre</a>
-          <a href="#nav">Menu</a>
-          <a href="#contato">Contato</a>
+          <a href="#about-me-section" onclick="scrollToSection('about-me-section')">Sobre</a>
+          <a href="#nav" onclick="scrollToSection('nav')">Menu</a>
+          <a href="#contato" onclick="scrollToSection('contato')">Contato</a>
       </div>
   </header>
 
@@ -276,7 +290,6 @@
   <img src="assets/1000059268-removebg-preview.png" alt="Localização" class="location-img">
 
   <section id="about-me-section" class="about-me-section">
-      
 </section>
 
   <nav id="nav">
