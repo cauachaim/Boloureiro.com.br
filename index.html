@@ -36,7 +36,7 @@
     .top-nav .brand-container {
       display: flex;
       align-items: center;
-      gap: 10px;
+      gap: 0px; /* Logos coladas */
     }
     
     .top-nav .brand-container .logo {
@@ -51,11 +51,11 @@
     
     .top-nav-links {
         display: flex;
-        justify-content: flex-end; /* Alinha os botões à direita */
+        justify-content: flex-end;
         align-items: center;
-        flex: 1; /* Ocupa o espaço restante */
-        margin-left: auto; /* Cria o espaçamento maior no centro */
-        gap: 10px; /* Espaçamento entre os botões */
+        flex: 1;
+        margin-left: auto;
+        gap: 10px;
     }
     
     .top-nav a {
@@ -129,25 +129,22 @@
         display: none;
     }
 
-    /* Botões abaixo da biografia */
     nav {
       margin: 15px 0;
       display: flex;
       justify-content: center;
       flex-wrap: wrap;
-      gap: 10px; /* Adicionado para espaçamento em telas pequenas */
     }
     
     .nav-image {
         max-width: 30%;
         height: auto;
+        margin: 5px;
         cursor: pointer;
         transition: transform 0.2s ease;
         outline: none;
-        
-        /* Estilos de botão */
-        background-color: white;
-        padding: 10px 15px;
+        background-color: white; /* Adicionado background para o botão */
+        padding: 10px 15px; /* Adicionado padding para o botão */
         border-radius: 20px;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
     }
@@ -215,11 +212,13 @@
     }
 
     .catalogo-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+      display: flex; /* Mudado para flexbox */
+      justify-content: space-around;
       gap: 15px;
       max-width: 600px;
       margin: 0 auto;
+      overflow-x: auto; /* Permite rolamento horizontal na grid, caso necessário */
+      padding: 0 10px;
     }
 
     .card {
@@ -227,6 +226,8 @@
       border-radius: 12px;
       padding: 10px;
       box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      flex-shrink: 0; /* Impede que os cartões encolham */
+      width: 130px; /* Largura fixa para manter a proporção */
     }
 
     .card img {
@@ -350,43 +351,43 @@
                 <div class="list-item-content">
                   <p>Brigadeiro</p>
                 </div>
-                <img src="URL-IMAGEM-BRIGADEIRO" alt="Brigadeiro" class="list-item-image">
+                <img src="URL-IMAGEM-BRIGADEIRO" alt="Brigadeiro" class-item-image">
               </div>
               <div class="list-item">
                 <div class="list-item-content">
                   <p>Brigadeiro branco</p>
                 </div>
-                <img src="URL-IMAGEM-BRIGADEIRO-BRANCO" alt="Brigadeiro branco" class="list-item-image">
+                <img src="URL-IMAGEM-BRIGADEIRO-BRANCO" alt="Brigadeiro branco" class-item-image">
               </div>
               <div class="list-item">
                 <div class="list-item-content">
                   <p>Ninho</p>
                 </div>
-                <img src="URL-IMAGEM-NINHO" alt="Ninho" class="list-item-image">
+                <img src="URL-IMAGEM-NINHO" alt="Ninho" class-item-image">
               </div>
               <div class="list-item">
                 <div class="list-item-content">
                   <p>Doce de Leite</p>
                 </div>
-                <img src="URL-IMAGEM-DOCE-DE-LEITE" alt="Doce de Leite" class="list-item-image">
+                <img src="URL-IMAGEM-DOCE-DE-LEITE" alt="Doce de Leite" class-item-image">
               </div>
               <div class="list-item">
                 <div class="list-item-content">
                   <p>Amendoim</p>
                 </div>
-                <img src="URL-IMAGEM-AMENDOIM" alt="Amendoim" class="list-item-image">
+                <img src="URL-IMAGEM-AMENDOIM" alt="Amendoim" class-item-image">
               </div>
               <div class="list-item">
                 <div class="list-item-content">
                   <p>Coco</p>
                 </div>
-                <img src="URL-IMAGEM-COCO" alt="Coco" class="list-item-image">
+                <img src="URL-IMAGEM-COCO" alt="Coco" class-item-image">
               </div>
               <div class="list-item">
                 <div class="list-item-content">
                   <p>4 leites</p>
                 </div>
-                <img src="URL-IMAGEM-4-LEITES" alt="4 leites" class="list-item-image">
+                <img src="URL-IMAGEM-4-LEITES" alt="4 leites" class-item-image">
               </div>
             </div>
             
