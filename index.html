@@ -49,26 +49,35 @@
 
     /* Nova seção para a biografia com fundo diferente */
     .about-me-section {
-        /* Fundo da imagem da biografia */
-        background-image: url('assets/Screenshot_2025-09-14-22-30-18-053_com.canva.editor~3.jpg'); /* Use a URL da sua imagem combinada aqui */
-        background-size: cover; /* Faz a imagem cobrir todo o espaço */
-        background-position: center; /* Centraliza a imagem */
-        background-repeat: no-repeat; /* Evita que a imagem se repita */
-        
+        background-color: #f8b5c1;
         padding: 20px;
         max-width: 600px;
         margin: 20px auto;
         border-radius: 12px;
-        height: 250px; /* Definindo uma altura para a seção para que o background seja visível */
-        /* display: flex e justify-content não são mais necessários se não houver conteúdo interno */
-        /* Se você quiser conteúdo sobre a imagem de fundo, precisaria de outro elemento */
     }
     
-    /* Esta classe .about-me-combined-image não é mais necessária no HTML,
-       mas a mantive com 'display: none' caso haja alguma referência perdida.
-       Idealmente, ela deve ser removida do HTML. */
-    .about-me-combined-image {
-        display: none; 
+    .about-me-content {
+        display: flex;
+        flex-direction: row; /* Mantém o layout lado a lado em qualquer tela */
+        align-items: center;
+        gap: 15px;
+        width: 100%;
+        text-align: left;
+    }
+    
+    .about-me-image {
+        width: 40%;
+        max-width: 150px;
+        height: auto;
+        flex-shrink: 0;
+    }
+
+    .about-me-text {
+        width: 60%;
+        font-size: 14px;
+        line-height: 1.5;
+        flex: 1;
+        text-align: justify;
     }
 
     nav {
@@ -85,7 +94,6 @@
         cursor: pointer;
         transition: transform 0.2s ease;
         outline: none;
-        /* Sombreado adicionado aqui */
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
     }
 
@@ -203,7 +211,11 @@
   <img src="assets/1000059268-removebg-preview.png" alt="Localização" class="location-img">
 
   <section class="about-me-section">
-      </section>
+      <div class="about-me-content">
+        <img src="assets/1000059366-removebg-preview.png" alt="Yasmim Loureiro" class="about-me-image">
+        <p class="about-me-text">Olá, eu sou a **Yasmim Loureiro**, a confeitaria sempre foi minha paixão, e hoje transformo esse amor em bolos preparados com carinho e dedicação. Cada detalhe é pensado para que o seu momento seja inesquecível, seja um aniversário, uma comemoração especial ou simplesmente para adoçar o seu dia.<br><br>Faça já sua encomenda e deixe seus momentos mais especiais com um bolo feito por mim!</p>
+      </div>
+  </section>
 
   <nav>
     <img src="assets/1000059270-removebg-preview.png" alt="Catálogo" class="nav-image" onclick="scrollToSection('catalogo')">
