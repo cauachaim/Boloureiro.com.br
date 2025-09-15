@@ -47,37 +47,26 @@
       display: block;
     }
 
-    /* Nova seção para a biografia com fundo diferente */
+    /* Seção de biografia */
     .about-me-section {
-        background-color: #f8b5c1;
-        padding: 20px;
+        position: relative; /* Importante para o posicionamento da imagem absoluta */
+        padding: 0; /* Removendo padding para a imagem cobrir tudo */
         max-width: 600px;
         margin: 20px auto;
         border-radius: 12px;
+        overflow: hidden; /* Garante que a imagem não ultrapasse as bordas arredondadas */
+        height: 250px; /* Defina uma altura para a seção */
+        background-color: transparent; /* Remove o fundo rosa */
     }
     
-    .about-me-content {
-        display: flex;
-        flex-direction: row; /* Mantém o layout lado a lado em qualquer tela */
-        align-items: center;
-        gap: 15px;
+    .about-me-combined-image {
+        position: absolute; /* Posição absoluta dentro da .about-me-section */
+        top: 0;
+        left: 0;
         width: 100%;
-        text-align: left;
-    }
-    
-    .about-me-image {
-        width: 40%;
-        max-width: 150px;
-        height: auto;
-        flex-shrink: 0;
-    }
-
-    .about-me-text {
-        width: 60%;
-        font-size: 14px;
-        line-height: 1.5;
-        flex: 1;
-        text-align: justify;
+        height: 100%;
+        object-fit: cover; /* Faz a imagem cobrir toda a área da seção */
+        border-radius: 12px; /* Mantém as bordas arredondadas da seção */
     }
 
     nav {
@@ -211,10 +200,7 @@
   <img src="assets/1000059268-removebg-preview.png" alt="Localização" class="location-img">
 
   <section class="about-me-section">
-      <div class="about-me-content">
-        <img src="assets/1000059366-removebg-preview.png" alt="Yasmim Loureiro" class="about-me-image">
-        <p class="about-me-text">Olá, eu sou a **Yasmim Loureiro**, a confeitaria sempre foi minha paixão, e hoje transformo esse amor em bolos preparados com carinho e dedicação. Cada detalhe é pensado para que o seu momento seja inesquecível, seja um aniversário, uma comemoração especial ou simplesmente para adoçar o seu dia.<br><br>Faça já sua encomenda e deixe seus momentos mais especiais com um bolo feito por mim!</p>
-      </div>
+      <img src="assets/Screenshot_2025-09-14-22-30-18-053_com.canva.editor~3.jpg" alt="Biografia de Yasmim" class="about-me-combined-image">
   </section>
 
   <nav>
