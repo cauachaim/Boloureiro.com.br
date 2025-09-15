@@ -16,7 +16,7 @@
       background-color: #ffe4ec;
       text-align: center;
       scroll-behavior: smooth;
-      overflow-x: hidden; /* Evita o rolamento lateral */
+      overflow-x: hidden; /* Garante que não haja rolagem lateral */
     }
 
     /* Nova barra de navegação no topo */
@@ -51,11 +51,11 @@
     
     .top-nav-links {
         display: flex;
-        justify-content: flex-end;
+        justify-content: flex-end; /* Alinha os botões à direita */
         align-items: center;
-        flex: 1;
-        margin-left: auto;
-        gap: 10px;
+        flex: 1; /* Ocupa o espaço restante */
+        margin-left: auto; /* Cria o espaçamento maior no centro */
+        gap: 10px; /* Espaçamento entre os botões */
     }
     
     .top-nav a {
@@ -213,12 +213,12 @@
 
     .catalogo-grid {
       display: flex; /* Mudado para flexbox */
-      justify-content: space-around;
+      justify-content: center; /* Alinha o conteúdo ao centro */
+      flex-wrap: wrap; /* Permite que os itens quebrem a linha */
       gap: 15px;
       max-width: 600px;
       margin: 0 auto;
-      overflow-x: auto; /* Permite rolamento horizontal na grid, caso necessário */
-      padding: 0 10px;
+      padding: 0;
     }
 
     .card {
@@ -226,8 +226,8 @@
       border-radius: 12px;
       padding: 10px;
       box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-      flex-shrink: 0; /* Impede que os cartões encolham */
-      width: 130px; /* Largura fixa para manter a proporção */
+      flex: 1 1 130px; /* Garante que os cartões se ajustem e fiquem em uma linha */
+      max-width: 130px; /* Largura máxima para manter o formato */
     }
 
     .card img {
