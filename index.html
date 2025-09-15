@@ -25,7 +25,6 @@
       background-color: #f8b5c1;
       padding: 10px 20px;
       display: flex;
-      justify-content: space-between;
       align-items: center;
       box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
       position: sticky;
@@ -36,8 +35,7 @@
     .top-nav .brand-container {
       display: flex;
       align-items: center;
-      /* Ajuste este valor para aproximar as duas imagens */
-      gap: 5px; 
+      gap: 10px;
     }
     
     .top-nav .brand-container .logo {
@@ -46,16 +44,17 @@
     }
 
     .top-nav .brand-container .brand-image {
-        height: 30px; 
+        height: 30px;
         width: auto;
     }
     
     .top-nav-links {
         display: flex;
-        justify-content: space-around;
+        justify-content: flex-end;
         align-items: center;
-        /* Mantenha a largura para garantir que os links se movam para a direita */
+        flex: 1;
         max-width: 250px;
+        margin-left: auto;
     }
     
     .top-nav a {
@@ -63,16 +62,20 @@
       color: white;
       font-weight: bold;
       font-size: 14px;
+      /* Estilos para parecer um botão */
+      background-color: #ff4b8a;
+      padding: 8px 15px; 
+      border-radius: 20px; 
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      
       transition: transform 0.2s ease, box-shadow 0.2s ease;
-      padding: 5px 10px;
-      border-radius: 8px;
       white-space: nowrap;
+      margin: 0 5px; /* Espaçamento entre os botões */
     }
     
     .top-nav a:hover {
-        transform: scale(1.1);
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        background-color: rgba(255, 255, 255, 0.2);
+        transform: scale(1.05);
+        box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
     }
 
     /* Container do banner + logo */
@@ -109,7 +112,7 @@
       display: block;
     }
 
-    /* Seção de biografia - Agora a imagem é o fundo, sem ser cortada */
+    /* Seção de biografia */
     .about-me-section {
         background-image: url('assets/Screenshot_2025-09-14-22-30-18-053_com.canva.editor~3.jpg');
         background-size: contain;
