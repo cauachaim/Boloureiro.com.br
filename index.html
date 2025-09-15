@@ -58,26 +58,23 @@
     
     .about-me-content {
         display: flex;
-        flex-direction: row; /* Para manter as imagens lado a lado */
+        flex-direction: row;
         align-items: center;
-        gap: 15px; /* Espaço entre as imagens */
+        gap: 15px;
         width: 100%;
-        justify-content: center; /* Centraliza o conteúdo horizontalmente */
     }
     
     .about-me-image {
-        width: 40%; /* Ajuste percentual para ser responsivo */
-        max-width: 150px; /* Limite máximo de largura */
+        width: 40%;
+        max-width: 150px;
         height: auto;
-        border-radius: 50%;
-        object-fit: cover;
     }
     
-    .about-me-secondary-image {
-        width: 55%; /* Ajuste percentual para ser responsivo */
-        max-width: 300px; /* Limite máximo de largura */
-        height: auto;
-        border-radius: 8px;
+    .about-me-text {
+        font-size: 14px; /* Ajuste o tamanho da fonte */
+        line-height: 1.5;
+        flex: 1; /* Ocupa o espaço restante */
+        text-align: justify;
     }
 
     nav {
@@ -212,7 +209,7 @@
   <section class="about-me-section">
       <div class="about-me-content">
         <img src="assets/1000059366-removebg-preview.png" alt="Yasmim Loureiro" class="about-me-image">
-        <img src="assets/Screenshot_2025-09-14-18-06-15-869_com.canva.editor~2.jpg" alt="Descrição da biografia" class="about-me-secondary-image">
+        <p class="about-me-text">Olá, eu sou a **Yasmim Loureiro**, a confeitaria sempre foi minha paixão, e hoje transformo esse amor em bolos preparados com carinho e dedicação. Cada detalhe é pensado para que o seu momento seja inesquecível, seja um aniversário, uma comemoração especial ou simplesmente para adoçar o seu dia.<br><br>Faça já sua encomenda e deixe seus momentos mais especiais com um bolo feito por mim!</p>
       </div>
   </section>
 
