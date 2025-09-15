@@ -34,7 +34,8 @@
     
     .top-nav-links {
         display: flex;
-        gap: 15px;
+        justify-content: space-around; /* Garante que os links caibam na tela */
+        flex: 1; /* Permite que os links ocupem o espaço disponível */
     }
     
     .top-nav a {
@@ -87,23 +88,22 @@
       display: block;
     }
 
-    /* Seção de biografia - Agora a imagem é o fundo */
+    /* Seção de biografia - Corrigido o problema de proporção */
     .about-me-section {
-        background-image: url('assets/Screenshot_2025-09-14-22-30-18-053_com.canva.editor~3.jpg'); /* Sua imagem combinada */
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-        
-        padding: 0;
+        background-color: #f8b5c1;
+        padding: 20px;
         max-width: 600px;
         margin: 20px auto;
         border-radius: 12px;
-        height: 250px; /* Altura ajustada para caber a imagem */
+        /* Remover a altura fixa para que o container se ajuste à imagem */
     }
     
-    /* Esta classe agora não é mais usada */
     .about-me-combined-image {
-        display: none;
+        width: 100%; /* A imagem preenche a largura do container */
+        height: auto; /* A altura se ajusta para manter a proporção */
+        max-width: 500px;
+        border-radius: 8px;
+        display: block;
     }
 
     nav {
@@ -267,8 +267,8 @@
   <img src="assets/1000059268-removebg-preview.png" alt="Localização" class="location-img">
 
   <section id="about-me-section" class="about-me-section">
-      
-</section>
+      <img src="assets/Screenshot_2025-09-14-22-30-18-053_com.canva.editor~3.jpg" alt="Biografia de Yasmim" class="about-me-combined-image">
+  </section>
 
   <nav id="nav">
     <img src="assets/1000059270-removebg-preview.png" alt="Catálogo" class="nav-image" onclick="scrollToSection('catalogo')">
