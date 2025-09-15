@@ -16,7 +16,7 @@
       background-color: #ffe4ec;
       text-align: center;
       scroll-behavior: smooth;
-      overflow-x: hidden;
+      overflow-x: hidden; /* Evita o rolamento lateral */
     }
 
     /* Nova barra de navegação no topo */
@@ -32,20 +32,20 @@
       top: 0;
       z-index: 1000;
     }
-    
-    .top-nav .logos-container {
-        display: flex;
-        align-items: center;
-        gap: 10px; /* Espaço entre as logos */
-    }
 
-    .top-nav .logo {
+    .top-nav .brand-container {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    
+    .top-nav .brand-container .logo {
         height: 60px;
         width: auto;
     }
 
-    .top-nav .new-logo {
-        height: 60px;
+    .top-nav .brand-container .brand-image {
+        height: 30px; /* Ajuste o tamanho da imagem de texto */
         width: auto;
     }
     
@@ -108,7 +108,7 @@
       display: block;
     }
 
-    /* Seção de biografia */
+    /* Seção de biografia - Agora a imagem é o fundo, sem ser cortada */
     .about-me-section {
         background-image: url('assets/Screenshot_2025-09-14-22-30-18-053_com.canva.editor~3.jpg');
         background-size: contain;
@@ -269,9 +269,9 @@
 <body>
 
   <header class="top-nav">
-      <div class="logos-container">
+      <div class="brand-container">
           <img src="assets/1000059258-removebg-preview.png" alt="Logo Boloure" class="logo">
-          <img src="assets/1000059510-removebg-preview.png" alt="Bolo Adicional" class="new-logo">
+          <img src="assets/1000059510-removebg-preview.png" alt="Nome Boloureiro" class="brand-image">
       </div>
       <div class="top-nav-links">
           <a href="#about-me-section" onclick="scrollToSection('about-me-section')">Sobre</a>
