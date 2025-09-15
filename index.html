@@ -47,26 +47,22 @@
       display: block;
     }
 
-    /* Seção de biografia */
+    /* Nova seção para a biografia com fundo diferente */
     .about-me-section {
-        position: relative; /* Importante para o posicionamento da imagem absoluta */
-        padding: 0; /* Removendo padding para a imagem cobrir tudo */
+        background-color: #f8b5c1;
+        padding: 0; /* Removido o padding para a imagem preencher tudo */
         max-width: 600px;
         margin: 20px auto;
         border-radius: 12px;
         overflow: hidden; /* Garante que a imagem não ultrapasse as bordas arredondadas */
-        height: 250px; /* Defina uma altura para a seção */
-        background-color: transparent; /* Remove o fundo rosa */
     }
     
     .about-me-combined-image {
-        position: absolute; /* Posição absoluta dentro da .about-me-section */
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        object-fit: cover; /* Faz a imagem cobrir toda a área da seção */
-        border-radius: 12px; /* Mantém as bordas arredondadas da seção */
+        /* Ajuste para a imagem preencher o container */
+        width: 100%; 
+        height: auto;
+        display: block;
+        border-radius: 12px;
     }
 
     nav {
