@@ -16,7 +16,7 @@
       background-color: #ffe4ec;
       text-align: center;
       scroll-behavior: smooth;
-      overflow-x: hidden; /* Garante que não haja rolagem lateral */
+      overflow-x: hidden; /* Evita o rolamento lateral */
     }
 
     /* Nova barra de navegação no topo */
@@ -36,7 +36,7 @@
     .top-nav .brand-container {
       display: flex;
       align-items: center;
-      gap: 0px; /* Logos coladas */
+      gap: 10px;
     }
     
     .top-nav .brand-container .logo {
@@ -51,11 +51,11 @@
     
     .top-nav-links {
         display: flex;
-        justify-content: flex-end; /* Alinha os botões à direita */
+        justify-content: flex-end;
         align-items: center;
-        flex: 1; /* Ocupa o espaço restante */
-        margin-left: auto; /* Cria o espaçamento maior no centro */
-        gap: 10px; /* Espaçamento entre os botões */
+        flex: 1;
+        margin-left: auto;
+        gap: 10px;
     }
     
     .top-nav a {
@@ -124,10 +124,6 @@
         border-radius: 12px;
         height: 250px;
     }
-    
-    .about-me-combined-image {
-        display: none;
-    }
 
     nav {
       margin: 15px 0;
@@ -143,8 +139,8 @@
         cursor: pointer;
         transition: transform 0.2s ease;
         outline: none;
-        background-color: white; /* Adicionado background para o botão */
-        padding: 10px 15px; /* Adicionado padding para o botão */
+        background-color: white;
+        padding: 10px 15px;
         border-radius: 20px;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
     }
@@ -212,9 +208,9 @@
     }
 
     .catalogo-grid {
-      display: flex; /* Mudado para flexbox */
-      justify-content: center; /* Alinha o conteúdo ao centro */
-      flex-wrap: wrap; /* Permite que os itens quebrem a linha */
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
       gap: 15px;
       max-width: 600px;
       margin: 0 auto;
@@ -226,8 +222,8 @@
       border-radius: 12px;
       padding: 10px;
       box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-      flex: 1 1 130px; /* Garante que os cartões se ajustem e fiquem em uma linha */
-      max-width: 130px; /* Largura máxima para manter o formato */
+      flex: 1 1 130px;
+      max-width: 130px;
     }
 
     .card img {
@@ -351,43 +347,43 @@
                 <div class="list-item-content">
                   <p>Brigadeiro</p>
                 </div>
-                <img src="URL-IMAGEM-BRIGADEIRO" alt="Brigadeiro" class-item-image">
+                <img src="URL-IMAGEM-BRIGADEIRO" alt="Brigadeiro" class="list-item-image">
               </div>
               <div class="list-item">
                 <div class="list-item-content">
                   <p>Brigadeiro branco</p>
                 </div>
-                <img src="URL-IMAGEM-BRIGADEIRO-BRANCO" alt="Brigadeiro branco" class-item-image">
+                <img src="URL-IMAGEM-BRIGADEIRO-BRANCO" alt="Brigadeiro branco" class="list-item-image">
               </div>
               <div class="list-item">
                 <div class="list-item-content">
                   <p>Ninho</p>
                 </div>
-                <img src="URL-IMAGEM-NINHO" alt="Ninho" class-item-image">
+                <img src="URL-IMAGEM-NINHO" alt="Ninho" class="list-item-image">
               </div>
               <div class="list-item">
                 <div class="list-item-content">
                   <p>Doce de Leite</p>
                 </div>
-                <img src="URL-IMAGEM-DOCE-DE-LEITE" alt="Doce de Leite" class-item-image">
+                <img src="URL-IMAGEM-DOCE-DE-LEITE" alt="Doce de Leite" class="list-item-image">
               </div>
               <div class="list-item">
                 <div class="list-item-content">
                   <p>Amendoim</p>
                 </div>
-                <img src="URL-IMAGEM-AMENDOIM" alt="Amendoim" class-item-image">
+                <img src="URL-IMAGEM-AMENDOIM" alt="Amendoim" class="list-item-image">
               </div>
               <div class="list-item">
                 <div class="list-item-content">
                   <p>Coco</p>
                 </div>
-                <img src="URL-IMAGEM-COCO" alt="Coco" class-item-image">
+                <img src="URL-IMAGEM-COCO" alt="Coco" class="list-item-image">
               </div>
               <div class="list-item">
                 <div class="list-item-content">
                   <p>4 leites</p>
                 </div>
-                <img src="URL-IMAGEM-4-LEITES" alt="4 leites" class-item-image">
+                <img src="URL-IMAGEM-4-LEITES" alt="4 leites" class="list-item-image">
               </div>
             </div>
             
@@ -398,35 +394,35 @@
                   <p>Brigadeiro amargo</p>
                   <span class="list-item-price">+ R$ 5,00</span>
                 </div>
-                <img src="URL-IMAGEM-BRIGADEIRO-AMARGO" alt="Brigadeiro amargo" class-item-image">
+                <img src="URL-IMAGEM-BRIGADEIRO-AMARGO" alt="Brigadeiro amargo" class="list-item-image">
               </div>
               <div class="list-item">
                 <div class="list-item-content">
                   <p>Ganache de chocolate</p>
                   <span class="list-item-price">+ R$ 5,00</span>
                 </div>
-                <img src="URL-IMAGEM-GANACHE-CHOCOLATE" alt="Ganache de chocolate" class-item-image">
+                <img src="URL-IMAGEM-GANACHE-CHOCOLATE" alt="Ganache de chocolate" class="list-item-image">
               </div>
               <div class="list-item">
                 <div class="list-item-content">
                   <p>Ganache de chocolate branco</p>
                   <span class="list-item-price">+ R$ 5,00</span>
                 </div>
-                <img src="URL-IMAGEM-GANACHE-BRANCO" alt="Ganache de chocolate branco" class-item-image">
+                <img src="URL-IMAGEM-GANACHE-BRANCO" alt="Ganache de chocolate branco" class="list-item-image">
               </div>
               <div class="list-item">
                 <div class="list-item-content">
                   <p>Maracujá</p>
                   <span class="list-item-price">+ R$ 5,00</span>
                 </div>
-                <img src="URL-IMAGEM-MARACUJA" alt="Maracujá" class-item-image">
+                <img src="URL-IMAGEM-MARACUJA" alt="Maracujá" class="list-item-image">
               </div>
               <div class="list-item">
                 <div class="list-item-content">
                   <p>Geleia de Frutas</p>
                   <span class="list-item-price">+ R$ 5,00</span>
                 </div>
-                <img src="URL-IMAGEM-GELEIA-FRUTAS" alt="Geleia de Frutas" class-item-image">
+                <img src="URL-IMAGEM-GELEIA-FRUTAS" alt="Geleia de Frutas" class="list-item-image">
               </div>
             </div>
         </div>
@@ -438,13 +434,13 @@
                     <div class="list-item-content">
                       <p>Chantilly ou Chantininho</p>
                     </div>
-                    <img src="URL-IMAGEM-CHANTININHO" alt="Chantilly ou Chantininho" class-item-image">
+                    <img src="URL-IMAGEM-CHANTININHO" alt="Chantilly ou Chantininho" class="list-item-image">
                 </div>
                 <div class="list-item">
                     <div class="list-item-content">
                       <p>Ganache</p>
                     </div>
-                    <img src="URL-IMAGEM-GANACHE" alt="Ganache" class-item-image">
+                    <img src="URL-IMAGEM-GANACHE" alt="Ganache" class="list-item-image">
                 </div>
             </div>
 
@@ -455,42 +451,42 @@
                       <p>Frutas frescas</p>
                       <span class="list-item-price">R$ 6,00</span>
                     </div>
-                    <img src="URL-IMAGEM-FRUTAS" alt="Frutas frescas" class-item-image">
+                    <img src="URL-IMAGEM-FRUTAS" alt="Frutas frescas" class="list-item-image">
                 </div>
                 <div class="list-item">
                     <div class="list-item-content">
                       <p>Pedaços de chocolate</p>
                       <span class="list-item-price">R$ 8,00</span>
                     </div>
-                    <img src="URL-IMAGEM-PEDACOS-CHOCOLATE" alt="Pedaços de chocolate" class-item-image">
+                    <img src="URL-IMAGEM-PEDACOS-CHOCOLATE" alt="Pedaços de chocolate" class="list-item-image">
                 </div>
                 <div class="list-item">
                     <div class="list-item-content">
                       <p>Castanhas ou nozes</p>
                       <span class="list-item-price">R$ 12,00</span>
                     </div>
-                    <img src="URL-IMAGEM-CASTANHAS" alt="Castanhas ou nozes" class-item-image">
+                    <img src="URL-IMAGEM-CASTANHAS" alt="Castanhas ou nozes" class="list-item-image">
                 </div>
                 <div class="list-item">
                     <div class="list-item-content">
                       <p>Nutella</p>
                       <span class="list-item-price">R$ 10,00</span>
                     </div>
-                    <img src="URL-IMAGEM-NUTELLA" alt="Nutella" class-item-image">
+                    <img src="URL-IMAGEM-NUTELLA" alt="Nutella" class="list-item-image">
                 </div>
                 <div class="list-item">
                     <div class="list-item-content">
                       <p>Camada extra de recheio</p>
                       <span class="list-item-price">20% do valor do bolo</span>
                     </div>
-                    <img src="URL-IMAGEM-CAMADA-EXTRA" alt="Camada extra de recheio" class-item-image">
+                    <img src="URL-IMAGEM-CAMADA-EXTRA" alt="Camada extra de recheio" class="list-item-image">
                 </div>
                 <div class="list-item">
                     <div class="list-item-content">
                       <p>Topper</p>
                       <span class="list-item-price">R$ 10,00</span>
                     </div>
-                    <img src="URL-IMAGEM-TOPPER" alt="Topper" class-item-image">
+                    <img src="URL-IMAGEM-TOPPER" alt="Topper" class="list-item-image">
                 </div>
             </div>
         </div>
