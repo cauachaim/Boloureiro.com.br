@@ -51,11 +51,11 @@
     
     .top-nav-links {
         display: flex;
-        justify-content: flex-end;
+        justify-content: flex-end; /* Alinha os botões à direita */
         align-items: center;
-        flex: 1;
-        margin-left: auto;
-        gap: 10px;
+        flex: 1; /* Ocupa o espaço restante */
+        margin-left: auto; /* Cria o espaçamento maior no centro */
+        gap: 10px; /* Espaçamento entre os botões */
     }
     
     .top-nav a {
@@ -113,54 +113,42 @@
 
     /* Seção de biografia */
     .about-me-section {
-        background-color: #f8b5c1;
-        padding: 20px;
+        background-image: url('assets/Screenshot_2025-09-14-22-30-18-053_com.canva.editor~3.jpg');
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+        
+        padding: 0;
         max-width: 600px;
         margin: 20px auto;
         border-radius: 12px;
-        display: flex;
-        align-items: center;
-        gap: 15px;
-    }
-
-    .about-me-image {
-        width: 150px;
-        height: auto;
-        flex-shrink: 0;
+        height: 250px;
     }
     
-    .about-me-text-content {
-        flex: 1;
-        font-size: 14px;
-        line-height: 1.5;
-        text-align: justify;
+    .about-me-combined-image {
+        display: none;
     }
 
-    @media (max-width: 600px) {
-        .about-me-section {
-            flex-direction: column;
-            text-align: center;
-        }
-
-        .about-me-image {
-            margin-bottom: 10px;
-        }
-    }
-
+    /* Botões abaixo da biografia */
     nav {
       margin: 15px 0;
       display: flex;
       justify-content: center;
       flex-wrap: wrap;
+      gap: 10px; /* Adicionado para espaçamento em telas pequenas */
     }
     
     .nav-image {
         max-width: 30%;
         height: auto;
-        margin: 5px;
         cursor: pointer;
         transition: transform 0.2s ease;
         outline: none;
+        
+        /* Estilos de botão */
+        background-color: white;
+        padding: 10px 15px;
+        border-radius: 20px;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
     }
 
@@ -311,15 +299,7 @@
   <img src="assets/1000059268-removebg-preview.png" alt="Localização" class="location-img">
 
   <section id="about-me-section" class="about-me-section">
-      <div class="about-me-content">
-          <img src="assets/1000059366-removebg-preview.png" alt="Yasmim Loureiro" class="about-me-image">
-          <div class="about-me-text-content">
-              <p>Oii, eu sou a Yasmim Loureiro!</p>
-              <p>A confeitaria sempre foi minha paixão, e hoje transformo esse amor em bolos preparados com carinho e dedicação. Cada detalhe é pensado para que o seu momento seja inesquecível - seja um aniversário, uma comemoração especial ou simplesmente para adoçar o seu dia.</p>
-              <p>Faça já sua encomenda e deixe seus momentos mais especiais com um bolo feito por mim!</p>
-          </div>
-      </div>
-  </section>
+</section>
 
   <nav id="nav">
     <img src="assets/1000059270-removebg-preview.png" alt="Catálogo" class="nav-image" onclick="scrollToSection('catalogo')">
@@ -417,35 +397,35 @@
                   <p>Brigadeiro amargo</p>
                   <span class="list-item-price">+ R$ 5,00</span>
                 </div>
-                <img src="URL-IMAGEM-BRIGADEIRO-AMARGO" alt="Brigadeiro amargo" class="list-item-image">
+                <img src="URL-IMAGEM-BRIGADEIRO-AMARGO" alt="Brigadeiro amargo" class-item-image">
               </div>
               <div class="list-item">
                 <div class="list-item-content">
                   <p>Ganache de chocolate</p>
                   <span class="list-item-price">+ R$ 5,00</span>
                 </div>
-                <img src="URL-IMAGEM-GANACHE-CHOCOLATE" alt="Ganache de chocolate" class="list-item-image">
+                <img src="URL-IMAGEM-GANACHE-CHOCOLATE" alt="Ganache de chocolate" class-item-image">
               </div>
               <div class="list-item">
                 <div class="list-item-content">
                   <p>Ganache de chocolate branco</p>
                   <span class="list-item-price">+ R$ 5,00</span>
                 </div>
-                <img src="URL-IMAGEM-GANACHE-BRANCO" alt="Ganache de chocolate branco" class="list-item-image">
+                <img src="URL-IMAGEM-GANACHE-BRANCO" alt="Ganache de chocolate branco" class-item-image">
               </div>
               <div class="list-item">
                 <div class="list-item-content">
                   <p>Maracujá</p>
                   <span class="list-item-price">+ R$ 5,00</span>
                 </div>
-                <img src="URL-IMAGEM-MARACUJA" alt="Maracujá" class="list-item-image">
+                <img src="URL-IMAGEM-MARACUJA" alt="Maracujá" class-item-image">
               </div>
               <div class="list-item">
                 <div class="list-item-content">
                   <p>Geleia de Frutas</p>
                   <span class="list-item-price">+ R$ 5,00</span>
                 </div>
-                <img src="URL-IMAGEM-GELEIA-FRUTAS" alt="Geleia de Frutas" class="list-item-image">
+                <img src="URL-IMAGEM-GELEIA-FRUTAS" alt="Geleia de Frutas" class-item-image">
               </div>
             </div>
         </div>
