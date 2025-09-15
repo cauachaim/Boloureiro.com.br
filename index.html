@@ -51,11 +51,11 @@
     
     .top-nav-links {
         display: flex;
-        justify-content: flex-end; /* Alinha os botões à direita */
+        justify-content: flex-end;
         align-items: center;
-        flex: 1; /* Ocupa o espaço restante */
-        margin-left: auto; /* Cria o espaçamento maior no centro */
-        gap: 10px; /* Espaçamento entre os botões */
+        flex: 1;
+        margin-left: auto;
+        gap: 10px;
     }
     
     .top-nav a {
@@ -63,8 +63,7 @@
       color: white;
       font-weight: bold;
       font-size: 14px;
-      /* Estilos para parecer um botão */
-      background-color: #ffc0cb; /* Cor da paleta */
+      background-color: #ffc0cb;
       padding: 8px 15px; 
       border-radius: 20px; 
       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -217,22 +216,18 @@
       margin: 0 auto;
     }
 
-    .card {
-      background-color: white;
-      border-radius: 12px;
-      padding: 10px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    }
+    /* Layout de lista lado a lado para telas maiores */
+    @media (min-width: 600px) {
+        .catalogo-side-by-side {
+            display: flex;
+            gap: 20px;
+            max-width: 600px;
+            margin: 10px auto;
+        }
 
-    .card img {
-      width: 100%;
-      border-radius: 8px;
-      object-fit: cover;
-    }
-
-    .card p {
-      margin: 5px 0 0;
-      font-weight: bold;
+        .catalogo-side-by-side .list-section {
+            flex: 1;
+        }
     }
 
     /* Estilos do rodapé de contato */
@@ -320,177 +315,173 @@
         <p>Red Velvet</p>
       </div>
     </div>
-
-    <img src="URL-IMAGEM-TITULO-RECHEIOS" alt="Recheios" class="section-title">
-    <div class="catalogo-list">
-      <div class="list-item">
-        <div class="list-item-content">
-          <p>Brigadeiro</p>
-        </div>
-        <img src="URL-IMAGEM-BRIGADEIRO" alt="Brigadeiro" class="list-item-image">
-      </div>
-      <div class="list-item">
-        <div class="list-item-content">
-          <p>Brigadeiro branco</p>
-        </div>
-        <img src="URL-IMAGEM-BRIGADEIRO-BRANCO" alt="Brigadeiro branco" class="list-item-image">
-      </div>
-      <div class="list-item">
-        <div class="list-item-content">
-          <p>Ninho</p>
-        </div>
-        <img src="URL-IMAGEM-NINHO" alt="Ninho" class="list-item-image">
-      </div>
-      <div class="list-item">
-        <div class="list-item-content">
-          <p>Doce de Leite</p>
-        </div>
-        <img src="URL-IMAGEM-DOCE-DE-LEITE" alt="Doce de Leite" class="list-item-image">
-      </div>
-      <div class="list-item">
-        <div class="list-item-content">
-          <p>Amendoim</p>
-        </div>
-        <img src="URL-IMAGEM-AMENDOIM" alt="Amendoim" class="list-item-image">
-      </div>
-      <div class="list-item">
-        <div class="list-item-content">
-          <p>Coco</p>
-        </div>
-        <img src="URL-IMAGEM-COCO" alt="Coco" class="list-item-image">
-      </div>
-      <div class="list-item">
-        <div class="list-item-content">
-          <p>4 leites</p>
-        </div>
-        <img src="URL-IMAGEM-4-LEITES" alt="4 leites" class="list-item-image">
-      </div>
-    </div>
     
-    <img src="URL-IMAGEM-TITULO-RECHEIOS-ESPECIAIS" alt="Recheios Especiais" class="section-title">
-    <div class="catalogo-list">
-      <div class="list-item">
-        <div class="list-item-content">
-          <p>Brigadeiro amargo</p>
-          <span class="list-item-price">+ R$ 5,00</span>
-        </div>
-        <img src="URL-IMAGEM-BRIGADEIRO-AMARGO" alt="Brigadeiro amargo" class="list-item-image">
-      </div>
-      <div class="list-item">
-        <div class="list-item-content">
-          <p>Ganache de chocolate</p>
-          <span class="list-item-price">+ R$ 5,00</span>
-        </div>
-        <img src="URL-IMAGEM-GANACHE-CHOCOLATE" alt="Ganache de chocolate" class="list-item-image">
-      </div>
-      <div class="list-item">
-        <div class="list-item-content">
-          <p>Ganache de chocolate branco</p>
-          <span class="list-item-price">+ R$ 5,00</span>
-        </div>
-        <img src="URL-IMAGEM-GANACHE-BRANCO" alt="Ganache de chocolate branco" class="list-item-image">
-      </div>
-      <div class="list-item">
-        <div class="list-item-content">
-          <p>Maracujá</p>
-          <span class="list-item-price">+ R$ 5,00</span>
-        </div>
-        <img src="URL-IMAGEM-MARACUJA" alt="Maracujá" class="list-item-image">
-      </div>
-      <div class="list-item">
-        <div class="list-item-content">
-          <p>Geleia de Frutas</p>
-          <span class="list-item-price">+ R$ 5,00</span>
-        </div>
-        <img src="URL-IMAGEM-GELEIA-FRUTAS" alt="Geleia de Frutas" class="list-item-image">
-      </div>
-    </div>
-
-
-    <img src="URL-IMAGEM-TITULO-COBERTURA" alt="Cobertura" class="section-title">
-    <div class="catalogo-list">
-        <div class="list-item">
-            <div class="list-item-content">
-              <p>Chantilly ou Chantininho</p>
-            </div>
-            <img src="URL-IMAGEM-CHANTININHO" alt="Chantilly ou Chantininho" class-item-image">
-        </div>
-        <div class="list-item">
-            <div class="list-item-content">
-              <p>Ganache</p>
-            </div>
-            <img src="URL-IMAGEM-GANACHE" alt="Ganache" class-item-image">
-        </div>
-    </div>
-
-    <img src="URL-IMAGEM-TITULO-ADICIONAIS" alt="Adicionais" class="section-title">
-    <div class="catalogo-list">
-        <div class="list-item">
-            <div class="list-item-content">
-              <p>Frutas frescas</p>
-              <span class="list-item-price">R$ 6,00</span>
-            </div>
-            <img src="URL-IMAGEM-FRUTAS" alt="Frutas frescas" class="list-item-image">
-        </div>
-        <div class="list-item">
-            <div class-item-content">
-              <p>Pedaços de chocolate</p>
-              <span class="list-item-price">R$ 8,00</span>
-            </div>
-            <img src="URL-IMAGEM-PEDACOS-CHOCOLATE" alt="Pedaços de chocolate" class-item-image">
-        </div>
-        <div class-item">
-            <div class="list-item-content">
-              <p>Castanhas ou nozes</p>
-              <span class="list-item-price">R$ 12,00</span>
-            </div>
-            <img src="URL-IMAGEM-CASTANHAS" alt="Castanhas ou nozes" class-item-image">
-        </div>
-        <div class="list-item">
-            <div class="list-item-content">
-              <p>Nutella</p>
-              <span class="list-item-price">R$ 10,00</span>
-            </div>
-            <img src="URL-IMAGEM-NUTELLA" alt="Nutella" class-item-image">
-        </div>
-        <div class-item">
-            <div class="list-item-content">
-              <p>Camada extra de recheio</p>
-              <span class="list-item-price">20% do valor do bolo</span>
-            </div>
-            <img src="URL-IMAGEM-CAMADA-EXTRA" alt="Camada extra de recheio" class-item-image">
-        </div>
-        <div class-item">
-            <div class="list-item-content">
-              <p>Topper</p>
-              <span class="list-item-price">R$ 10,00</span>
-            </div>
-            <img src="URL-IMAGEM-TOPPER" alt="Topper" class-item-image">
-        </div>
-    </div>
-
     <img src="URL-IMAGEM-TITULO-TAMANHOS" alt="Tamanhos" class="section-title">
-    <div class="catalogo-list">
-        <div class-item">
-            <div class="list-item-content">
-              <p>10x10</p>
-              <span class="list-item-price">5 fatias - R$ 30,00</span>
-            </div>
-            <img src="URL-IMAGEM-TAMANHO-10" alt="10x10" class-item-image">
+    <div class="catalogo-grid">
+        <div class="card">
+            <img src="URL-IMAGEM-TAMANHO-10" alt="10x10">
+            <p>10x10 (5 fatias) - R$ 30,00</p>
         </div>
-        <div class-item">
-            <div class="list-item-content">
-              <p>15x10</p>
-              <span class="list-item-price">12/15 fatias - R$ 60,00</span>
-            </div>
-            <img src="URL-IMAGEM-TAMANHO-15" alt="15x10" class-item-image">
+        <div class="card">
+            <img src="URL-IMAGEM-TAMANHO-15" alt="15x10">
+            <p>15x10 (12/15 fatias) - R$ 60,00</p>
         </div>
-        <div class-item">
-            <div class="list-item-content">
-              <p>20x10</p>
-              <span class="list-item-price">20/25 fatias - R$ 85,00</span>
+        <div class="card">
+            <img src="URL-IMAGEM-TAMANHO-20" alt="20x10">
+            <p>20x10 (20/25 fatias) - R$ 85,00</p>
+        </div>
+    </div>
+
+    <div class="catalogo-side-by-side">
+        <div class="list-section">
+            <img src="URL-IMAGEM-TITULO-RECHEIOS" alt="Recheios" class="section-title">
+            <div class="catalogo-list">
+              <div class="list-item">
+                <div class="list-item-content">
+                  <p>Brigadeiro</p>
+                </div>
+                <img src="URL-IMAGEM-BRIGADEIRO" alt="Brigadeiro" class="list-item-image">
+              </div>
+              <div class="list-item">
+                <div class="list-item-content">
+                  <p>Brigadeiro branco</p>
+                </div>
+                <img src="URL-IMAGEM-BRIGADEIRO-BRANCO" alt="Brigadeiro branco" class="list-item-image">
+              </div>
+              <div class="list-item">
+                <div class="list-item-content">
+                  <p>Ninho</p>
+                </div>
+                <img src="URL-IMAGEM-NINHO" alt="Ninho" class="list-item-image">
+              </div>
+              <div class="list-item">
+                <div class="list-item-content">
+                  <p>Doce de Leite</p>
+                </div>
+                <img src="URL-IMAGEM-DOCE-DE-LEITE" alt="Doce de Leite" class="list-item-image">
+              </div>
+              <div class="list-item">
+                <div class="list-item-content">
+                  <p>Amendoim</p>
+                </div>
+                <img src="URL-IMAGEM-AMENDOIM" alt="Amendoim" class="list-item-image">
+              </div>
+              <div class="list-item">
+                <div class="list-item-content">
+                  <p>Coco</p>
+                </div>
+                <img src="URL-IMAGEM-COCO" alt="Coco" class="list-item-image">
+              </div>
+              <div class="list-item">
+                <div class="list-item-content">
+                  <p>4 leites</p>
+                </div>
+                <img src="URL-IMAGEM-4-LEITES" alt="4 leites" class="list-item-image">
+              </div>
             </div>
-            <img src="URL-IMAGEM-TAMANHO-20" alt="20x10" class-item-image">
+            
+            <img src="URL-IMAGEM-TITULO-RECHEIOS-ESPECIAIS" alt="Recheios Especiais" class="section-title">
+            <div class="catalogo-list">
+              <div class="list-item">
+                <div class="list-item-content">
+                  <p>Brigadeiro amargo</p>
+                  <span class="list-item-price">+ R$ 5,00</span>
+                </div>
+                <img src="URL-IMAGEM-BRIGADEIRO-AMARGO" alt="Brigadeiro amargo" class="list-item-image">
+              </div>
+              <div class="list-item">
+                <div class="list-item-content">
+                  <p>Ganache de chocolate</p>
+                  <span class="list-item-price">+ R$ 5,00</span>
+                </div>
+                <img src="URL-IMAGEM-GANACHE-CHOCOLATE" alt="Ganache de chocolate" class="list-item-image">
+              </div>
+              <div class="list-item">
+                <div class="list-item-content">
+                  <p>Ganache de chocolate branco</p>
+                  <span class="list-item-price">+ R$ 5,00</span>
+                </div>
+                <img src="URL-IMAGEM-GANACHE-BRANCO" alt="Ganache de chocolate branco" class="list-item-image">
+              </div>
+              <div class="list-item">
+                <div class="list-item-content">
+                  <p>Maracujá</p>
+                  <span class="list-item-price">+ R$ 5,00</span>
+                </div>
+                <img src="URL-IMAGEM-MARACUJA" alt="Maracujá" class="list-item-image">
+              </div>
+              <div class="list-item">
+                <div class="list-item-content">
+                  <p>Geleia de Frutas</p>
+                  <span class="list-item-price">+ R$ 5,00</span>
+                </div>
+                <img src="URL-IMAGEM-GELEIA-FRUTAS" alt="Geleia de Frutas" class="list-item-image">
+              </div>
+            </div>
+        </div>
+
+        <div class="list-section">
+            <img src="URL-IMAGEM-TITULO-COBERTURA" alt="Cobertura" class="section-title">
+            <div class="catalogo-list">
+                <div class="list-item">
+                    <div class="list-item-content">
+                      <p>Chantilly ou Chantininho</p>
+                    </div>
+                    <img src="URL-IMAGEM-CHANTININHO" alt="Chantilly ou Chantininho" class="list-item-image">
+                </div>
+                <div class="list-item">
+                    <div class="list-item-content">
+                      <p>Ganache</p>
+                    </div>
+                    <img src="URL-IMAGEM-GANACHE" alt="Ganache" class="list-item-image">
+                </div>
+            </div>
+
+            <img src="URL-IMAGEM-TITULO-ADICIONAIS" alt="Adicionais" class="section-title">
+            <div class="catalogo-list">
+                <div class="list-item">
+                    <div class="list-item-content">
+                      <p>Frutas frescas</p>
+                      <span class="list-item-price">R$ 6,00</span>
+                    </div>
+                    <img src="URL-IMAGEM-FRUTAS" alt="Frutas frescas" class="list-item-image">
+                </div>
+                <div class="list-item">
+                    <div class="list-item-content">
+                      <p>Pedaços de chocolate</p>
+                      <span class="list-item-price">R$ 8,00</span>
+                    </div>
+                    <img src="URL-IMAGEM-PEDACOS-CHOCOLATE" alt="Pedaços de chocolate" class="list-item-image">
+                </div>
+                <div class="list-item">
+                    <div class="list-item-content">
+                      <p>Castanhas ou nozes</p>
+                      <span class="list-item-price">R$ 12,00</span>
+                    </div>
+                    <img src="URL-IMAGEM-CASTANHAS" alt="Castanhas ou nozes" class="list-item-image">
+                </div>
+                <div class="list-item">
+                    <div class="list-item-content">
+                      <p>Nutella</p>
+                      <span class="list-item-price">R$ 10,00</span>
+                    </div>
+                    <img src="URL-IMAGEM-NUTELLA" alt="Nutella" class="list-item-image">
+                </div>
+                <div class="list-item">
+                    <div class="list-item-content">
+                      <p>Camada extra de recheio</p>
+                      <span class="list-item-price">20% do valor do bolo</span>
+                    </div>
+                    <img src="URL-IMAGEM-CAMADA-EXTRA" alt="Camada extra de recheio" class="list-item-image">
+                </div>
+                <div class="list-item">
+                    <div class="list-item-content">
+                      <p>Topper</p>
+                      <span class="list-item-price">R$ 10,00</span>
+                    </div>
+                    <img src="URL-IMAGEM-TOPPER" alt="Topper" class="list-item-image">
+                </div>
+            </div>
         </div>
     </div>
   </section>
