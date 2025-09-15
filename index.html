@@ -5,13 +5,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Boloure</title>
   <style>
+    /* Regra global para design responsivo */
+    * {
+        box-sizing: border-box;
+    }
+
     body {
       font-family: Arial, sans-serif;
       margin: 0;
       background-color: #ffe4ec;
       text-align: center;
       scroll-behavior: smooth;
-      overflow-x: hidden; /* Evita o rolamento lateral */
+      overflow-x: hidden;
     }
 
     /* Nova barra de navegação no topo */
@@ -29,15 +34,16 @@
     }
     
     .top-nav .logo {
-        height: 60px; /* Logo maior */
+        height: 60px;
         width: auto;
     }
     
     .top-nav-links {
         display: flex;
-        gap: 10px; /* Espaço ajustado entre os links */
-        flex-wrap: nowrap; /* Impede quebras de linha em links */
-        white-space: nowrap; /* Mantém os links em uma única linha */
+        justify-content: space-around;
+        align-items: center;
+        flex: 1;
+        max-width: 250px; /* Limita a largura dos links para não quebrar */
     }
     
     .top-nav a {
@@ -48,6 +54,7 @@
       transition: transform 0.2s ease, box-shadow 0.2s ease;
       padding: 5px 10px;
       border-radius: 8px;
+      white-space: nowrap;
     }
     
     .top-nav a:hover {
@@ -90,10 +97,10 @@
       display: block;
     }
 
-    /* Seção de biografia - Agora a imagem é o fundo */
+    /* Seção de biografia - Agora a imagem é o fundo, sem ser cortada */
     .about-me-section {
         background-image: url('assets/Screenshot_2025-09-14-22-30-18-053_com.canva.editor~3.jpg');
-        background-size: cover;
+        background-size: contain; /* Garante que a imagem inteira seja visível */
         background-position: center;
         background-repeat: no-repeat;
         
@@ -101,11 +108,11 @@
         max-width: 600px;
         margin: 20px auto;
         border-radius: 12px;
-        height: 250px;
+        height: 250px; /* Altura ajustada para caber a imagem */
     }
     
     .about-me-combined-image {
-        display: none;
+        display: none; /* A imagem original agora está no background */
     }
 
     nav {
