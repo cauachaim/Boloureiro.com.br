@@ -13,6 +13,30 @@
       scroll-behavior: smooth;
     }
 
+    /* Nova barra de navegação no topo */
+    .top-nav {
+      width: 100%;
+      background-color: white;
+      padding: 15px 10px;
+      display: flex;
+      justify-content: flex-end; /* Alinha os botões à direita */
+      align-items: center;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    
+    .top-nav a {
+      text-decoration: none;
+      color: #ff4b8a;
+      font-weight: bold;
+      margin-left: 25px;
+      font-size: 14px;
+      transition: color 0.2s ease;
+    }
+    
+    .top-nav a:hover {
+        color: #e63973;
+    }
+
     /* Container do banner + logo */
     .banner-container {
       position: relative;
@@ -50,19 +74,20 @@
     /* Nova seção para a biografia com fundo diferente */
     .about-me-section {
         background-color: #f8b5c1;
-        padding: 0; /* Removido o padding para a imagem preencher tudo */
+        padding: 20px;
         max-width: 600px;
         margin: 20px auto;
         border-radius: 12px;
-        overflow: hidden; /* Garante que a imagem não ultrapasse as bordas arredondadas */
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
     
     .about-me-combined-image {
-        /* Ajuste para a imagem preencher o container */
-        width: 100%; 
+        width: 100%;
         height: auto;
-        display: block;
-        border-radius: 12px;
+        max-width: 500px;
+        border-radius: 8px;
     }
 
     nav {
@@ -170,21 +195,43 @@
       font-weight: bold;
     }
 
+    /* Estilos do rodapé de contato */
     footer {
       background-color: #f8b5c1;
       padding: 20px;
       margin-top: 30px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 15px;
     }
 
-    footer a {
-      display: block;
-      margin: 5px 0;
-      text-decoration: none;
-      color: #000;
+    .contact-item {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .contact-logo {
+        width: 30px;
+        height: auto;
+    }
+
+    .contact-link {
+        text-decoration: none;
+        color: #000;
+        font-weight: bold;
+        font-size: 16px;
     }
   </style>
 </head>
 <body>
+
+  <header class="top-nav">
+      <a href="#about-me-section">Sobre</a>
+      <a href="#catalogo">Catálogo</a>
+      <a href="#contato">Contato</a>
+  </header>
 
   <div class="banner-container">
     <img src="assets/Screenshot_2025-09-14-15-32-42-350_com.canva.editor~2.jpg" alt="Banner" class="banner">
