@@ -49,21 +49,26 @@
 
     /* Nova seção para a biografia com fundo diferente */
     .about-me-section {
-        background-color: #f8b5c1;
+        /* Fundo da imagem da biografia */
+        background-image: url('assets/Screenshot_2025-09-14-22-30-18-053_com.canva.editor~3.jpg'); /* Use a URL da sua imagem combinada aqui */
+        background-size: cover; /* Faz a imagem cobrir todo o espaço */
+        background-position: center; /* Centraliza a imagem */
+        background-repeat: no-repeat; /* Evita que a imagem se repita */
+        
         padding: 20px;
         max-width: 600px;
         margin: 20px auto;
         border-radius: 12px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        height: 250px; /* Definindo uma altura para a seção para que o background seja visível */
+        /* display: flex e justify-content não são mais necessários se não houver conteúdo interno */
+        /* Se você quiser conteúdo sobre a imagem de fundo, precisaria de outro elemento */
     }
     
+    /* Esta classe .about-me-combined-image não é mais necessária no HTML,
+       mas a mantive com 'display: none' caso haja alguma referência perdida.
+       Idealmente, ela deve ser removida do HTML. */
     .about-me-combined-image {
-        width: 100%;
-        height: auto;
-        max-width: 500px;
-        border-radius: 8px;
+        display: none; 
     }
 
     nav {
@@ -80,8 +85,8 @@
         cursor: pointer;
         transition: transform 0.2s ease;
         outline: none;
-        /* Adicionando o sombreado aqui */
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        /* Sombreado adicionado aqui */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
     }
 
     .nav-image:hover {
@@ -198,8 +203,7 @@
   <img src="assets/1000059268-removebg-preview.png" alt="Localização" class="location-img">
 
   <section class="about-me-section">
-      <img src="assets/Screenshot_2025-09-14-22-30-18-053_com.canva.editor~3.jpg" alt="Biografia de Yasmim" class="about-me-combined-image">
-  </section>
+      </section>
 
   <nav>
     <img src="assets/1000059270-removebg-preview.png" alt="Catálogo" class="nav-image" onclick="scrollToSection('catalogo')">
