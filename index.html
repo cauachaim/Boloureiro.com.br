@@ -24,12 +24,12 @@
     }
 
     /* ======================================================= */
-    /* BARRA DE NAVEGAÇÃO (NOVO ESTILO) */
+    /* BARRA DE NAVEGAÇÃO (ESTILO CORRIGIDO) */
     /* ======================================================= */
     .top-nav {
       width: 100%;
       background-color: #EB6D7D;
-      padding: 10px 20px 0 10px; /* Padding bottom removido para dar espaço ao traço */
+      padding: 10px 20px 0 10px;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -46,26 +46,26 @@
     }
     
     .top-nav .brand-container .logo {
-        height: 50px; /* Aumentei um pouco para alinhar melhor */
+        height: 50px;
         width: auto;
     }
     
     .top-nav-links {
-        position: relative; /* Necessário para o posicionamento do traço */
+        position: relative;
         display: flex;
         justify-content: flex-end;
         align-items: center;
         flex: 1;
         margin-left: auto;
-        gap: 20px; /* Aumentei o espaço entre os links */
+        gap: 20px;
     }
     
     .top-nav a {
       text-decoration: none;
-      color: white; /* Cor do texto alterada para branco */
+      color: white;
       font-weight: bold;
-      font-size: 18px; /* Fonte aumentada */
-      padding: 15px 5px; /* Padding ajustado */
+      font-size: 18px;
+      padding: 15px 5px;
       white-space: nowrap;
       outline: none;
       transition: color 0.3s ease;
@@ -75,7 +75,6 @@
         color: #fff0f3;
     }
     
-    /* Traço branco que se move */
     .underline {
         position: absolute;
         bottom: 0;
@@ -115,7 +114,7 @@
     .location-img {
       width: 100%;
       max-width: 250px;
-      margin: -15px auto 5px auto; /* AJUSTE: Margem inferior diminuída */
+      margin: -15px auto 5px auto;
       display: block;
     }
 
@@ -124,7 +123,7 @@
         background-image: url('assets/Screenshot_2025-09-19-21-45-06-763_com.canva.editor~3.jpg');
         background-position: center;
         background-repeat: no-repeat;
-        margin: 10px auto 20px auto; /* AJUSTE: Margem superior diminuída */
+        margin: 10px auto 20px auto;
         border-radius: 12px;
         max-width: 600px;
         height: 250px;
@@ -152,13 +151,8 @@
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
     }
 
-    .nav-image:hover {
-        transform: scale(1.05);
-    }
-    
-    .nav-image:active {
-        transform: scale(0.95);
-    }
+    .nav-image:hover { transform: scale(1.05); }
+    .nav-image:active { transform: scale(0.95); }
 
     section {
       padding: 20px 10px;
@@ -167,15 +161,16 @@
     .section-title {
       width: 200px;
       max-width: 80%;
-      margin: 10px auto 20px auto;
+      margin: 20px auto;
       display: block;
     }
 
     /* ======================================================= */
-    /* LAYOUT DE GRADES (CELULAR) */
+    /* LAYOUT DE GRADES E LISTAS (MOBILE-FIRST) */
     /* ======================================================= */
     
-    .catalogo-grid, .list-as-grid {
+    /* Grade para Massas e Tamanhos */
+    .catalogo-grid {
       display: flex;
       justify-content: center;
       flex-wrap: wrap;
@@ -210,57 +205,55 @@
       text-align: center;
     }
     
-    /* ======================================================= */
-    /* NOVO LAYOUT PARA LISTAS EM CELULAR */
-    /* ======================================================= */
-    
-    .list-as-grid .list-item {
+    /* Layout de Grade para as Listas (Recheios, etc.) no Celular */
+    .catalogo-list {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 8px;
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 0;
+    }
+
+    .catalogo-list .list-item {
       background-color: white;
       border-radius: 12px;
       padding: 8px;
       box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-      flex: 1 1 100px; /* Base para 3 por linha */
-      max-width: 100px;
       display: flex;
       flex-direction: column;
       align-items: center;
       text-align: center;
     }
     
-    .list-as-grid .list-item-image {
-        width: 80px;
-        height: 80px;
+    /* CORREÇÃO: Layout específico para cada lista no celular */
+    #recheios-list .list-item {
+        flex: 1 1 65px; /* Base menor para caber 4 por linha */
+        max-width: 65px;
+    }
+    #recheios-especiais-list .list-item {
+        flex: 1 1 90px; /* Base para caber 3 por linha */
+        max-width: 90px;
+    }
+    #cobertura-list .list-item, #adicionais-list .list-item {
+        flex: 1 1 90px; /* Base para caber 3 por linha */
+        max-width: 90px;
+    }
+     #cobertura-list .list-item {
+        max-width: 120px;
+    }
+
+    .list-item-image {
+        width: 100%;
+        height: 60px;
         border-radius: 8px;
         object-fit: cover;
         margin-bottom: 5px;
     }
     
-    .list-as-grid .list-item p {
-        margin: 0;
-        font-weight: bold;
-        font-size: 0.8em;
-    }
-    
-    .list-as-grid .list-item-price {
-        font-size: 0.8em;
-        color: #ff4b8a;
-    }
-
-    /* Ajustes específicos para as seções no celular */
-    #recheios-especiais .list-item {
-        flex-basis: 120px; /* Um pouco maior para caberem só 2 por linha */
-        max-width: 120px;
-    }
-    #cobertura .list-item {
-        flex-basis: 120px;
-        max-width: 120px;
-    }
-
-    /* Esconde a lista original no celular */
-    .catalogo-list {
-      display: none;
-    }
-
+    .list-item p { margin: 0; font-weight: bold; font-size: 0.8em; }
+    .list-item-price { font-size: 0.8em; color: #ff4b8a; }
 
     /* Rodapé */
     footer {
@@ -273,141 +266,54 @@
       gap: 15px;
     }
     
-    footer h3, footer p {
-      color: white;
-      font-weight: bold;
-    }
+    footer p { color: white; font-weight: bold; }
 
     .contact-item {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        background-color: white;
-        padding: 8px 15px;
-        border-radius: 20px;
-        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        text-decoration: none;
+        display: flex; align-items: center; gap: 10px;
+        background-color: white; padding: 8px 15px; border-radius: 20px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1); text-decoration: none;
     }
-
-    .contact-logo {
-        width: 25px;
-        height: auto;
-    }
-
-    .contact-link {
-        text-decoration: none;
-        color: #000;
-        font-weight: bold;
-        font-size: 16px;
-    }
+    .contact-logo { width: 25px; height: auto; }
+    .contact-link { text-decoration: none; color: #000; font-weight: bold; font-size: 16px; }
 
     /* ======================================================= */
     /* AJUSTES PARA TELAS GRANDES (COMPUTADOR) - A PARTIR DE 768PX */
     /* ======================================================= */
     @media screen and (min-width: 768px) {
-      .logo-container {
-        width: 350px;
-        margin: -100px auto 30px;
-      }
+      .logo-container { width: 350px; margin: -100px auto 30px; }
+      .location-img { max-width: 350px; }
+      .about-me-section { max-width: none; margin: 20px 0; border-radius: 0; height: 400px; background-size: cover; }
+      nav { gap: 10px; }
+      .nav-image { max-width: 200px; padding: 15px 20px; }
+      .section-title { width: 300px; }
+      .catalogo-grid { max-width: 800px; gap: 25px; }
+      .card { flex-basis: 180px; max-width: 180px; padding: 15px; }
+      .card p { font-size: 1.1em; }
 
-      .location-img {
-        max-width: 350px;
-      }
-      
-      .about-me-section {
-        max-width: none;
-        margin: 20px 0;
-        border-radius: 0;
-        height: 400px;
-        background-size: cover;
-      }
-      
-      nav {
-        gap: 10px;
-      }
-
-      .nav-image {
-        max-width: 200px;
-        padding: 15px 20px;
-      }
-
-      .section-title {
-        width: 300px;
-      }
-
-      .catalogo-grid {
-        max-width: 800px;
-        gap: 25px;
-      }
-
-      .card {
-        flex-basis: 180px;
-        max-width: 180px;
-        padding: 15px;
-      }
-
-      .card p {
-        font-size: 1.1em;
-      }
-      
-      /* Esconde a versão em grade e mostra a versão em lista no PC */
-      .list-as-grid {
-        display: none;
-      }
+      /* Retorna as listas ao layout original no PC */
       .catalogo-list {
-        display: flex;
         flex-direction: column;
         gap: 10px;
         max-width: none;
-        margin: 0 auto;
-        padding: 0;
-        list-style: none;
       }
-      
-      /* Estilos originais da lista para PC */
-      .list-item {
-        display: flex;
+      .catalogo-list .list-item {
+        flex-direction: row;
         justify-content: space-between;
-        align-items: center;
-        background-color: white;
-        border-radius: 12px;
         padding: 10px 20px;
-        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         text-align: left;
-      }
-      .list-item-content {
-          display: flex;
-          flex-direction: column;
+        flex-basis: auto; /* Reseta a base do flex */
       }
       .list-item-image {
-          width: 70px;
-          height: 70px;
-          border-radius: 8px;
-          object-fit: cover;
+          width: 70px; height: 70px;
       }
-      .list-item p {
-          margin: 0;
-          font-weight: bold;
-          font-size: 1em;
-      }
-      .list-item-price {
-          font-size: 0.9em;
-          color: #ff4b8a;
-      }
+      .list-item p { font-size: 1em; }
 
       .catalogo-side-by-side {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        align-items: flex-start;
-        gap: 40px;
-        max-width: 1200px;
-        margin: 20px auto;
+        display: flex; flex-wrap: wrap; justify-content: center;
+        align-items: flex-start; gap: 40px; max-width: 1200px; margin: 20px auto;
       }
-
       .catalogo-list-block {
-        flex: 1 1 40%;
-        max-width: 450px;
+        flex: 1 1 40%; max-width: 450px;
       }
     }
   </style>
@@ -416,11 +322,11 @@
 
   <header class="top-nav">
       <div class="brand-container">
-          <img src="assets/1000060446.jpg" alt="Logo Boloureiro" class="logo">
+          <img src="assets/Screenshot_2025-09-20-12-23-58-442_com.canva.editor~2.jpg" alt="Logo Boloure" class="logo">
       </div>
       <div class="top-nav-links">
           <a href="#about-me-section" data-section="about-me-section">Sobre</a>
-          <a href="#nav" data-section="nav">Menu</a>
+          <a href="#catalogo" data-section="catalogo">Menu</a>
           <a href="#contato" data-section="contato">Contato</a>
           <div class="underline"></div>
       </div>
@@ -434,7 +340,7 @@
   </div>
 
   <img src="assets/1000059268-removebg-preview.png" alt="Localização" class="location-img">
-
+  
   <section id="about-me-section" class="about-me-section"></section>
 
   <nav id="nav">
@@ -464,22 +370,13 @@
     
     <img src="assets/1000060402-removebg-preview.png" alt="Tamanhos" class="section-title">
     <div class="catalogo-grid">
-        <div class="card">
-            <img src="assets/Screenshot_2025-09-20-14-16-13-985_com.google.android.googlequicksearchbox~2.jpg" alt="10x10">
-            <p>10x10 (5 fatias) - R$ 30,00</p>
-        </div>
-        <div class="card">
-            <img src="assets/Screenshot_2025-09-20-14-16-13-985_com.google.android.googlequicksearchbox~3.jpg" alt="15x10">
-            <p>15x10 (12/15 fatias) - R$ 60,00</p>
-        </div>
-        <div class="card">
-            <img src="assets/Screenshot_2025-09-20-14-16-17-872_com.google.android.googlequicksearchbox~2.jpg" alt="20x10">
-            <p>20x10 (20/25 fatias) - R$ 85,00</p>
-        </div>
+        <div class="card"><img src="assets/Screenshot_2025-09-20-14-16-13-985_com.google.android.googlequicksearchbox~2.jpg" alt="10x10"><p>10x10 (5 fatias) - R$ 30,00</p></div>
+        <div class="card"><img src="assets/Screenshot_2025-09-20-14-16-13-985_com.google.android.googlequicksearchbox~3.jpg" alt="15x10"><p>15x10 (12/15 fatias) - R$ 60,00</p></div>
+        <div class="card"><img src="assets/Screenshot_2025-09-20-14-16-17-872_com.google.android.googlequicksearchbox~2.jpg" alt="20x10"><p>20x10 (20/25 fatias) - R$ 85,00</p></div>
     </div>
 
     <div class="catalogo-side-by-side">
-        <div class="catalogo-list-block">
+        <div class="catalogo-list-block" id="recheios-list">
             <img src="assets/1000060400-removebg-preview.png" alt="Recheios" class="section-title">
             <div class="catalogo-list">
               <div class="list-item"><div class="list-item-content"><p>Brigadeiro</p></div><img src="assets/1000060430-removebg-preview.png" alt="Brigadeiro" class="list-item-image"></div>
@@ -491,7 +388,8 @@
               <div class="list-item"><div class="list-item-content"><p>4 leites</p></div><img src="assets/1000060437-removebg-preview.png" alt="4 leites" class="list-item-image"></div>
             </div>
         </div>
-        <div class="catalogo-list-block">
+        
+        <div class="catalogo-list-block" id="recheios-especiais-list">
             <img src="assets/1000060399-removebg-preview.png" alt="Recheios Especiais" class="section-title">
             <div class="catalogo-list">
               <div class="list-item"><div class="list-item-content"><p>Brigadeiro amargo</p><span class="list-item-price">+ R$ 5,00</span></div><img src="assets/Screenshot_2025-09-20-12-51-05-964_com.google.android.googlequicksearchbox~2.jpg" alt="Brigadeiro amargo" class="list-item-image"></div>
@@ -501,14 +399,16 @@
               <div class="list-item"><div class="list-item-content"><p>Geleia de Frutas</p><span class="list-item-price">+ R$ 5,00</span></div><img src="assets/Screenshot_2025-09-20-12-52-04-661_com.google.android.googlequicksearchbox~2.jpg" alt="Geleia de Frutas" class="list-item-image"></div>
             </div>
         </div>
-        <div class="catalogo-list-block">
+
+        <div class="catalogo-list-block" id="cobertura-list">
             <img src="assets/1000060397-removebg-preview.png" alt="Cobertura" class="section-title">
             <div class="catalogo-list">
                 <div class="list-item"><div class="list-item-content"><p>Chantilly ou Chantininho</p></div><img src="assets/Screenshot_2025-09-20-14-42-14-490_com.google.android.googlequicksearchbox~2.jpg" alt="Chantilly ou Chantininho" class="list-item-image"></div>
                 <div class="list-item"><div class="list-item-content"><p>Ganache</p></div><img src="assets/Screenshot_2025-09-20-14-42-14-490_com.google.android.googlequicksearchbox~3.jpg" alt="Ganache" class="list-item-image"></div>
             </div>
         </div>
-        <div class="catalogo-list-block">
+
+        <div class="catalogo-list-block" id="adicionais-list">
             <img src="assets/1000060398-removebg-preview.png" alt="Adicionais" class="section-title">
             <div class="catalogo-list">
                 <div class="list-item"><div class="list-item-content"><p>Frutas frescas</p><span class="list-item-price">R$ 6,00</span></div><img src="assets/Screenshot_2025-09-20-13-30-42-469_com.google.android.googlequicksearchbox~2.jpg" alt="Frutas frescas" class="list-item-image"></div>
@@ -518,47 +418,6 @@
                 <div class="list-item"><div class="list-item-content"><p>Camada extra de recheio</p><span class="list-item-price">20% do valor</span></div><img src="assets/Screenshot_2025-09-20-13-32-25-666_com.google.android.googlequicksearchbox~3.jpg" alt="Camada extra de recheio" class="list-item-image"></div>
                 <div class="list-item"><div class="list-item-content"><p>Topper</p><span class="list-item-price">R$ 10,00</span></div><img src="assets/Screenshot_2025-09-20-13-32-25-666_com.google.android.googlequicksearchbox~2.jpg" alt="Topper" class="list-item-image"></div>
             </div>
-        </div>
-    </div>
-
-    <div id="recheios">
-        <img src="assets/1000060400-removebg-preview.png" alt="Recheios" class="section-title">
-        <div class="list-as-grid">
-          <div class="list-item"><img src="assets/1000060430-removebg-preview.png" alt="Brigadeiro" class="list-item-image"><div class="list-item-content"><p>Brigadeiro</p></div></div>
-          <div class="list-item"><img src="assets/1000060431-removebg-preview.png" alt="Brigadeiro branco" class="list-item-image"><div class="list-item-content"><p>Brigadeiro branco</p></div></div>
-          <div class="list-item"><img src="assets/1000060436-removebg-preview.png" alt="Ninho" class="list-item-image"><div class="list-item-content"><p>Ninho</p></div></div>
-          <div class="list-item"><img src="assets/1000060432-removebg-preview (1).png" alt="Doce de Leite" class="list-item-image"><div class="list-item-content"><p>Doce de Leite</p></div></div>
-          <div class="list-item"><img src="assets/e90b7581-a263-458a-b4af-c7290bd026ea-1_all_6653-removebg-preview.png" alt="Amendoim" class="list-item-image"><div class="list-item-content"><p>Amendoim</p></div></div>
-          <div class="list-item"><img src="assets/1000060435-removebg-preview.png" alt="Coco" class="list-item-image"><div class="list-item-content"><p>Coco</p></div></div>
-          <div class="list-item"><img src="assets/1000060437-removebg-preview.png" alt="4 leites" class="list-item-image"><div class="list-item-content"><p>4 leites</p></div></div>
-        </div>
-    </div>
-    <div id="recheios-especiais">
-        <img src="assets/1000060399-removebg-preview.png" alt="Recheios Especiais" class="section-title">
-        <div class="list-as-grid">
-          <div class="list-item"><img src="assets/Screenshot_2025-09-20-12-51-05-964_com.google.android.googlequicksearchbox~2.jpg" alt="Brigadeiro amargo" class="list-item-image"><div class="list-item-content"><p>Brigadeiro amargo</p><span class="list-item-price">+ R$ 5,00</span></div></div>
-          <div class="list-item"><img src="assets/Screenshot_2025-09-20-12-51-05-964_com.google.android.googlequicksearchbox~3.jpg" alt="Ganache de chocolate" class="list-item-image"><div class="list-item-content"><p>Ganache de chocolate</p><span class="list-item-price">+ R$ 5,00</span></div></div>
-          <div class="list-item"><img src="assets/Screenshot_2025-09-20-12-51-12-283_com.google.android.googlequicksearchbox~2.jpg" alt="Ganache de chocolate branco" class="list-item-image"><div class="list-item-content"><p>Ganache de chocolate branco</p><span class="list-item-price">+ R$ 5,00</span></div></div>
-          <div class="list-item"><img src="assets/Screenshot_2025-09-20-12-51-12-283_com.google.android.googlequicksearchbox~3.jpg" alt="Maracujá" class="list-item-image"><div class="list-item-content"><p>Maracujá</p><span class="list-item-price">+ R$ 5,00</span></div></div>
-          <div class="list-item"><img src="assets/Screenshot_2025-09-20-12-52-04-661_com.google.android.googlequicksearchbox~2.jpg" alt="Geleia de Frutas" class="list-item-image"><div class="list-item-content"><p>Geleia de Frutas</p><span class="list-item-price">+ R$ 5,00</span></div></div>
-        </div>
-    </div>
-    <div id="cobertura">
-        <img src="assets/1000060397-removebg-preview.png" alt="Cobertura" class="section-title">
-        <div class="list-as-grid">
-            <div class="list-item"><img src="assets/Screenshot_2025-09-20-14-42-14-490_com.google.android.googlequicksearchbox~2.jpg" alt="Chantilly ou Chantininho" class="list-item-image"><div class="list-item-content"><p>Chantilly ou Chantininho</p></div></div>
-            <div class="list-item"><img src="assets/Screenshot_2025-09-20-14-42-14-490_com.google.android.googlequicksearchbox~3.jpg" alt="Ganache" class="list-item-image"><div class="list-item-content"><p>Ganache</p></div></div>
-        </div>
-    </div>
-    <div id="adicionais">
-        <img src="assets/1000060398-removebg-preview.png" alt="Adicionais" class="section-title">
-        <div class="list-as-grid">
-            <div class="list-item"><img src="assets/Screenshot_2025-09-20-13-30-42-469_com.google.android.googlequicksearchbox~2.jpg" alt="Frutas frescas" class="list-item-image"><div class="list-item-content"><p>Frutas frescas</p><span class="list-item-price">R$ 6,00</span></div></div>
-            <div class="list-item"><img src="assets/Screenshot_2025-09-20-13-27-52-932_com.google.android.googlequicksearchbox~2.jpg" alt="Pedaços de chocolate" class="list-item-image"><div class="list-item-content"><p>Pedaços de chocolate</p><span class="list-item-price">R$ 8,00</span></div></div>
-            <div class="list-item"><img src="assets/Screenshot_2025-09-20-13-27-46-553_com.google.android.googlequicksearchbox~2.jpg" alt="Castanhas ou nozes" class="list-item-image"><div class="list-item-content"><p>Castanhas ou nozes</p><span class="list-item-price">R$ 12,00</span></div></div>
-            <div class="list-item"><img src="assets/Screenshot_2025-09-20-13-30-49-361_com.google.android.googlequicksearchbox~2.jpg" alt="Nutella" class="list-item-image"><div class="list-item-content"><p>Nutella</p><span class="list-item-price">R$ 10,00</span></div></div>
-            <div class="list-item"><img src="assets/Screenshot_2025-09-20-13-32-25-666_com.google.android.googlequicksearchbox~3.jpg" alt="Camada extra de recheio" class="list-item-image"><div class="list-item-content"><p>Camada extra de recheio</p><span class="list-item-price">20% do valor</span></div></div>
-            <div class="list-item"><img src="assets/Screenshot_2025-09-20-13-32-25-666_com.google.android.googlequicksearchbox~2.jpg" alt="Topper" class="list-item-image"><div class="list-item-content"><p>Topper</p><span class="list-item-price">R$ 10,00</span></div></div>
         </div>
     </div>
   </section>
@@ -581,12 +440,10 @@
   </footer>
 
   <script>
-    // Função de rolagem suave para os botões de imagem
     function scrollToSection(id) {
       document.getElementById(id).scrollIntoView({ behavior: "smooth" });
     }
 
-    // Código para garantir que os links do menu superior também funcionem suavemente
     document.querySelectorAll('.top-nav a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
@@ -596,13 +453,10 @@
         });
     });
 
-    // =======================================================
-    // NOVO CÓDIGO PARA O TRAÇO DA NAVEGAÇÃO
-    // =======================================================
     document.addEventListener('DOMContentLoaded', () => {
         const navLinks = document.querySelectorAll('.top-nav-links a');
         const underline = document.querySelector('.top-nav-links .underline');
-        const sections = document.querySelectorAll('section[id], nav[id], footer[id]');
+        const sections = document.querySelectorAll('section[id], footer[id]');
 
         function moveUnderline(activeLink) {
             if (!activeLink) {
@@ -615,31 +469,35 @@
             underline.style.width = `${linkRect.width}px`;
             underline.style.left = `${linkRect.left - parentRect.left}px`;
         }
-
+        
         const observerOptions = {
             root: null,
-            rootMargin: '0px 0px -60% 0px', // Ativa quando a seção está no terço superior da tela
+            rootMargin: '0px 0px -65% 0px',
             threshold: 0
         };
 
         const sectionObserver = new IntersectionObserver((entries) => {
+            let latestIntersectingEntry = null;
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    const sectionId = entry.target.id;
-                    const activeLink = document.querySelector(`.top-nav-links a[data-section="${sectionId}"]`);
-                    moveUnderline(activeLink);
+                   latestIntersectingEntry = entry;
                 }
             });
+
+            if (latestIntersectingEntry) {
+                 const sectionId = latestIntersectingEntry.target.id;
+                 const activeLink = document.querySelector(`.top-nav-links a[data-section="${sectionId}"]`);
+                 moveUnderline(activeLink);
+            }
         }, observerOptions);
 
         sections.forEach(section => {
             sectionObserver.observe(section);
         });
 
-        // Define a posição inicial do traço no primeiro link
-        if (navLinks.length > 0) {
+        window.addEventListener('load', () => {
             moveUnderline(navLinks[0]);
-        }
+        });
     });
   </script>
 
