@@ -10,6 +10,10 @@
         box-sizing: border-box;
     }
 
+    html {
+      scroll-padding-top: 80px; /* Espaço para o menu fixo não cobrir o título */
+    }
+
     body {
       font-family: Arial, sans-serif;
       margin: 0;
@@ -19,7 +23,7 @@
       overflow-x: hidden; /* Evita o rolamento lateral */
     }
 
-    /* Nova barra de navegação no topo */
+    /* Barra de navegação no topo */
     .top-nav {
       width: 100%;
       background-color: #f8b5c1;
@@ -36,7 +40,7 @@
     .top-nav .brand-container {
       display: flex;
       align-items: center;
-      gap: 5px; /* Aproximei as imagens */
+      gap: 5px;
     }
     
     .top-nav .brand-container .logo {
@@ -50,25 +54,30 @@
         align-items: center;
         flex: 1;
         margin-left: auto;
-        gap: 5px; /* Diminuí o espaçamento entre os botões */
+        gap: 5px;
     }
     
     .top-nav a {
       text-decoration: none;
       color: white;
       font-weight: bold;
-      font-size: 12px; /* Diminuí o tamanho da fonte */
+      font-size: 12px;
       background-color: #ffc0cb;
-      padding: 6px 12px; /* Diminuí o padding */
+      padding: 6px 12px;
       border-radius: 20px; 
       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
       transition: transform 0.2s ease, box-shadow 0.2s ease;
       white-space: nowrap;
+      outline: none; /* Remove a borda azul ao clicar */
     }
     
     .top-nav a:hover {
         transform: scale(1.05);
         box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .top-nav a:active {
+        transform: scale(0.95); /* Efeito de clique */
     }
 
     /* Container do banner + logo */
@@ -105,17 +114,29 @@
       display: block;
     }
 
-    /* Seção de biografia (AJUSTADO) */
+    /* Seção de biografia (AJUSTADO PARA SER RESPONSIVO) */
     .about-me-section {
         background-image: url('assets/Screenshot_2025-09-19-21-45-06-763_com.canva.editor~3.jpg');
-        background-size: cover; /* Alterado de 'contain' para 'cover' */
         background-position: center;
         background-repeat: no-repeat;
-        width: 100%; /* Garante que a seção ocupe toda a largura */
-        margin: 20px 0; /* Remove margens laterais para ir de ponta a ponta */
-        height: 40vh; /* Altura responsiva (40% da altura da tela) */
-        max-height: 400px; /* Limite máximo de altura para telas grandes */
+        margin: 20px auto;
+        border-radius: 12px;
+        max-width: 600px;
+        height: 250px;
+        background-size: contain; /* Padrão para celular */
     }
+    
+    /* Regra específica para telas maiores (computador) */
+    @media screen and (min-width: 768px) {
+      .about-me-section {
+        max-width: none; /* Remove a largura máxima */
+        margin: 20px 0;
+        border-radius: 0;
+        height: 400px;
+        background-size: cover; /* Cobre ponta a ponta no PC */
+      }
+    }
+
 
     nav {
       margin: 15px 0;
@@ -124,16 +145,15 @@
       flex-wrap: wrap;
     }
     
-    /* Botões do menu (AJUSTADO) */
     .nav-image {
-        max-width: 140px; /* Diminuí o tamanho máximo do botão */
+        max-width: 140px;
         height: auto;
         margin: 5px;
         cursor: pointer;
         transition: transform 0.2s ease;
         outline: none;
         background-color: white;
-        padding: 10px 15px; /* Diminuí o padding interno */
+        padding: 10px 15px;
         border-radius: 20px;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
     }
@@ -240,6 +260,11 @@
       align-items: center;
       gap: 15px;
     }
+    
+    footer h3, footer p {
+      color: white;
+      font-weight: bold;
+    }
 
     .contact-item {
         display: flex;
@@ -272,9 +297,9 @@
           <img src="assets/Screenshot_2025-09-19-22-05-49-392_com.canva.editor~3.jpg" alt="Logo Boloure" class="logo">
       </div>
       <div class="top-nav-links">
-          <a href="#about-me-section" onclick="scrollToSection('about-me-section')">Sobre</a>
-          <a href="#nav" onclick="scrollToSection('nav')">Menu</a>
-          <a href="#contato" onclick="scrollToSection('contato')">Contato</a>
+          <a href="#about-me-section">Sobre</a>
+          <a href="#nav">Menu</a>
+          <a href="#contato">Contato</a>
       </div>
   </header>
 
@@ -287,8 +312,7 @@
 
   <img src="assets/1000059268-removebg-preview.png" alt="Localização" class="location-img">
 
-  <section id="about-me-section" class="about-me-section">
-</section>
+  <section id="about-me-section" class="about-me-section"></section>
 
   <nav id="nav">
     <img src="assets/1000059270-removebg-preview.png" alt="Catálogo" class="nav-image" onclick="scrollToSection('catalogo')">
@@ -487,11 +511,11 @@
 
   <section id="monte">
     <img src="URL-IMAGEM-TITULO-MONTE" alt="Monte seu Bolo" class="section-title">
-    <p>Aqui você vai poder escolher massa, recheio e cobertura e no final calcular o valor.</p>
+    <p style="color: #555;">Aqui você vai poder escolher massa, recheio e cobertura e no final calcular o valor.</p>
   </section>
 
   <footer id="contato">
-    <h3>Contato</h3>
+    <p>Gostou? Faça sua encomenda:</p>
     <div class="contact-item">
         <img src="assets/1000059480-removebg-preview.png" alt="Logo WhatsApp" class="contact-logo">
         <a href="https://wa.me/5522999290349" target="_blank" class="contact-link">WhatsApp</a>
@@ -503,9 +527,20 @@
   </footer>
 
   <script>
+    // Função de rolagem suave para os botões de imagem
     function scrollToSection(id) {
       document.getElementById(id).scrollIntoView({ behavior: "smooth" });
     }
+
+    // Código para garantir que os links do menu superior também funcionem suavemente
+    document.querySelectorAll('.top-nav a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+    });
   </script>
 
 </body>
