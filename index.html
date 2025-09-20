@@ -58,7 +58,7 @@
     }
     
     .top-nav .brand-container .logo {
-        height: 50px;
+        height: 40px;
         width: auto;
         cursor: pointer;
     }
@@ -194,26 +194,29 @@
       .card p { font-size: 1em; }
       .card .list-item-price { font-size: 0.9em; }
 
-      /* CORREÇÃO: Layout de cards mantido para PC, apenas com tamanho maior */
+      /* Blocos de listas empilhados verticalmente */
+      .catalogo-side-by-side {
+          max-width: 900px; /* Largura máxima para os blocos */
+          margin: 0 auto;
+      }
+      .catalogo-list-block {
+          margin-bottom: 50px; /* Espaço entre os blocos de listas */
+      }
+      
+      /* CORREÇÃO: Grade de cards horizontal dentro de cada bloco */
       .catalogo-list {
-          max-width: 100%; /* Permite que o container se expanda */
-          gap: 20px; /* Mais espaço entre os cards */
+        max-width: 100%; 
+        gap: 20px;
       }
       .catalogo-list .list-item {
-          width: 160px; /* Cards maiores no PC */
+        width: 140px; /* Cards maiores para PC */
       }
       .list-item-image {
-          height: 120px; /* Imagens maiores */
+        height: 110px; /* Imagens maiores */
       }
       .list-item p {
-          font-size: 1em; /* Fonte maior */
+        font-size: 0.9em; /* Fonte um pouco maior */
       }
-
-      .catalogo-side-by-side {
-        display: flex; flex-wrap: wrap; justify-content: center;
-        align-items: flex-start; gap: 40px; max-width: 1200px; margin: 20px auto;
-      }
-      .catalogo-list-block { flex: 1 1 45%; max-width: 500px; }
     }
   </style>
 </head>
@@ -361,7 +364,6 @@
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
                 scrollToSection(this.getAttribute('data-section'));
-                // Move o traço imediatamente ao clicar, exceto para o contato que tem regra especial
                 if (this !== contatoLink) {
                     moveUnderlineTo(this);
                 }
@@ -386,13 +388,11 @@
             });
         };
 
-        // Observador para o topo e seções principais
         const mainObserver = new IntersectionObserver(observerCallback, {
             root: null, rootMargin: '0px 0px -80% 0px', threshold: 0
         });
         document.querySelectorAll('#top-of-page, section[id]').forEach(sec => mainObserver.observe(sec));
 
-        // Observador especial para o rodapé (contato)
         const footerObserver = new IntersectionObserver(observerCallback, {
             root: null, rootMargin: '0px 0px -10px 0px', threshold: 0.1
         });
