@@ -83,25 +83,23 @@
     /* ======================================================= */
     /* CORREÇÃO PARA JUNTAR BANNER E MENU */
     /* ======================================================= */
-
-    /* 1. Adicionamos um espaço no topo do conteúdo principal. */
-    /* Altere este valor se a altura do menu mudar. */
     main {
-        padding-top: 60px;
-    }
+      /* 1. Este espaço no topo é necessário para o menu fixo. */
+      /* Altere o valor se a altura do menu mudar. */
+      padding-top: 60px;
 
-    /* 2. Puxamos o container do banner para cima e adicionamos um espaço interno */
-    /* para compensar e alinhar a logo corretamente. Altere os dois valores se o menu mudar. */
-    .banner-container {
-      position: relative; 
-      display: flex; 
-      justify-content: center;
-      align-items: center; 
-      flex-direction: column;
-      margin-top: -60px; /* Puxa para cima */
-      padding-top: 60px;  /* Empurra o conteúdo interno (logo) para baixo */
+      /* 2. PINTAMOS o fundo com a cor do banner para dar a impressão de que estão colados. */
+      /* Altere esta cor se o seu banner mudar. */
+      background-color: #FAD9E0; 
     }
     /* ======================================================= */
+
+
+    /* Conteúdo principal */
+    .banner-container {
+      position: relative; display: flex; justify-content: center;
+      align-items: center; flex-direction: column;
+    }
 
     .banner { width: 100%; max-height: 200px; object-fit: cover; display: block; }
     .logo-container { width: 250px; margin: -75px auto 20px; text-align: center; }
@@ -114,15 +112,13 @@
     }
 
     nav { margin: 15px 0; display: flex; justify-content: center; align-items: center; flex-wrap: nowrap; gap: 5px; }
+    /* CORREÇÃO: Tamanho dos botões de navegação uniformes novamente */
     .nav-image {
         max-width: 110px; height: auto; cursor: pointer; transition: transform 0.2s ease; outline: none;
         background-color: white; padding: 8px 12px; border-radius: 20px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
     }
     .nav-image:hover { transform: scale(1.05); }
 
-    nav .nav-image:first-child {
-        max-width: 125px;
-    }
 
     section { padding: 20px 10px; }
     .section-title { width: 200px; max-width: 80%; margin: 20px auto; display: block; }
@@ -185,7 +181,6 @@
       .about-me-section { max-width: none; margin: 20px 0; border-radius: 0; height: 400px; background-size: cover; }
       nav { gap: 10px; }
       .nav-image { max-width: 200px; }
-      nav .nav-image:first-child { max-width: 220px; }
       .section-title { width: 300px; }
       .catalogo-grid { max-width: 800px; gap: 25px; }
       .card { flex-basis: 180px; max-width: 180px; padding: 15px; }
