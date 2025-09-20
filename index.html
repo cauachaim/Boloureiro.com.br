@@ -11,7 +11,7 @@
     }
 
     html {
-      scroll-padding-top: 80px; /* Ajustado para a altura do menu fixo */
+      scroll-padding-top: 80px; /* Espaço para o menu fixo não cobrir o título */
     }
 
     body {
@@ -20,36 +20,32 @@
       background-color: #ffe4ec;
       text-align: center;
       scroll-behavior: smooth;
-      overflow-x: hidden;
+      overflow-x: hidden; /* Evita o rolamento lateral */
     }
 
-    /* ======================================================= */
-    /* BARRA DE NAVEGAÇÃO PRINCIPAL */
-    /* ======================================================= */
+    /* Barra de navegação no topo */
     .top-nav {
-      position: fixed;
       width: 100%;
-      top: 0;
-      left: 0;
       background-color: #EB6D7D;
-      padding: 10px 20px 0px 10px; /* Padding ajustado */
+      padding: 10px 20px 10px 10px;
       display: flex;
       justify-content: space-between;
       align-items: center;
       box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      position: sticky;
+      top: 0;
       z-index: 1000;
-      height: 60px; /* Altura fixa para facilitar cálculos */
     }
 
     .top-nav .brand-container {
       display: flex;
       align-items: center;
+      gap: 5px;
     }
     
     .top-nav .brand-container .logo {
         height: 40px;
         width: auto;
-        cursor: pointer;
     }
     
     .top-nav-links {
@@ -58,366 +54,508 @@
         align-items: center;
         flex: 1;
         margin-left: auto;
-        gap: 15px;
+        gap: 5px;
     }
     
     .top-nav a {
       text-decoration: none;
-      color: white;
+      color: black;
       font-weight: bold;
-      font-size: 16px;
-      padding: 10px 5px;
+      font-size: 12px;
+      background-color: #ffffff;
+      padding: 6px 12px;
+      border-radius: 20px; 
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
       white-space: nowrap;
-      outline: none;
-      transition: color 0.3s ease;
+      outline: none; /* Remove a borda azul ao clicar */
     }
     
     .top-nav a:hover {
-        color: #fff0f3;
-    }
-    
-    .underline {
-        position: absolute;
-        bottom: 0;
-        height: 4px;
-        background-color: white;
-        border-radius: 2px;
-        transition: left 0.4s ease, width 0.4s ease;
+        transform: scale(1.05);
+        box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
     }
 
-    /* ======================================================= */
-    /* CORREÇÃO PARA JUNTAR O BANNER PRINCIPAL E O MENU */
-    /* ======================================================= */
-    main {
-      /* Remove qualquer padding no topo do main para que o conteúdo comece imediatamente */
-      padding-top: 0; 
+    .top-nav a:active {
+        transform: scale(0.95); /* Efeito de clique */
     }
 
+    /* Container do banner + logo */
     .banner-container {
-      position: relative; 
-      display: flex; 
+      position: relative;
+      display: flex;
       justify-content: center;
-      align-items: center; 
+      align-items: center;
       flex-direction: column;
-      /* Puxa o banner container para cima exato da altura do menu fixo */
-      margin-top: -60px; /* Use a altura fixa do menu */
-      /* Adiciona um padding no topo do banner container para empurrar seu conteúdo */
-      /* abaixo do menu, mas mantém o background (o banner) por trás. */
-      padding-top: 60px; /* Use a altura fixa do menu */
     }
 
-    .banner { 
-        width: 100%; 
-        max-height: 200px; 
-        object-fit: cover; 
-        display: block; 
-        position: absolute; /* Permite que a logo fique sobre ele */
-        top: 0;
-        left: 0;
-        height: 100%;
-        z-index: -1; /* Manda o banner para trás do conteúdo */
+    .banner {
+      width: 100%;
+      max-height: 200px;
+      object-fit: cover;
+      display: block;
     }
-    /* ======================================================= */
 
+    .logo-container {
+      width: 250px;
+      margin: -75px auto 20px;
+      text-align: center;
+    }
 
-    .logo-container { width: 250px; margin: -75px auto 20px; text-align: center; }
-    .logo-container img { width: 100%; height: auto; }
-    .location-img { width: 100%; max-width: 250px; margin: -15px auto 5px auto; display: block; }
+    .logo-container img {
+      width: 100%;
+      height: auto;
+    }
+
+    .location-img {
+      width: 100%;
+      max-width: 250px;
+      margin: -15px auto 10px auto;
+      display: block;
+    }
+
+    /* Seção de biografia */
     .about-me-section {
         background-image: url('assets/Screenshot_2025-09-19-21-45-06-763_com.canva.editor~3.jpg');
-        background-position: center; background-repeat: no-repeat;
-        margin: 10px auto 20px auto; border-radius: 12px; max-width: 600px; height: 250px; background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+        margin: 20px auto;
+        border-radius: 12px;
+        max-width: 600px;
+        height: 250px;
+        background-size: contain; /* Padrão para celular */
     }
 
-    nav { margin: 15px 0; display: flex; justify-content: center; flex-wrap: nowrap; gap: 5px; }
-    /* REVERSÃO: Voltou ao tamanho original do seu código */
+    /* Botões de navegação por imagem */
+    nav {
+      margin: 15px 0;
+      display: flex;
+      justify-content: center;
+      flex-wrap: nowrap; /* Impede a quebra de linha */
+      gap: 5px;
+    }
+    
     .nav-image {
-        max-width: 110px; height: auto; cursor: pointer; transition: transform 0.2s ease; outline: none;
-        background-color: white; padding: 8px 12px; border-radius: 20px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+        max-width: 110px;
+        height: auto;
+        cursor: pointer;
+        transition: transform 0.2s ease;
+        outline: none;
+        background-color: white;
+        padding: 8px 12px;
+        border-radius: 20px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
     }
-    .nav-image:hover { transform: scale(1.05); }
 
-    section { padding: 20px 10px; }
-    .section-title { width: 200px; max-width: 80%; margin: 20px auto; display: block; }
+    .nav-image:hover {
+        transform: scale(1.05);
+    }
+    
+    .nav-image:active {
+        transform: scale(0.95);
+    }
 
-    /* ======================================================= */
-    /* LAYOUT DE CARDS (MOBILE-FIRST) */
-    /* ======================================================= */
-    
-    .catalogo-grid {
-      display: flex; justify-content: center; flex-wrap: wrap; gap: 10px;
-      max-width: 600px; margin: 0 auto; padding: 0;
+    section {
+      padding: 20px 10px;
     }
-    .card {
-      background-color: white; border-radius: 12px; padding: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-      flex: 1 1 100px; max-width: 100px; display: flex; flex-direction: column; align-items: center;
+
+    .section-title {
+      width: 200px;
+      max-width: 80%;
+      margin: 10px auto;
+      display: block;
     }
-    .card img { width: 100%; border-radius: 8px; object-fit: cover; }
-    .card p { margin: 8px 0 0; font-weight: bold; font-size: 0.8em; text-align: center; }
-    .card .list-item-price { color: #ff4b8a; display: block; margin-top: 4px; font-weight: bold; }
-    
+
+    /* Listas do catálogo */
     .catalogo-list {
       display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
+      flex-direction: column;
       gap: 10px;
+      max-width: 600px;
       margin: 0 auto;
       padding: 0;
-      max-width: 400px;
+      list-style: none;
     }
 
-    .catalogo-list .list-item {
-      background-color: white; border-radius: 12px; padding: 8px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1); display: flex; flex-direction: column;
-      align-items: center; text-align: center; width: 100px; flex-grow: 0;
+    .list-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: white;
+      border-radius: 12px;
+      padding: 10px 20px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      text-align: left;
     }
     
-    #recheios-especiais-list .list-item { width: 100px; }
+    .list-item-content {
+        display: flex;
+        flex-direction: column;
+    }
 
     .list-item-image {
-        width: 100%;
-        height: 80px;
+        width: 70px;
+        height: 70px;
         border-radius: 8px;
         object-fit: cover;
-        margin-bottom: 5px;
     }
-    .list-item p { margin: 0; font-weight: bold; font-size: 0.8em; }
-    .list-item-price { font-size: 0.8em; color: #ff4b8a; }
+    
+    .list-item p {
+        margin: 0;
+        font-weight: bold;
+    }
+    
+    .list-item-price {
+        font-size: 0.9em;
+        color: #ff4b8a;
+    }
+
+    /* Grade de cards do catálogo (AJUSTADO PARA CELULAR) */
+    .catalogo-grid {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px; /* Espaço entre os cards diminuído */
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 0;
+    }
+
+    /* CARDS (AJUSTADO PARA CELULAR) */
+    .card {
+      background-color: white;
+      border-radius: 12px;
+      padding: 8px; /* Padding interno diminuído */
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      flex: 1 1 100px; /* AJUSTADO: Base de 100px para caber 3 */
+      max-width: 100px; /* AJUSTADO: Largura máxima de 100px */
+    }
+
+    .card img {
+      width: 100%;
+      border-radius: 8px;
+      object-fit: cover;
+    }
+
+    .card p {
+      margin: 5px 0 0;
+      font-weight: bold;
+      font-size: 0.8em; /* AJUSTADO: Fonte diminuída para caber no card menor */
+    }
 
     /* Rodapé */
     footer {
-      background-color: #f8b5c1; padding: 20px; margin-top: 30px;
-      display: flex; flex-direction: column; align-items: center; gap: 15px;
+      background-color: #f8b5c1;
+      padding: 20px;
+      margin-top: 30px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 15px;
     }
-    footer p { color: white; font-weight: bold; }
+    
+    footer h3, footer p {
+      color: white;
+      font-weight: bold;
+    }
+
     .contact-item {
-        display: flex; align-items: center; gap: 10px; background-color: white;
-        padding: 8px 15px; border-radius: 20px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); text-decoration: none;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        background-color: white;
+        padding: 8px 15px;
+        border-radius: 20px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        text-decoration: none;
     }
-    .contact-logo { width: 25px; height: auto; }
-    .contact-link { text-decoration: none; color: #000; font-weight: bold; font-size: 16px; }
+
+    .contact-logo {
+        width: 25px;
+        height: auto;
+    }
+
+    .contact-link {
+        text-decoration: none;
+        color: #000;
+        font-weight: bold;
+        font-size: 16px;
+    }
 
     /* ======================================================= */
     /* AJUSTES PARA TELAS GRANDES (COMPUTADOR) - A PARTIR DE 768PX */
     /* ======================================================= */
     @media screen and (min-width: 768px) {
-      .logo-container { width: 350px; margin: -100px auto 30px; }
-      .location-img { max-width: 350px; }
-      .about-me-section { max-width: none; margin: 20px 0; border-radius: 0; height: 400px; background-size: cover; }
-      nav { gap: 10px; }
-      .nav-image { max-width: 200px; } /* REVERSÃO: Voltou ao tamanho original do seu código */
-      .section-title { width: 300px; }
-      .catalogo-grid { max-width: 800px; gap: 25px; }
-      .card { flex-basis: 180px; max-width: 180px; padding: 15px; }
-      .card p { font-size: 1em; }
-      .card .list-item-price { font-size: 0.9em; }
-
-      .catalogo-side-by-side {
-          max-width: 900px;
-          margin: 0 auto;
+      .logo-container {
+        width: 350px;
+        margin: -100px auto 30px;
       }
-      .catalogo-list-block {
-          margin-bottom: 50px;
+
+      .location-img {
+        max-width: 350px;
       }
       
+      .about-me-section {
+        max-width: none; /* Remove a largura máxima */
+        margin: 20px 0;
+        border-radius: 0;
+        height: 400px;
+        background-size: cover; /* Cobre ponta a ponta no PC */
+      }
+      
+      nav {
+        gap: 10px;
+      }
+
+      .nav-image {
+        max-width: 200px;
+        padding: 15px 20px;
+      }
+
+      .section-title {
+        width: 300px;
+      }
+
+      .catalogo-grid {
+        max-width: 800px;
+        gap: 25px; /* Retorna o espaçamento maior no PC */
+      }
+
+      .card {
+        flex-basis: 180px; /* Retorna o tamanho maior no PC */
+        max-width: 180px;
+        padding: 15px; /* Retorna o padding maior no PC */
+      }
+
+      .card p {
+        font-size: 1.1em; /* Retorna a fonte maior no PC */
+      }
+
+      /* NOVO LAYOUT 2X2 PARA AS LISTAS */
+      .catalogo-side-by-side {
+        display: flex;
+        flex-wrap: wrap; /* Permite a quebra de linha para formar o 2x2 */
+        justify-content: center;
+        align-items: flex-start;
+        gap: 40px;
+        max-width: 1200px;
+        margin: 20px auto;
+      }
+
+      .catalogo-list-block {
+        flex: 1 1 40%; /* Cada bloco ocupa ~40% para garantir 2 por linha */
+        max-width: 450px;
+      }
+
       .catalogo-list {
-        max-width: 100%; 
-        gap: 20px;
-      }
-      .catalogo-list .list-item {
-        width: 140px;
-      }
-      .list-item-image {
-        height: 110px;
-      }
-      .list-item p {
-        font-size: 0.9em;
+        max-width: none;
       }
     }
+
   </style>
 </head>
 <body>
-  
-  <div id="top-of-page"></div>
 
   <header class="top-nav">
       <div class="brand-container">
-          <img src="assets/Screenshot_2025-09-20-12-23-58-442_com.canva.editor~2.jpg" alt="Logo Boloure" class="logo" onclick="scrollToSection('top-of-page')">
+          <img src="assets/Screenshot_2025-09-20-12-23-58-442_com.canva.editor~2.jpg" alt="Logo Boloure" class="logo">
       </div>
       <div class="top-nav-links">
-          <a href="#about-me-section" data-section="about-me-section">Sobre</a>
-          <a href="#catalogo" data-section="catalogo">Menu</a>
-          <a href="#contato" data-section="contato">Contato</a>
+          <a href="#about-me-section">Sobre</a>
+          <a href="#nav">Menu</a>
+          <a href="#contato">Contato</a>
       </div>
-      <div class="underline"></div>
   </header>
 
-  <main>
-    <div class="banner-container">
-      <img src="assets/Screenshot_2025-09-14-15-32-42-350_com.canva.editor~2.jpg" alt="Banner" class="banner">
-      <div class="logo-container">
-        <img src="assets/1000059258-removebg-preview.png" alt="Logo">
+  <div class="banner-container">
+    <img src="assets/Screenshot_2025-09-14-15-32-42-350_com.canva.editor~2.jpg" alt="Banner" class="banner">
+    <div class="logo-container">
+      <img src="assets/1000059258-removebg-preview.png" alt="Logo">
+    </div>
+  </div>
+
+  <img src="assets/1000059268-removebg-preview.png" alt="Localização" class="location-img">
+
+  <section id="about-me-section" class="about-me-section"></section>
+
+  <nav id="nav">
+    <img src="assets/1000059270-removebg-preview.png" alt="Catálogo" class="nav-image" onclick="scrollToSection('catalogo')">
+    <img src="assets/1000059273-removebg-preview.png" alt="Monte seu Bolo" class="nav-image" onclick="scrollToSection('monte')">
+    <img src="assets/1000059271-removebg-preview.png" alt="Contato" class="nav-image" onclick="scrollToSection('contato')">
+  </nav>
+
+  <section id="catalogo">
+    <img src="assets/1000059272-removebg-preview.png" alt="Catálogo" class="section-title">
+    
+    <img src="assets/1000059274-removebg-preview.png" alt="Massas" class="section-title">
+    <div class="catalogo-grid">
+      <div class="card">
+        <img src="assets/1000060386-removebg-preview.png" alt="Massa Branca">
+        <p>Massa Branca</p>
+      </div>
+      <div class="card">
+        <img src="assets/1000060391-removebg-preview.png" alt="Massa de Chocolate">
+        <p>Massa de Chocolate</p>
+      </div>
+      <div class="card">
+        <img src="assets/1000060388-removebg-preview.png" alt="Red Velvet">
+        <p>Red Velvet</p>
       </div>
     </div>
-
-    <img src="assets/1000059268-removebg-preview.png" alt="Localização" class="location-img">
     
-    <section id="about-me-section" class="about-me-section"></section>
+    <img src="assets/1000060402-removebg-preview.png" alt="Tamanhos" class="section-title">
+    <div class="catalogo-grid">
+        <div class="card">
+            <img src="assets/Screenshot_2025-09-20-14-16-13-985_com.google.android.googlequicksearchbox~2.jpg" alt="10x10">
+            <p>10x10 (5 fatias) - R$ 30,00</p>
+        </div>
+        <div class="card">
+            <img src="assets/Screenshot_2025-09-20-14-16-13-985_com.google.android.googlequicksearchbox~3.jpg" alt="15x10">
+            <p>15x10 (12/15 fatias) - R$ 60,00</p>
+        </div>
+        <div class="card">
+            <img src="assets/Screenshot_2025-09-20-14-16-17-872_com.google.android.googlequicksearchbox~2.jpg" alt="20x10">
+            <p>20x10 (20/25 fatias) - R$ 85,00</p>
+        </div>
+    </div>
 
-    <nav id="nav">
-      <img src="assets/1000059270-removebg-preview.png" alt="Catálogo" class="nav-image" onclick="scrollToSection('catalogo')">
-      <img src="assets/1000059273-removebg-preview.png" alt="Monte seu Bolo" class="nav-image" onclick="scrollToSection('monte')">
-      <img src="assets/1000059271-removebg-preview.png" alt="Contato" class="nav-image" onclick="scrollToSection('contato')">
-    </nav>
-
-    <section id="catalogo">
-      <img src="assets/Screenshot_2025-09-20-16-44-44-491_com.canva.editor~2.jpg" alt="Catálogo" class="section-title">
-      
-      <img src="assets/1000060496-removebg-preview.png" alt="Massas" class="section-title">
-      <div class="catalogo-grid">
-        <div class="card"><img src="assets/1000060386-removebg-preview.png" alt="Massa Branca"><p>Massa Branca</p></div>
-        <div class="card"><img src="assets/1000060391-removebg-preview.png" alt="Massa de Chocolate"><p>Massa de Chocolate</p></div>
-        <div class="card"><img src="assets/1000060388-removebg-preview.png" alt="Red Velvet"><p>Red Velvet</p></div>
-      </div>
-      
-      <img src="assets/1000060495-removebg-preview.png" alt="Tamanhos" class="section-title">
-      <div class="catalogo-grid">
-          <div class="card"><img src="assets/Screenshot_2025-09-20-14-16-13-985_com.google.android.googlequicksearchbox~2.jpg" alt="10x10"><p>10x10 (5 fatias)<span class="list-item-price">R$ 30,00</span></p></div>
-          <div class="card"><img src="assets/Screenshot_2025-09-20-14-16-13-985_com.google.android.googlequicksearchbox~3.jpg" alt="15x10"><p>15x10 (12/15 fatias)<span class="list-item-price">R$ 60,00</span></p></div>
-          <div class="card"><img src="assets/Screenshot_2025-09-20-14-17-872_com.google.android.googlequicksearchbox~2.jpg" alt="20x10"><p>20x10 (20/25 fatias)<span class="list-item-price">R$ 85,00</span></p></div>
-      </div>
-
-      <div class="catalogo-side-by-side">
-          <div class="catalogo-list-block" id="recheios-list">
-              <img src="assets/1000060492-removebg-preview.png" alt="Recheios" class="section-title">
-              <div class="catalogo-list">
-                <div class="list-item"><img src="assets/1000060430-removebg-preview.png" alt="Brigadeiro" class="list-item-image"><div class="list-item-content"><p>Brigadeiro</p></div></div>
-                <div class="list-item"><img src="assets/1000060431-removebg-preview.png" alt="Brigadeiro branco" class="list-item-image"><div class="list-item-content"><p>Brigadeiro branco</p></div></div>
-                <div class="list-item"><img src="assets/1000060436-removebg-preview.png" alt="Ninho" class="list-item-image"><div class="list-item-content"><p>Ninho</p></div></div>
-                <div class="list-item"><img src="assets/1000060432-removebg-preview (1).png" alt="Doce de Leite" class="list-item-image"><div class="list-item-content"><p>Doce de Leite</p></div></div>
-                <div class="list-item"><img src="assets/e90b7581-a263-458a-b4af-c7290bd026ea-1_all_6653-removebg-preview.png" alt="Amendoim" class="list-item-image"><div class="list-item-content"><p>Amendoim</p></div></div>
-                <div class="list-item"><img src="assets/1000060435-removebg-preview.png" alt="Coco" class="list-item-image"><div class="list-item-content"><p>Coco</p></div></div>
-                <div class="list-item"><img src="assets/1000060437-removebg-preview.png" alt="4 leites" class="list-item-image"><div class="list-item-content"><p>4 leites</p></div></div>
+    <div class="catalogo-side-by-side">
+        <div class="catalogo-list-block">
+            <img src="assets/1000060400-removebg-preview.png" alt="Recheios" class="section-title">
+            <div class="catalogo-list">
+              <div class="list-item">
+                <div class="list-item-content"><p>Brigadeiro</p></div>
+                <img src="assets/1000060430-removebg-preview.png" alt="Brigadeiro" class="list-item-image">
               </div>
-          </div>
-          
-          <div class="catalogo-list-block" id="recheios-especiais-list">
-              <img src="assets/1000060493-removebg-preview.png" alt="Recheios Especiais" class="section-title">
-              <div class="catalogo-list">
-                <div class="list-item"><img src="assets/Screenshot_2025-09-20-12-51-05-964_com.google.android.googlequicksearchbox~2.jpg" alt="Brigadeiro amargo" class="list-item-image"><div class="list-item-content"><p>Brigadeiro amargo</p><span class="list-item-price">+ R$ 5,00</span></div></div>
-                <div class="list-item"><img src="assets/Screenshot_2025-09-20-12-51-05-964_com.google.android.googlequicksearchbox~3.jpg" alt="Ganache de chocolate" class="list-item-image"><div class="list-item-content"><p>Ganache de chocolate</p><span class="list-item-price">+ R$ 5,00</span></div></div>
-                <div class="list-item"><img src="assets/Screenshot_2025-09-20-12-51-12-283_com.google.android.googlequicksearchbox~2.jpg" alt="Ganache de chocolate branco" class="list-item-image"><div class="list-item-content"><p>Ganache de chocolate branco</p><span class="list-item-price">+ R$ 5,00</span></div></div>
-                <div class="list-item"><img src="assets/Screenshot_2025-09-20-12-51-12-283_com.google.android.googlequicksearchbox~3.jpg" alt="Maracujá" class="list-item-image"><div class="list-item-content"><p>Maracujá</p><span class="list-item-price">+ R$ 5,00</span></div></div>
-                <div class="list-item"><img src="assets/Screenshot_2025-09-20-12-52-04-661_com.google.android.googlequicksearchbox~2.jpg" alt="Geleia de Frutas" class="list-item-image"><div class="list-item-content"><p>Geleia de Frutas</p><span class="list-item-price">+ R$ 5,00</span></div></div>
+              <div class="list-item">
+                <div class="list-item-content"><p>Brigadeiro branco</p></div>
+                <img src="assets/1000060431-removebg-preview.png" alt="Brigadeiro branco" class="list-item-image">
               </div>
-          </div>
-
-          <div class="catalogo-list-block" id="cobertura-list">
-              <img src="assets/1000060494-removebg-preview.png" alt="Cobertura" class="section-title">
-              <div class="catalogo-list">
-                  <div class="list-item"><img src="assets/Screenshot_2025-09-20-14-42-14-490_com.google.android.googlequicksearchbox~2.jpg" alt="Chantilly ou Chantininho" class="list-item-image"><div class="list-item-content"><p>Chantilly ou Chantininho</p></div></div>
-                  <div class="list-item"><img src="assets/Screenshot_2025-09-20-14-42-14-490_com.google.android.googlequicksearchbox~3.jpg" alt="Ganache" class="list-item-image"><div class="list-item-content"><p>Ganache</p></div></div>
+              <div class="list-item">
+                <div class="list-item-content"><p>Ninho</p></div>
+                <img src="assets/1000060436-removebg-preview.png" alt="Ninho" class="list-item-image">
               </div>
-          </div>
-
-          <div class="catalogo-list-block" id="adicionais-list">
-              <img src="assets/e90b7581-a263-458a-b4af-c7290bd026ea-1_all_6715-removebg-preview.png" alt="Adicionais" class="section-title">
-              <div class="catalogo-list">
-                  <div class="list-item"><img src="assets/Screenshot_2025-09-20-13-30-42-469_com.google.android.googlequicksearchbox~2.jpg" alt="Frutas frescas" class="list-item-image"><div class="list-item-content"><p>Frutas frescas</p><span class="list-item-price">R$ 6,00</span></div></div>
-                  <div class="list-item"><img src="assets/Screenshot_2025-09-20-13-27-52-932_com.google.android.googlequicksearchbox~2.jpg" alt="Pedaços de chocolate" class="list-item-image"><div class="list-item-content"><p>Pedaços de chocolate</p><span class="list-item-price">R$ 8,00</span></div></div>
-                  <div class="list-item"><img src="assets/Screenshot_2025-09-20-13-27-46-553_com.google.android.googlequicksearchbox~2.jpg" alt="Castanhas ou nozes" class="list-item-image"><div class="list-item-content"><p>Castanhas ou nozes</p><span class="list-item-price">R$ 12,00</span></div></div>
-                  <div class="list-item"><img src="assets/Screenshot_2025-09-20-13-30-49-361_com.google.android.googlequicksearchbox~2.jpg" alt="Nutella" class="list-item-image"><div class="list-item-content"><p>Nutella</p><span class="list-item-price">R$ 10,00</span></div></div>
-                  <div class="list-item"><img src="assets/Screenshot_2025-09-20-13-32-25-666_com.google.android.googlequicksearchbox~3.jpg" alt="Camada extra de recheio" class="list-item-image"><div class="list-item-content"><p>Camada extra de recheio</p><span class="list-item-price">20% do valor</span></div></div>
-                  <div class="list-item"><img src="assets/Screenshot_2025-09-20-13-32-25-666_com.google.android.googlequicksearchbox~2.jpg" alt="Topper" class="list-item-image"><div class="list-item-content"><p>Topper</p><span class="list-item-price">R$ 10,00</span></div></div>
+              <div class="list-item">
+                <div class="list-item-content"><p>Doce de Leite</p></div>
+                <img src="assets/1000060432-removebg-preview (1).png" alt="Doce de Leite" class="list-item-image">
               </div>
-          </div>
-      </div>
-    </section>
+              <div class="list-item">
+                <div class="list-item-content"><p>Amendoim</p></div>
+                <img src="assets/e90b7581-a263-458a-b4af-c7290bd026ea-1_all_6653-removebg-preview.png" alt="Amendoim" class="list-item-image">
+              </div>
+              <div class="list-item">
+                <div class="list-item-content"><p>Coco</p></div>
+                <img src="assets/1000060435-removebg-preview.png" alt="Coco" class="list-item-image">
+              </div>
+              <div class="list-item">
+                <div class="list-item-content"><p>4 leites</p></div>
+                <img src="assets/1000060437-removebg-preview.png" alt="4 leites" class="list-item-image">
+              </div>
+            </div>
+        </div>
+        
+        <div class="catalogo-list-block">
+            <img src="assets/1000060399-removebg-preview.png" alt="Recheios Especiais" class="section-title">
+            <div class="catalogo-list">
+              <div class="list-item">
+                <div class="list-item-content"><p>Brigadeiro amargo</p><span class="list-item-price">+ R$ 5,00</span></div>
+                <img src="assets/Screenshot_2025-09-20-12-51-05-964_com.google.android.googlequicksearchbox~2.jpg" alt="Brigadeiro amargo" class="list-item-image">
+              </div>
+              <div class="list-item">
+                <div class="list-item-content"><p>Ganache de chocolate</p><span class="list-item-price">+ R$ 5,00</span></div>
+                <img src="assets/Screenshot_2025-09-20-12-51-05-964_com.google.android.googlequicksearchbox~3.jpg" alt="Ganache de chocolate" class="list-item-image">
+              </div>
+              <div class="list-item">
+                <div class="list-item-content"><p>Ganache de chocolate branco</p><span class="list-item-price">+ R$ 5,00</span></div>
+                <img src="assets/Screenshot_2025-09-20-12-51-12-283_com.google.android.googlequicksearchbox~2.jpg" alt="Ganache de chocolate branco" class="list-item-image">
+              </div>
+              <div class="list-item">
+                <div class="list-item-content"><p>Maracujá</p><span class="list-item-price">+ R$ 5,00</span></div>
+                <img src="assets/Screenshot_2025-09-20-12-51-12-283_com.google.android.googlequicksearchbox~3.jpg" alt="Maracujá" class="list-item-image">
+              </div>
+              <div class="list-item">
+                <div class="list-item-content"><p>Geleia de Frutas</p><span class="list-item-price">+ R$ 5,00</span></div>
+                <img src="assets/Screenshot_2025-09-20-12-52-04-661_com.google.android.googlequicksearchbox~2.jpg" alt="Geleia de Frutas" class="list-item-image">
+              </div>
+            </div>
+        </div>
 
-    <section id="monte">
-      <img src="URL-IMAGEM-TITULO-MONTE" alt="Monte seu Bolo" class="section-title">
-      <p style="color: #555;">Aqui você vai poder escolher massa, recheio e cobertura e no final calcular o valor.</p>
-    </section>
-  </main>
+        <div class="catalogo-list-block">
+            <img src="assets/1000060397-removebg-preview.png" alt="Cobertura" class="section-title">
+            <div class="catalogo-list">
+                <div class="list-item">
+                    <div class="list-item-content"><p>Chantilly ou Chantininho</p></div>
+                    <img src="assets/Screenshot_2025-09-20-14-42-14-490_com.google.android.googlequicksearchbox~2.jpg" alt="Chantilly ou Chantininho" class="list-item-image">
+                </div>
+                <div class="list-item">
+                    <div class="list-item-content"><p>Ganache</p></div>
+                    <img src="assets/Screenshot_2025-09-20-14-42-14-490_com.google.android.googlequicksearchbox~3.jpg" alt="Ganache" class="list-item-image">
+                </div>
+            </div>
+        </div>
+
+        <div class="catalogo-list-block">
+            <img src="assets/1000060398-removebg-preview.png" alt="Adicionais" class="section-title">
+            <div class="catalogo-list">
+                <div class="list-item">
+                    <div class="list-item-content"><p>Frutas frescas</p><span class="list-item-price">R$ 6,00</span></div>
+                    <img src="assets/Screenshot_2025-09-20-13-30-42-469_com.google.android.googlequicksearchbox~2.jpg" alt="Frutas frescas" class="list-item-image">
+                </div>
+                <div class="list-item">
+                    <div class="list-item-content"><p>Pedaços de chocolate</p><span class="list-item-price">R$ 8,00</span></div>
+                    <img src="assets/Screenshot_2025-09-20-13-27-52-932_com.google.android.googlequicksearchbox~2.jpg" alt="Pedaços de chocolate" class="list-item-image">
+                </div>
+                <div class="list-item">
+                    <div class="list-item-content"><p>Castanhas ou nozes</p><span class="list-item-price">R$ 12,00</span></div>
+                    <img src="assets/Screenshot_2025-09-20-13-27-46-553_com.google.android.googlequicksearchbox~2.jpg" alt="Castanhas ou nozes" class="list-item-image">
+                </div>
+                <div class="list-item">
+                    <div class="list-item-content"><p>Nutella</p><span class="list-item-price">R$ 10,00</span></div>
+                    <img src="assets/Screenshot_2025-09-20-13-30-49-361_com.google.android.googlequicksearchbox~2.jpg" alt="Nutella" class="list-item-image">
+                </div>
+                <div class="list-item">
+                    <div class="list-item-content"><p>Camada extra de recheio</p><span class="list-item-price">20% do valor</span></div>
+                    <img src="assets/Screenshot_2025-09-20-13-32-25-666_com.google.android.googlequicksearchbox~3.jpg" alt="Camada extra de recheio" class="list-item-image">
+                </div>
+                <div class="list-item">
+                    <div class="list-item-content"><p>Topper</p><span class="list-item-price">R$ 10,00</span></div>
+                    <img src="assets/Screenshot_2025-09-20-13-32-25-666_com.google.android.googlequicksearchbox~2.jpg" alt="Topper" class="list-item-image">
+                </div>
+            </div>
+        </div>
+    </div>
+  </section>
+
+  <section id="monte">
+    <img src="URL-IMAGEM-TITULO-MONTE" alt="Monte seu Bolo" class="section-title">
+    <p style="color: #555;">Aqui você vai poder escolher massa, recheio e cobertura e no final calcular o valor.</p>
+  </section>
 
   <footer id="contato">
     <p>Gostou? Faça sua encomenda:</p>
     <div class="contact-item">
         <img src="assets/1000059480-removebg-preview.png" alt="Logo WhatsApp" class="contact-logo">
-        <a href="https://wa.me/5522999297966?text=Olá,%20quero%20fazer%20uma%20encomenda!" target="_blank" class="contact-link">WhatsApp</a>
+        <a href="https://wa.me/5522999290349" target="_blank" class="contact-link">WhatsApp</a>
     </div>
     <div class="contact-item">
         <img src="assets/1000056092-removebg-preview.png" alt="Logo Instagram" class="contact-logo">
-        <a href="https://www.instagram.com/boloureiro?igsh=MWl5YWo0cG9pb2Flbw==" target="_blank" class="contact-link">Instagram</a>
+        <a href="https://instagram.com/SEU_INSTAGRAM" target="_blank" class="contact-link">Instagram</a>
     </div>
   </footer>
 
   <script>
+    // Função de rolagem suave para os botões de imagem
     function scrollToSection(id) {
-      const element = document.getElementById(id);
-      if(element) {
-        element.scrollIntoView({ behavior: "smooth" });
-      }
+      document.getElementById(id).scrollIntoView({ behavior: "smooth" });
     }
 
-    document.addEventListener('DOMContentLoaded', () => {
-        const navBar = document.querySelector('.top-nav');
-        const logo = document.querySelector('.top-nav .logo');
-        const underline = document.querySelector('.top-nav .underline');
-        const navLinks = document.querySelectorAll('.top-nav a[data-section]');
-        const contatoLink = document.querySelector('.top-nav a[data-section="contato"]');
-
-        function moveUnderlineTo(element) {
-            if (!element) return;
-            const elemRect = element.getBoundingClientRect();
-            const parentRect = navBar.getBoundingClientRect();
-            
-            underline.style.width = `${elemRect.width}px`;
-            underline.style.left = `${elemRect.left - parentRect.left}px`;
-        }
-        
-        navLinks.forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                scrollToSection(this.getAttribute('data-section'));
-                if (this !== contatoLink) {
-                    moveUnderlineTo(this);
-                }
+    // Código para garantir que os links do menu superior também funcionem suavemente
+    document.querySelectorAll('.top-nav a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
             });
-        });
-
-        contatoLink.addEventListener('click', () => {
-            moveUnderlineTo(contatoLink);
-        });
-
-        const observerCallback = (entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const sectionId = entry.target.id;
-                    const activeLink = document.querySelector(`.top-nav a[data-section="${sectionId}"]`);
-                    if (activeLink) {
-                        moveUnderlineTo(activeLink);
-                    } else if (sectionId === 'top-of-page') {
-                        moveUnderlineTo(logo);
-                    }
-                }
-            });
-        };
-
-        const mainObserver = new IntersectionObserver(observerCallback, {
-            root: null, rootMargin: '0px 0px -80% 0px', threshold: 0
-        });
-        document.querySelectorAll('#top-of-page, section[id]').forEach(sec => mainObserver.observe(sec));
-
-        const footerObserver = new IntersectionObserver(observerCallback, {
-            root: null, rootMargin: '0px 0px -10px 0px', threshold: 0.1
-        });
-        const footer = document.getElementById('contato');
-        if (footer) footerObserver.observe(footer);
-
-
-        window.addEventListener('load', () => {
-            setTimeout(() => moveUnderlineTo(logo), 100);
         });
     });
   </script>
