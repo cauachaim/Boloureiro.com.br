@@ -114,7 +114,7 @@
       display: block;
     }
 
-    /* Seção de biografia (AJUSTADO PARA SER RESPONSIVO) */
+    /* Seção de biografia */
     .about-me-section {
         background-image: url('assets/Screenshot_2025-09-19-21-45-06-763_com.canva.editor~3.jpg');
         background-position: center;
@@ -125,19 +125,8 @@
         height: 250px;
         background-size: contain; /* Padrão para celular */
     }
-    
-    /* Regra específica para telas maiores (computador) */
-    @media screen and (min-width: 768px) {
-      .about-me-section {
-        max-width: none; /* Remove a largura máxima */
-        margin: 20px 0;
-        border-radius: 0;
-        height: 400px;
-        background-size: cover; /* Cobre ponta a ponta no PC */
-      }
-    }
 
-
+    /* Botões de navegação por imagem */
     nav {
       margin: 15px 0;
       display: flex;
@@ -177,6 +166,7 @@
       display: block;
     }
 
+    /* Listas do catálogo */
     .catalogo-list {
       display: flex;
       flex-direction: column;
@@ -220,6 +210,7 @@
         color: #ff4b8a;
     }
 
+    /* Grade de cards do catálogo */
     .catalogo-grid {
       display: flex;
       justify-content: center;
@@ -250,7 +241,7 @@
       font-weight: bold;
     }
 
-    /* Estilos do rodapé de contato */
+    /* Rodapé */
     footer {
       background-color: #f8b5c1;
       padding: 20px;
@@ -288,6 +279,73 @@
         font-weight: bold;
         font-size: 16px;
     }
+
+    /* ======================================================= */
+    /* AJUSTES PARA TELAS GRANDES (COMPUTADOR) - A PARTIR DE 768PX */
+    /* ======================================================= */
+    @media screen and (min-width: 768px) {
+      .logo-container {
+        width: 350px;
+        margin: -100px auto 30px;
+      }
+
+      .location-img {
+        max-width: 350px;
+      }
+      
+      .about-me-section {
+        max-width: none; /* Remove a largura máxima */
+        margin: 20px 0;
+        border-radius: 0;
+        height: 400px;
+        background-size: cover; /* Cobre ponta a ponta no PC */
+      }
+      
+      .nav-image {
+        max-width: 200px;
+        padding: 15px 20px;
+        margin: 10px;
+      }
+
+      .section-title {
+        width: 300px;
+      }
+
+      .catalogo-grid {
+        max-width: 800px;
+        gap: 25px;
+      }
+
+      .card {
+        flex-basis: 180px; /* Aumenta a base do card */
+        max-width: 180px; /* Aumenta a largura máxima */
+        padding: 15px;
+      }
+
+      .card p {
+        font-size: 1.1em; /* Aumenta um pouco a fonte nos cards */
+      }
+
+      /* Novo layout lado a lado para as listas */
+      .catalogo-side-by-side {
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        gap: 40px;
+        max-width: 1200px;
+        margin: 20px auto;
+      }
+
+      .list-section {
+        flex: 1;
+        max-width: 500px;
+      }
+
+      .catalogo-list {
+        max-width: none; /* Remove a largura máxima para se ajustar ao .list-section */
+      }
+    }
+
   </style>
 </head>
 <body>
