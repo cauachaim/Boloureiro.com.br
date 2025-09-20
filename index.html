@@ -27,7 +27,7 @@
     .top-nav {
       width: 100%;
       background-color: #f8b5c1;
-      padding: 10px 20px;
+      padding: 10px 20px 10px 10px;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -126,7 +126,7 @@
         background-size: contain; /* Padrão para celular */
     }
 
-    /* Botões de navegação por imagem (AJUSTADO PARA CELULAR) */
+    /* Botões de navegação por imagem */
     nav {
       margin: 15px 0;
       display: flex;
@@ -136,13 +136,13 @@
     }
     
     .nav-image {
-        max-width: 110px; /* Diminuído para caber lado a lado no celular */
+        max-width: 110px;
         height: auto;
         cursor: pointer;
         transition: transform 0.2s ease;
         outline: none;
         background-color: white;
-        padding: 8px 12px; /* Reduzido o padding */
+        padding: 8px 12px;
         border-radius: 20px;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
     }
@@ -210,12 +210,12 @@
         color: #ff4b8a;
     }
 
-    /* Grade de cards do catálogo */
+    /* Grade de cards do catálogo (AJUSTADO PARA CELULAR) */
     .catalogo-grid {
       display: flex;
       justify-content: center;
       flex-wrap: wrap;
-      gap: 15px;
+      gap: 10px; /* Espaço entre os cards diminuído */
       max-width: 600px;
       margin: 0 auto;
       padding: 0;
@@ -225,10 +225,10 @@
     .card {
       background-color: white;
       border-radius: 12px;
-      padding: 10px;
+      padding: 8px; /* Padding interno diminuído */
       box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-      flex: 1 1 120px; /* Diminuído */
-      max-width: 120px; /* Diminuído */
+      flex: 1 1 100px; /* AJUSTADO: Base de 100px para caber 3 */
+      max-width: 100px; /* AJUSTADO: Largura máxima de 100px */
     }
 
     .card img {
@@ -240,7 +240,7 @@
     .card p {
       margin: 5px 0 0;
       font-weight: bold;
-      font-size: 0.9em; /* Fonte diminuída no celular */
+      font-size: 0.8em; /* AJUSTADO: Fonte diminuída para caber no card menor */
     }
 
     /* Rodapé */
@@ -318,13 +318,13 @@
 
       .catalogo-grid {
         max-width: 800px;
-        gap: 25px;
+        gap: 25px; /* Retorna o espaçamento maior no PC */
       }
 
       .card {
-        flex-basis: 180px; /* Aumenta a base do card */
-        max-width: 180px; /* Aumenta a largura máxima */
-        padding: 15px;
+        flex-basis: 180px; /* Retorna o tamanho maior no PC */
+        max-width: 180px;
+        padding: 15px; /* Retorna o padding maior no PC */
       }
 
       .card p {
