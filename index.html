@@ -11,12 +11,14 @@
     }
 
     html {
-      scroll-padding-top: 60px; 
+      scroll-padding-top: 80px; 
     }
 
     body {
       font-family: Arial, sans-serif;
       margin: 0;
+      /* CORREÇÃO: A linha abaixo foi removida para juntar o menu e o banner */
+      /* padding-top: 70px; */
       background-color: #ffe4ec;
       text-align: center;
       scroll-behavior: smooth;
@@ -32,7 +34,7 @@
       top: 0;
       left: 0;
       background-color: #EB6D7D;
-      padding: 10px 20px 0 10px;
+      padding: 10px 20px 0px 10px;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -71,6 +73,10 @@
       transition: color 0.3s ease;
     }
     
+    .top-nav a:hover {
+        color: #fff0f3;
+    }
+    
     .underline {
         position: absolute;
         bottom: 0;
@@ -79,21 +85,6 @@
         border-radius: 2px;
         transition: left 0.4s ease, width 0.4s ease;
     }
-    
-    /* ======================================================= */
-    /* CORREÇÃO PARA JUNTAR BANNER E MENU */
-    /* ======================================================= */
-    main {
-      /* 1. Este espaço no topo é necessário para o menu fixo. */
-      /* Altere o valor se a altura do menu mudar. */
-      padding-top: 60px;
-
-      /* 2. PINTAMOS o fundo com a cor do banner para dar a impressão de que estão colados. */
-      /* Altere esta cor se o seu banner mudar. */
-      background-color: #FAD9E0; 
-    }
-    /* ======================================================= */
-
 
     /* Conteúdo principal */
     .banner-container {
@@ -111,18 +102,20 @@
         margin: 10px auto 20px auto; border-radius: 12px; max-width: 600px; height: 250px; background-size: contain;
     }
 
-    nav { margin: 15px 0; display: flex; justify-content: center; align-items: center; flex-wrap: nowrap; gap: 5px; }
-    /* CORREÇÃO: Tamanho dos botões de navegação uniformes novamente */
+    nav { margin: 15px 0; display: flex; justify-content: center; flex-wrap: nowrap; gap: 5px; }
     .nav-image {
         max-width: 110px; height: auto; cursor: pointer; transition: transform 0.2s ease; outline: none;
         background-color: white; padding: 8px 12px; border-radius: 20px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
     }
     .nav-image:hover { transform: scale(1.05); }
 
-
     section { padding: 20px 10px; }
     .section-title { width: 200px; max-width: 80%; margin: 20px auto; display: block; }
 
+    /* ======================================================= */
+    /* LAYOUT DE CARDS (MOBILE-FIRST) */
+    /* ======================================================= */
+    
     .catalogo-grid {
       display: flex; justify-content: center; flex-wrap: wrap; gap: 10px;
       max-width: 600px; margin: 0 auto; padding: 0;
@@ -163,6 +156,7 @@
     .list-item p { margin: 0; font-weight: bold; font-size: 0.8em; }
     .list-item-price { font-size: 0.8em; color: #ff4b8a; }
 
+    /* Rodapé */
     footer {
       background-color: #f8b5c1; padding: 20px; margin-top: 30px;
       display: flex; flex-direction: column; align-items: center; gap: 15px;
@@ -175,12 +169,15 @@
     .contact-logo { width: 25px; height: auto; }
     .contact-link { text-decoration: none; color: #000; font-weight: bold; font-size: 16px; }
 
+    /* ======================================================= */
+    /* AJUSTES PARA TELAS GRANDES (COMPUTADOR) - A PARTIR DE 768PX */
+    /* ======================================================= */
     @media screen and (min-width: 768px) {
       .logo-container { width: 350px; margin: -100px auto 30px; }
       .location-img { max-width: 350px; }
       .about-me-section { max-width: none; margin: 20px 0; border-radius: 0; height: 400px; background-size: cover; }
       nav { gap: 10px; }
-      .nav-image { max-width: 200px; }
+      .nav-image { max-width: 200px; padding: 15px 20px; }
       .section-title { width: 300px; }
       .catalogo-grid { max-width: 800px; gap: 25px; }
       .card { flex-basis: 180px; max-width: 180px; padding: 15px; }
@@ -259,7 +256,7 @@
       <div class="catalogo-grid">
           <div class="card"><img src="assets/Screenshot_2025-09-20-14-16-13-985_com.google.android.googlequicksearchbox~2.jpg" alt="10x10"><p>10x10 (5 fatias)<span class="list-item-price">R$ 30,00</span></p></div>
           <div class="card"><img src="assets/Screenshot_2025-09-20-14-16-13-985_com.google.android.googlequicksearchbox~3.jpg" alt="15x10"><p>15x10 (12/15 fatias)<span class="list-item-price">R$ 60,00</span></p></div>
-          <div class="card"><img src="assets/Screenshot_2025-09-20-14-16-17-872_com.google.android.googlequicksearchbox~2.jpg" alt="20x10"><p>20x10 (20/25 fatias)<span class="list-item-price">R$ 85,00</span></p></div>
+          <div class="card"><img src="assets/Screenshot_2025-09-20-14-17-872_com.google.android.googlequicksearchbox~2.jpg" alt="20x10"><p>20x10 (20/25 fatias)<span class="list-item-price">R$ 85,00</span></p></div>
       </div>
 
       <div class="catalogo-side-by-side">
