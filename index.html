@@ -11,14 +11,12 @@
     }
 
     html {
-      scroll-padding-top: 80px; 
+      scroll-padding-top: 80px; /* Ajustado para a altura do menu fixo */
     }
 
     body {
       font-family: Arial, sans-serif;
       margin: 0;
-      /* CORREÇÃO: A linha abaixo foi removida para juntar o menu e o banner */
-      /* padding-top: 70px; */
       background-color: #ffe4ec;
       text-align: center;
       scroll-behavior: smooth;
@@ -26,7 +24,7 @@
     }
 
     /* ======================================================= */
-    /* BARRA DE NAVEGAÇÃO */
+    /* BARRA DE NAVEGAÇÃO PRINCIPAL */
     /* ======================================================= */
     .top-nav {
       position: fixed;
@@ -34,12 +32,13 @@
       top: 0;
       left: 0;
       background-color: #EB6D7D;
-      padding: 10px 20px 0px 10px;
+      padding: 10px 20px 0px 10px; /* Padding ajustado */
       display: flex;
       justify-content: space-between;
       align-items: center;
       box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
       z-index: 1000;
+      height: 60px; /* Altura fixa para facilitar cálculos */
     }
 
     .top-nav .brand-container {
@@ -86,13 +85,41 @@
         transition: left 0.4s ease, width 0.4s ease;
     }
 
-    /* Conteúdo principal */
-    .banner-container {
-      position: relative; display: flex; justify-content: center;
-      align-items: center; flex-direction: column;
+    /* ======================================================= */
+    /* CORREÇÃO PARA JUNTAR O BANNER PRINCIPAL E O MENU */
+    /* ======================================================= */
+    main {
+      /* Remove qualquer padding no topo do main para que o conteúdo comece imediatamente */
+      padding-top: 0; 
     }
 
-    .banner { width: 100%; max-height: 200px; object-fit: cover; display: block; }
+    .banner-container {
+      position: relative; 
+      display: flex; 
+      justify-content: center;
+      align-items: center; 
+      flex-direction: column;
+      /* Puxa o banner container para cima exato da altura do menu fixo */
+      margin-top: -60px; /* Use a altura fixa do menu */
+      /* Adiciona um padding no topo do banner container para empurrar seu conteúdo */
+      /* abaixo do menu, mas mantém o background (o banner) por trás. */
+      padding-top: 60px; /* Use a altura fixa do menu */
+    }
+
+    .banner { 
+        width: 100%; 
+        max-height: 200px; 
+        object-fit: cover; 
+        display: block; 
+        position: absolute; /* Permite que a logo fique sobre ele */
+        top: 0;
+        left: 0;
+        height: 100%;
+        z-index: -1; /* Manda o banner para trás do conteúdo */
+    }
+    /* ======================================================= */
+
+
     .logo-container { width: 250px; margin: -75px auto 20px; text-align: center; }
     .logo-container img { width: 100%; height: auto; }
     .location-img { width: 100%; max-width: 250px; margin: -15px auto 5px auto; display: block; }
@@ -103,6 +130,7 @@
     }
 
     nav { margin: 15px 0; display: flex; justify-content: center; flex-wrap: nowrap; gap: 5px; }
+    /* REVERSÃO: Voltou ao tamanho original do seu código */
     .nav-image {
         max-width: 110px; height: auto; cursor: pointer; transition: transform 0.2s ease; outline: none;
         background-color: white; padding: 8px 12px; border-radius: 20px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
@@ -177,7 +205,7 @@
       .location-img { max-width: 350px; }
       .about-me-section { max-width: none; margin: 20px 0; border-radius: 0; height: 400px; background-size: cover; }
       nav { gap: 10px; }
-      .nav-image { max-width: 200px; padding: 15px 20px; }
+      .nav-image { max-width: 200px; } /* REVERSÃO: Voltou ao tamanho original do seu código */
       .section-title { width: 300px; }
       .catalogo-grid { max-width: 800px; gap: 25px; }
       .card { flex-basis: 180px; max-width: 180px; padding: 15px; }
