@@ -11,13 +11,12 @@
     }
 
     html {
-      scroll-padding-top: 60px; /* Espaço para rolagem dos links internos */
+      scroll-padding-top: 60px; 
     }
 
     body {
       font-family: Arial, sans-serif;
       margin: 0;
-      /* CORREÇÃO: Padding removido para colar o banner no topo */
       background-color: #ffe4ec;
       text-align: center;
       scroll-behavior: smooth;
@@ -47,7 +46,7 @@
     }
     
     .top-nav .brand-container .logo {
-        height: 40px; /* Tamanho ajustado */
+        height: 40px;
         width: auto;
         cursor: pointer;
     }
@@ -72,10 +71,6 @@
       transition: color 0.3s ease;
     }
     
-    .top-nav a:hover {
-        color: #fff0f3;
-    }
-    
     .underline {
         position: absolute;
         bottom: 0;
@@ -85,17 +80,28 @@
         transition: left 0.4s ease, width 0.4s ease;
     }
     
-    /* Conteúdo principal precisa de um padding no topo para não ficar atrás do menu */
+    /* ======================================================= */
+    /* CORREÇÃO PARA JUNTAR BANNER E MENU */
+    /* ======================================================= */
+
+    /* 1. Adicionamos um espaço no topo do conteúdo principal. */
+    /* Altere este valor se a altura do menu mudar. */
     main {
-        padding-top: 60px; /* Altura aproximada do menu */
+        padding-top: 60px;
     }
 
-    /* Conteúdo principal */
+    /* 2. Puxamos o container do banner para cima e adicionamos um espaço interno */
+    /* para compensar e alinhar a logo corretamente. Altere os dois valores se o menu mudar. */
     .banner-container {
-      position: relative; display: flex; justify-content: center;
-      align-items: center; flex-direction: column;
-      margin-top: -60px; /* Puxa o banner para cima, para colar no menu */
+      position: relative; 
+      display: flex; 
+      justify-content: center;
+      align-items: center; 
+      flex-direction: column;
+      margin-top: -60px; /* Puxa para cima */
+      padding-top: 60px;  /* Empurra o conteúdo interno (logo) para baixo */
     }
+    /* ======================================================= */
 
     .banner { width: 100%; max-height: 200px; object-fit: cover; display: block; }
     .logo-container { width: 250px; margin: -75px auto 20px; text-align: center; }
@@ -114,7 +120,6 @@
     }
     .nav-image:hover { transform: scale(1.05); }
 
-    /* CORREÇÃO: Aumenta o primeiro botão "Catálogo" */
     nav .nav-image:first-child {
         max-width: 125px;
     }
@@ -122,10 +127,6 @@
     section { padding: 20px 10px; }
     .section-title { width: 200px; max-width: 80%; margin: 20px auto; display: block; }
 
-    /* ======================================================= */
-    /* LAYOUT DE CARDS (MOBILE-FIRST) */
-    /* ======================================================= */
-    
     .catalogo-grid {
       display: flex; justify-content: center; flex-wrap: wrap; gap: 10px;
       max-width: 600px; margin: 0 auto; padding: 0;
@@ -166,7 +167,6 @@
     .list-item p { margin: 0; font-weight: bold; font-size: 0.8em; }
     .list-item-price { font-size: 0.8em; color: #ff4b8a; }
 
-    /* Rodapé */
     footer {
       background-color: #f8b5c1; padding: 20px; margin-top: 30px;
       display: flex; flex-direction: column; align-items: center; gap: 15px;
@@ -179,16 +179,13 @@
     .contact-logo { width: 25px; height: auto; }
     .contact-link { text-decoration: none; color: #000; font-weight: bold; font-size: 16px; }
 
-    /* ======================================================= */
-    /* AJUSTES PARA TELAS GRANDES (COMPUTADOR) - A PARTIR DE 768PX */
-    /* ======================================================= */
     @media screen and (min-width: 768px) {
       .logo-container { width: 350px; margin: -100px auto 30px; }
       .location-img { max-width: 350px; }
       .about-me-section { max-width: none; margin: 20px 0; border-radius: 0; height: 400px; background-size: cover; }
       nav { gap: 10px; }
       .nav-image { max-width: 200px; }
-      nav .nav-image:first-child { max-width: 220px; } /* Aumenta o catálogo no PC também */
+      nav .nav-image:first-child { max-width: 220px; }
       .section-title { width: 300px; }
       .catalogo-grid { max-width: 800px; gap: 25px; }
       .card { flex-basis: 180px; max-width: 180px; padding: 15px; }
