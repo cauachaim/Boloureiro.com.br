@@ -11,31 +11,27 @@
     }
 
     html {
-      /* Espaço no topo para o conteúdo não ficar escondido atrás do menu fixo */
       scroll-padding-top: 80px; 
     }
 
     body {
       font-family: Arial, sans-serif;
       margin: 0;
-      /* Adiciona um padding no topo do body igual à altura do menu */
       padding-top: 70px; 
       background-color: #ffe4ec;
       text-align: center;
       scroll-behavior: smooth;
-      overflow-x: hidden; /* Evita o rolamento lateral */
+      overflow-x: hidden;
     }
 
     /* ======================================================= */
-    /* BARRA DE NAVEGAÇÃO (ESTILO CORRIGIDO) */
+    /* BARRA DE NAVEGAÇÃO */
     /* ======================================================= */
     .top-nav {
-      /* CORREÇÃO: Posição alterada para FIXED */
       position: fixed;
-      width: 100%; /* Garante que ocupe toda a largura */
+      width: 100%;
       top: 0;
       left: 0;
-
       background-color: #EB6D7D;
       padding: 10px 20px 0 10px;
       display: flex;
@@ -46,7 +42,6 @@
       position: relative;
     }
     
-    /* Reposiciona o elemento fixo após a mudança */
     body {
         padding-top: 70px;
     }
@@ -56,7 +51,6 @@
         top: 0;
         left: 0;
     }
-
 
     .top-nav .brand-container {
       display: flex;
@@ -102,7 +96,7 @@
         transition: left 0.4s ease, width 0.4s ease;
     }
 
-    /* Container do banner + logo */
+    /* Conteúdo principal */
     .banner-container {
       position: relative; display: flex; justify-content: center;
       align-items: center; flex-direction: column;
@@ -118,20 +112,18 @@
         margin: 10px auto 20px auto; border-radius: 12px; max-width: 600px; height: 250px; background-size: contain;
     }
 
-    /* Botões de navegação por imagem */
     nav { margin: 15px 0; display: flex; justify-content: center; flex-wrap: nowrap; gap: 5px; }
     .nav-image {
         max-width: 110px; height: auto; cursor: pointer; transition: transform 0.2s ease; outline: none;
         background-color: white; padding: 8px 12px; border-radius: 20px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
     }
     .nav-image:hover { transform: scale(1.05); }
-    .nav-image:active { transform: scale(0.95); }
 
     section { padding: 20px 10px; }
     .section-title { width: 200px; max-width: 80%; margin: 20px auto; display: block; }
 
     /* ======================================================= */
-    /* LAYOUT DE GRADES E LISTAS (MOBILE-FIRST) */
+    /* LAYOUT DE CARDS (MOBILE-FIRST) */
     /* ======================================================= */
     
     .catalogo-grid {
@@ -157,22 +149,12 @@
     }
 
     .catalogo-list .list-item {
-      background-color: white;
-      border-radius: 12px;
-      padding: 8px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-      width: 100px;
-      flex-grow: 0;
+      background-color: white; border-radius: 12px; padding: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1); display: flex; flex-direction: column;
+      align-items: center; text-align: center; width: 100px; flex-grow: 0;
     }
-
-    /* CORREÇÃO: Recheios Especiais com 3 por linha */
-    #recheios-especiais-list .list-item {
-        width: 100px;
-    }
+    
+    #recheios-especiais-list .list-item { width: 100px; }
 
     .list-item-image {
         width: 100%;
@@ -212,26 +194,26 @@
       .card p { font-size: 1em; }
       .card .list-item-price { font-size: 0.9em; }
 
+      /* CORREÇÃO: Layout de cards mantido para PC, apenas com tamanho maior */
       .catalogo-list {
-        flex-direction: column;
-        gap: 10px;
-        max-width: none;
+          max-width: 100%; /* Permite que o container se expanda */
+          gap: 20px; /* Mais espaço entre os cards */
       }
       .catalogo-list .list-item {
-        flex-direction: row;
-        justify-content: space-between;
-        padding: 10px 20px;
-        text-align: left;
-        width: 100%;
+          width: 160px; /* Cards maiores no PC */
       }
-      .list-item-image { width: 70px; height: 70px; }
-      .list-item p { font-size: 1em; }
+      .list-item-image {
+          height: 120px; /* Imagens maiores */
+      }
+      .list-item p {
+          font-size: 1em; /* Fonte maior */
+      }
 
       .catalogo-side-by-side {
         display: flex; flex-wrap: wrap; justify-content: center;
         align-items: flex-start; gap: 40px; max-width: 1200px; margin: 20px auto;
       }
-      .catalogo-list-block { flex: 1 1 40%; max-width: 450px; }
+      .catalogo-list-block { flex: 1 1 45%; max-width: 500px; }
     }
   </style>
 </head>
@@ -365,9 +347,9 @@
         const underline = document.querySelector('.top-nav .underline');
         const navLinks = document.querySelectorAll('.top-nav a[data-section]');
         const contatoLink = document.querySelector('.top-nav a[data-section="contato"]');
-        const sections = document.querySelectorAll('#top-of-page, section[id], footer[id]');
 
         function moveUnderlineTo(element) {
+            if (!element) return;
             const elemRect = element.getBoundingClientRect();
             const parentRect = navBar.getBoundingClientRect();
             
@@ -379,6 +361,10 @@
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
                 scrollToSection(this.getAttribute('data-section'));
+                // Move o traço imediatamente ao clicar, exceto para o contato que tem regra especial
+                if (this !== contatoLink) {
+                    moveUnderlineTo(this);
+                }
             });
         });
 
@@ -386,31 +372,33 @@
             moveUnderlineTo(contatoLink);
         });
 
-        const observerOptions = {
-            root: null,
-            rootMargin: '0px 0px -80% 0px',
-            threshold: 0
-        };
-
-        const sectionObserver = new IntersectionObserver((entries) => {
+        const observerCallback = (entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     const sectionId = entry.target.id;
-                    if (sectionId === 'top-of-page') {
+                    const activeLink = document.querySelector(`.top-nav a[data-section="${sectionId}"]`);
+                    if (activeLink) {
+                        moveUnderlineTo(activeLink);
+                    } else if (sectionId === 'top-of-page') {
                         moveUnderlineTo(logo);
-                    } else {
-                        const activeLink = document.querySelector(`.top-nav a[data-section="${sectionId}"]`);
-                        if (activeLink) {
-                            moveUnderlineTo(activeLink);
-                        }
                     }
                 }
             });
-        }, observerOptions);
+        };
 
-        sections.forEach(section => {
-            sectionObserver.observe(section);
+        // Observador para o topo e seções principais
+        const mainObserver = new IntersectionObserver(observerCallback, {
+            root: null, rootMargin: '0px 0px -80% 0px', threshold: 0
         });
+        document.querySelectorAll('#top-of-page, section[id]').forEach(sec => mainObserver.observe(sec));
+
+        // Observador especial para o rodapé (contato)
+        const footerObserver = new IntersectionObserver(observerCallback, {
+            root: null, rootMargin: '0px 0px -10px 0px', threshold: 0.1
+        });
+        const footer = document.getElementById('contato');
+        if (footer) footerObserver.observe(footer);
+
 
         window.addEventListener('load', () => {
             setTimeout(() => moveUnderlineTo(logo), 100);
