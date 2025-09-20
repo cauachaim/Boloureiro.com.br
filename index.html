@@ -11,13 +11,13 @@
     }
 
     html {
-      scroll-padding-top: 80px; 
+      scroll-padding-top: 60px; /* Espaço para rolagem dos links internos */
     }
 
     body {
       font-family: Arial, sans-serif;
       margin: 0;
-      padding-top: 70px; 
+      /* CORREÇÃO: Padding removido para colar o banner no topo */
       background-color: #ffe4ec;
       text-align: center;
       scroll-behavior: smooth;
@@ -33,23 +33,12 @@
       top: 0;
       left: 0;
       background-color: #EB6D7D;
-      padding: 10px 20px 0px 10px;
+      padding: 10px 20px 0 10px;
       display: flex;
       justify-content: space-between;
       align-items: center;
       box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
       z-index: 1000;
-      position: relative;
-    }
-    
-    body {
-        padding-top: 70px;
-    }
-    .top-nav {
-        position: fixed;
-        width: 100%;
-        top: 0;
-        left: 0;
     }
 
     .top-nav .brand-container {
@@ -58,7 +47,7 @@
     }
     
     .top-nav .brand-container .logo {
-        height: 40px;
+        height: 40px; /* Tamanho ajustado */
         width: auto;
         cursor: pointer;
     }
@@ -95,11 +84,17 @@
         border-radius: 2px;
         transition: left 0.4s ease, width 0.4s ease;
     }
+    
+    /* Conteúdo principal precisa de um padding no topo para não ficar atrás do menu */
+    main {
+        padding-top: 60px; /* Altura aproximada do menu */
+    }
 
     /* Conteúdo principal */
     .banner-container {
       position: relative; display: flex; justify-content: center;
       align-items: center; flex-direction: column;
+      margin-top: -60px; /* Puxa o banner para cima, para colar no menu */
     }
 
     .banner { width: 100%; max-height: 200px; object-fit: cover; display: block; }
@@ -112,12 +107,17 @@
         margin: 10px auto 20px auto; border-radius: 12px; max-width: 600px; height: 250px; background-size: contain;
     }
 
-    nav { margin: 15px 0; display: flex; justify-content: center; flex-wrap: nowrap; gap: 5px; }
+    nav { margin: 15px 0; display: flex; justify-content: center; align-items: center; flex-wrap: nowrap; gap: 5px; }
     .nav-image {
         max-width: 110px; height: auto; cursor: pointer; transition: transform 0.2s ease; outline: none;
         background-color: white; padding: 8px 12px; border-radius: 20px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
     }
     .nav-image:hover { transform: scale(1.05); }
+
+    /* CORREÇÃO: Aumenta o primeiro botão "Catálogo" */
+    nav .nav-image:first-child {
+        max-width: 125px;
+    }
 
     section { padding: 20px 10px; }
     .section-title { width: 200px; max-width: 80%; margin: 20px auto; display: block; }
@@ -187,35 +187,34 @@
       .location-img { max-width: 350px; }
       .about-me-section { max-width: none; margin: 20px 0; border-radius: 0; height: 400px; background-size: cover; }
       nav { gap: 10px; }
-      .nav-image { max-width: 200px; padding: 15px 20px; }
+      .nav-image { max-width: 200px; }
+      nav .nav-image:first-child { max-width: 220px; } /* Aumenta o catálogo no PC também */
       .section-title { width: 300px; }
       .catalogo-grid { max-width: 800px; gap: 25px; }
       .card { flex-basis: 180px; max-width: 180px; padding: 15px; }
       .card p { font-size: 1em; }
       .card .list-item-price { font-size: 0.9em; }
 
-      /* Blocos de listas empilhados verticalmente */
       .catalogo-side-by-side {
-          max-width: 900px; /* Largura máxima para os blocos */
+          max-width: 900px;
           margin: 0 auto;
       }
       .catalogo-list-block {
-          margin-bottom: 50px; /* Espaço entre os blocos de listas */
+          margin-bottom: 50px;
       }
       
-      /* CORREÇÃO: Grade de cards horizontal dentro de cada bloco */
       .catalogo-list {
         max-width: 100%; 
         gap: 20px;
       }
       .catalogo-list .list-item {
-        width: 140px; /* Cards maiores para PC */
+        width: 140px;
       }
       .list-item-image {
-        height: 110px; /* Imagens maiores */
+        height: 110px;
       }
       .list-item p {
-        font-size: 0.9em; /* Fonte um pouco maior */
+        font-size: 0.9em;
       }
     }
   </style>
