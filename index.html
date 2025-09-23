@@ -25,9 +25,7 @@
       overflow-x: hidden;
     }
 
-    /* ======================================================= */
     /* BARRA DE NAVEGAÇÃO */
-    /* ======================================================= */
     .top-nav {
       position: fixed;
       width: 100%;
@@ -98,17 +96,14 @@
     }
 
     /* Conteúdo principal */
-    
     .banner-container {
-  margin-top: -20px; /* << ADICIONE ESTA LINHA */
-  position: relative; 
-  display: flex; 
-  justify-content: center;
-  align-items: center; 
-  flex-direction: column;
-}
-
-    
+        margin-top: -20px;
+        position: relative; 
+        display: flex; 
+        justify-content: center;
+        align-items: center; 
+        flex-direction: column;
+    }
 
     .banner { width: 100%; max-height: 200px; object-fit: cover; display: block; }
     .logo-container { width: 250px; margin: -75px auto 20px; text-align: center; }
@@ -129,11 +124,8 @@
 
     section { padding: 20px 10px; }
     .section-title { width: 200px; max-width: 80%; margin: 20px auto; display: block; }
-
-    /* ======================================================= */
-    /* LAYOUT DE CARDS (MOBILE-FIRST) */
-    /* ======================================================= */
     
+    /* LAYOUT DE CARDS (MOBILE-FIRST) */
     .catalogo-grid {
       display: flex; justify-content: center; flex-wrap: wrap; gap: 10px;
       max-width: 600px; margin: 0 auto; padding: 0;
@@ -162,8 +154,6 @@
       align-items: center; text-align: center; width: 100px; flex-grow: 0;
     }
     
-    #recheios-especiais-list .list-item { width: 100px; }
-
     .list-item-image {
         width: 100%;
         height: 80px;
@@ -187,9 +177,7 @@
     .contact-logo { width: 25px; height: auto; }
     .contact-link { text-decoration: none; color: #000; font-weight: bold; font-size: 16px; }
 
-    /* ======================================================= */
-    /* AJUSTES PARA TELAS GRANDES (COMPUTADOR) - A PARTIR DE 768PX */
-    /* ======================================================= */
+    /* AJUSTES PARA TELAS GRANDES (COMPUTADOR) */
     @media screen and (min-width: 768px) {
       .logo-container { width: 350px; margin: -100px auto 30px; }
       .location-img { max-width: 350px; }
@@ -201,29 +189,110 @@
       .card { flex-basis: 180px; max-width: 180px; padding: 15px; }
       .card p { font-size: 1em; }
       .card .list-item-price { font-size: 0.9em; }
-
       .catalogo-side-by-side {
-          max-width: 900px; /* Largura máxima para os blocos */
+          max-width: 900px;
           margin: 0 auto;
       }
       .catalogo-list-block {
-          margin-bottom: 50px; /* Espaço entre os blocos de listas */
+          margin-bottom: 50px;
       }
-      
       .catalogo-list {
         max-width: 100%; 
         gap: 20px;
       }
       .catalogo-list .list-item {
-        width: 140px; /* Cards maiores para PC */
+        width: 140px;
       }
       .list-item-image {
-        height: 110px; /* Imagens maiores */
+        height: 110px;
       }
       .list-item p {
-        font-size: 0.9em; /* Fonte um pouco maior */
+        font-size: 0.9em;
       }
     }
+    
+    /* === ESTILOS PARA O "MONTE SEU BOLO" === */
+    .cake-builder-container {
+        background-color: #fff; text-align: left; padding: 25px 30px;
+        border-radius: 12px; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        width: 100%; max-width: 600px; margin: 0 auto;
+    }
+    .option-group { margin-bottom: 20px; }
+    .option-group label {
+        font-weight: bold; display: block;
+        margin-bottom: 8px; color: #EB6D7D;
+    }
+    .radio-group label {
+        display: inline-block; margin-right: 15px;
+        font-weight: normal; color: #333;
+    }
+    .price-display {
+        text-align: right; margin-top: 25px; font-size: 24px;
+        font-weight: bold; color: #333;
+    }
+    .price-display span { color: #ff4b8a; }
+    .whatsapp-button {
+        display: block; width: 100%; padding: 15px; background-color: #25D366;
+        color: white; text-align: center; text-decoration: none; border-radius: 8px;
+        font-size: 18px; font-weight: bold; margin-top: 20px; border: none;
+        cursor: pointer; transition: background-color 0.3s;
+    }
+    .whatsapp-button:hover { background-color: #128C7E; }
+    .custom-select-wrapper { position: relative; cursor: pointer; }
+    .custom-select-trigger {
+        width: 100%; padding: 12px; border: 1px solid #ccc; border-radius: 8px;
+        font-size: 16px; background-color: #fff; display: flex;
+        justify-content: space-between; align-items: center;
+    }
+    .custom-select-trigger::after {
+        content: '▼'; font-size: 12px; color: #aaa; transition: transform 0.3s;
+    }
+    .custom-select-wrapper.open .custom-select-trigger::after {
+        transform: rotate(180deg);
+    }
+    .custom-options {
+        position: absolute; top: 100%; left: 0; right: 0; background-color: #fff;
+        border: 1px solid #ccc; border-top: none; border-radius: 0 0 8px 8px;
+        z-index: 10; overflow: hidden; max-height: 0;
+        opacity: 0;
+        transition: max-height 0.4s ease-out, opacity 0.3s ease;
+    }
+    .custom-select-wrapper.open .custom-options {
+        max-height: 200px; opacity: 1; overflow-y: auto;
+    }
+    .custom-option {
+        padding: 12px; font-size: 16px; transition: background-color 0.2s;
+    }
+    .custom-option:hover { background-color: #fce4ec; }
+    #extra-layer-options {
+        display: none;
+        margin-top: 15px;
+    }
+    #extra-layer-options.visible {
+        display: block;
+    }
+    .adicional-item { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
+    .adicional-item .custom-select-wrapper { flex-grow: 1; }
+    .remove-adicional-btn {
+        background-color: #EB6D7D; color: white; border: none;
+        border-radius: 50%; width: 28px; height: 28px; font-size: 20px;
+        font-weight: bold; cursor: pointer; display: flex;
+        justify-content: center; align-items: center; line-height: 1;
+        flex-shrink: 0;
+    }
+    .add-adicional-container {
+        display: flex; align-items: center; gap: 10px; cursor: pointer;
+        margin-top: 5px;
+    }
+    .add-adicional-btn {
+        background-color: #5cb85c; color: white; border: none;
+        border-radius: 50%; width: 28px; height: 28px; font-size: 20px;
+        font-weight: bold; cursor: pointer; display: flex;
+        justify-content: center; align-items: center;
+        flex-shrink: 0;
+    }
+    .add-adicional-text { color: #555; font-weight: bold; }
+
   </style>
 </head>
 <body>
@@ -325,8 +394,125 @@
     </section>
 
     <section id="monte">
-    
-      <p style="color: #555;"> </p>
+      <img src="assets/Screenshot_2025-09-23-20-48-57-864_com.canva.editor~2.jpg" alt="Monte seu Bolo" class="section-title">
+      <div class="cake-builder-container">
+          <form id="cake-form">
+
+            <div style="display: none;">
+                <div id="recheio-extra-template">
+                    <div class="custom-select-wrapper" data-price="0" data-value="Nenhum">
+                        <div class="custom-select-trigger">Selecione um recheio</div>
+                        <div class="custom-options">
+                             <div class="custom-option" data-value="Nenhum" data-price="0">Nenhum</div>
+                            <div class="custom-option" data-value="Brigadeiro" data-price="0">Brigadeiro</div>
+                            <div class="custom-option" data-value="Brigadeiro branco" data-price="0">Brigadeiro branco</div>
+                            <div class="custom-option" data-value="Ninho" data-price="0">Ninho</div>
+                            <div class="custom-option" data-value="Doce de Leite" data-price="0">Doce de Leite</div>
+                            <div class="custom-option" data-value="Amendoim" data-price="0">Amendoim</div>
+                            <div class="custom-option" data-value="Coco" data-price="0">Coco</div>
+                            <div class="custom-option" data-value="4 leites" data-price="0">4 leites</div>
+                            <div class="custom-option" data-value="Brigadeiro amargo" data-price="5">Brigadeiro amargo (+ R$ 5,00)</div>
+                            <div class="custom-option" data-value="Ganache de chocolate" data-price="5">Ganache de chocolate (+ R$ 5,00)</div>
+                            <div class="custom-option" data-value="Ganache de chocolate branco" data-price="5">Ganache de chocolate branco (+ R$ 5,00)</div>
+                            <div class="custom-option" data-value="Maracujá" data-price="5">Maracujá (+ R$ 5,00)</div>
+                            <div class="custom-option" data-value="Geleia de Frutas" data-price="5">Geleia de Frutas (+ R$ 5,00)</div>
+                        </div>
+                    </div>
+                </div>
+                <div id="adicional-item-template">
+                    <div class="adicional-item">
+                        <div class="custom-select-wrapper" data-price="0" data-value="Nenhum">
+                            <div class="custom-select-trigger">Nenhum</div>
+                            <div class="custom-options">
+                                <div class="custom-option" data-value="Nenhum" data-price="0">Nenhum</div>
+                                <div class="custom-option" data-value="Frutas frescas" data-price="6">Frutas frescas (+ R$ 6,00)</div>
+                                <div class="custom-option" data-value="Pedaços de chocolate" data-price="8">Pedaços de chocolate (+ R$ 8,00)</div>
+                                <div class="custom-option" data-value="Castanhas ou nozes" data-price="12">Castanhas ou nozes (+ R$ 12,00)</div>
+                                <div class="custom-option" data-value="Nutella" data-price="10">Nutella (+ R$ 10,00)</div>
+                                <div class="custom-option" data-value="Topper" data-price="10">Topper (+ R$ 10,00)</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="option-group">
+                <label>1. Escolha o Tamanho:</label>
+                <div id="tamanho" class="custom-select-wrapper" data-price="0" data-value="">
+                    <div class="custom-select-trigger">Selecione uma opção</div>
+                    <div class="custom-options">
+                        <div class="custom-option" data-value="10x10 (5 fatias)" data-price="30">10x10 (5 fatias) - R$ 30,00</div>
+                        <div class="custom-option" data-value="15x10 (12/15 fatias)" data-price="60">15x10 (12/15 fatias) - R$ 60,00</div>
+                        <div class="custom-option" data-value="20x10 (20/25 fatias)" data-price="85">20x10 (20/25 fatias) - R$ 85,00</div>
+                    </div>
+                </div>
+            </div>
+            <div class="option-group">
+                <label>2. Escolha a Massa:</label>
+                <div id="massa" class="custom-select-wrapper" data-price="0" data-value="Branca">
+                    <div class="custom-select-trigger">Branca</div>
+                    <div class="custom-options">
+                        <div class="custom-option" data-value="Branca" data-price="0">Branca</div>
+                        <div class="custom-option" data-value="Chocolate" data-price="0">Chocolate</div>
+                        <div class="custom-option" data-value="Red Velvet" data-price="0">Red Velvet</div>
+                    </div>
+                </div>
+            </div>
+            <div class="option-group">
+                <label>3. Escolha o Recheio 1:</label>
+                <div id="recheio1" class="custom-select-wrapper" data-price="0" data-value="Brigadeiro">
+                    <div class="custom-select-trigger">Brigadeiro</div>
+                    <div class="custom-options"></div>
+                </div>
+            </div>
+            <div class="option-group">
+                <label>4. Escolha o Recheio 2:</label>
+                <div id="recheio2" class="custom-select-wrapper" data-price="0" data-value="Brigadeiro">
+                    <div class="custom-select-trigger">Brigadeiro</div>
+                    <div class="custom-options"></div>
+                </div>
+            </div>
+            <div class="option-group">
+                <label>5. Deseja Camada Extra de Recheio? (Acréscimo de 20%)</label>
+                <div class="radio-group">
+                    <input type="radio" id="extra-layer-yes" name="extra-layer" value="sim">
+                    <label for="extra-layer-yes">Sim</label>
+                    <input type="radio" id="extra-layer-no" name="extra-layer" value="nao" checked>
+                    <label for="extra-layer-no">Não</label>
+                </div>
+                <div id="extra-layer-options">
+                    <label>Escolha o recheio da camada extra:</label>
+                    <div id="recheio-extra-container"></div>
+                </div>
+            </div>
+            <div class="option-group">
+                <label>6. Escolha seus Adicionais:</label>
+                <div id="adicionais-container"></div>
+                <div class="add-adicional-container" id="add-adicional-btn-container">
+                    <button type="button" class="add-adicional-btn">+</button>
+                    <span class="add-adicional-text">Adicionar outro adicional</span>
+                </div>
+            </div>
+            <div class="option-group">
+                <label>7. Escolha a Cobertura:</label>
+                <div id="cobertura" class="custom-select-wrapper" data-price="0" data-value="Nenhum">
+                    <div class="custom-select-trigger">Nenhum</div>
+                    <div class="custom-options">
+                        <div class="custom-option" data-value="Nenhum" data-price="0">Nenhum</div>
+                        <div class="custom-option" data-value="Chantilly" data-price="0">Chantilly</div>
+                        <div class="custom-option" data-value="Chantininho" data-price="0">Chantininho</div>
+                        <div class="custom-option" data-value="Ganache" data-price="0">Ganache</div>
+                    </div>
+                </div>
+            </div>
+            <div class="price-display">
+                Valor Total: <span id="total-price">R$ 0,00</span>
+            </div>
+            <button type="button" class="whatsapp-button" id="whatsapp-btn">
+                Fazer Pedido pelo WhatsApp
+            </button>
+          </form>
+      </div>
     </section>
   </main>
 
@@ -343,29 +529,160 @@
   </footer>
 
   <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const initializeCustomSelect = (wrapper) => {
+            const trigger = wrapper.querySelector('.custom-select-trigger');
+            const options = wrapper.querySelectorAll('.custom-option');
+            if (trigger.dataset.initialized) return;
+            trigger.dataset.initialized = 'true';
+            trigger.addEventListener('click', (e) => {
+                e.stopPropagation();
+                document.querySelectorAll('.custom-select-wrapper.open').forEach(s => {
+                    if (s !== wrapper) s.classList.remove('open');
+                });
+                wrapper.classList.toggle('open');
+            });
+            options.forEach(option => {
+                option.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    trigger.textContent = option.textContent.split(' - ')[0].split(' (+')[0];
+                    wrapper.dataset.value = option.dataset.value;
+                    wrapper.dataset.price = option.dataset.price;
+                    wrapper.classList.remove('open');
+                    calculateTotal();
+                });
+            });
+        };
+        const recheioTemplateOptions = document.querySelectorAll('#recheio-extra-template .custom-option');
+        const recheio1OptionsContainer = document.querySelector('#recheio1 .custom-options');
+        recheioTemplateOptions.forEach(node => recheio1OptionsContainer.appendChild(node.cloneNode(true)));
+        ['#tamanho', '#massa', '#recheio1', '#recheio2', '#cobertura'].forEach(id => {
+            const wrapper = document.querySelector(id);
+            if (id === '#recheio2') {
+                const recheio1OptionsNodes = document.querySelectorAll('#recheio1 .custom-option');
+                const recheio2OptionsContainer = wrapper.querySelector('.custom-options');
+                recheio1OptionsNodes.forEach(node => recheio2OptionsContainer.appendChild(node.cloneNode(true)));
+            }
+            initializeCustomSelect(wrapper);
+        });
+        const recheioExtraContainer = document.getElementById('recheio-extra-container');
+        document.getElementsByName('extra-layer').forEach(radio => {
+            radio.addEventListener('change', () => {
+                const optionsDiv = document.getElementById('extra-layer-options');
+                const isVisible = radio.value === 'sim' && radio.checked;
+                optionsDiv.classList.toggle('visible', isVisible);
+                if (isVisible && recheioExtraContainer.children.length === 0) {
+                    const template = document.querySelector('#recheio-extra-template > .custom-select-wrapper');
+                    const clone = template.cloneNode(true);
+                    clone.id = 'recheio-extra';
+                    recheioExtraContainer.appendChild(clone);
+                    initializeCustomSelect(clone);
+                } else if (!isVisible) {
+                    recheioExtraContainer.innerHTML = '';
+                }
+                calculateTotal();
+            });
+        });
+        const addBtnContainer = document.getElementById('add-adicional-btn-container');
+        const adicionaisContainer = document.getElementById('adicionais-container');
+        const templateAdicional = document.querySelector('#adicional-item-template > .adicional-item');
+        const addNewAdicional = () => {
+            const novoAdicional = templateAdicional.cloneNode(true);
+            const removeBtn = document.createElement('button');
+            removeBtn.type = 'button';
+            removeBtn.className = 'remove-adicional-btn';
+            removeBtn.textContent = '−';
+            removeBtn.addEventListener('click', () => {
+                novoAdicional.remove();
+                calculateTotal();
+            });
+            if (adicionaisContainer.children.length > 0) {
+                 novoAdicional.appendChild(removeBtn);
+            }
+            adicionaisContainer.appendChild(novoAdicional);
+            initializeCustomSelect(novoAdicional.querySelector('.custom-select-wrapper'));
+        };
+        addBtnContainer.addEventListener('click', addNewAdicional);
+        addNewAdicional();
+
+        const calculateTotal = () => {
+            let subtotal = 0;
+            const elementsToSum = ['#tamanho', '#recheio1', '#recheio2', '#cobertura'];
+            elementsToSum.forEach(id => {
+                subtotal += parseFloat(document.querySelector(id).dataset.price) || 0;
+            });
+            document.querySelectorAll('#adicionais-container .custom-select-wrapper').forEach(item => {
+                subtotal += parseFloat(item.dataset.price) || 0;
+            });
+            let precoFinal = subtotal;
+            if (document.getElementById('extra-layer-yes').checked) {
+                let precoBaseParaTaxa = subtotal;
+                const recheioExtraEl = document.querySelector('#recheio-extra');
+                if (recheioExtraEl) {
+                    const precoEspecialDoRecheio = parseFloat(recheioExtraEl.dataset.price) || 0;
+                    precoBaseParaTaxa += precoEspecialDoRecheio;
+                }
+                precoFinal = precoBaseParaTaxa * 1.20;
+            }
+            document.getElementById('total-price').textContent = precoFinal.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+        };
+        const sendToWhatsApp = () => {
+            const phoneNumber = '5522999297966';
+            const tamanho = document.querySelector('#tamanho').dataset.value;
+            if (!tamanho) {
+                alert("Por favor, selecione um tamanho para o bolo.");
+                return;
+            }
+            let camadaExtraMsg = `\n- *Camada Extra (20%):* Não`;
+            if (document.getElementById('extra-layer-yes').checked) {
+                const recheioExtraEl = document.querySelector('#recheio-extra');
+                const recheioExtra = recheioExtraEl ? recheioExtraEl.dataset.value : 'Não selecionado';
+                camadaExtraMsg = `\n- *Camada Extra (20%):* Sim`;
+                if(recheioExtra && recheioExtra !== "Nenhum") camadaExtraMsg += ` (Recheio: ${recheioExtra})`;
+            }
+            const adicionais = Array.from(document.querySelectorAll('#adicionais-container .adicional-item .custom-select-wrapper'))
+                .map(item => item.dataset.value)
+                .filter(val => val && val !== 'Nenhum');
+            const adicionaisTxt = adicionais.length > 0 ? adicionais.join(', ') : 'Nenhum';
+            const message = `Olá! Gostaria de montar um bolo:\n\n` +
+                `*MEU PEDIDO:*\n` +
+                `- *Tamanho:* ${tamanho}\n` +
+                `- *Massa:* ${document.querySelector('#massa').dataset.value}\n` +
+                `- *Recheio 1:* ${document.querySelector('#recheio1').dataset.value}\n` +
+                `- *Recheio 2:* ${document.querySelector('#recheio2').dataset.value}` +
+                `${camadaExtraMsg}\n` +
+                `- *Adicionais:* ${adicionaisTxt}\n` +
+                `- *Cobertura:* ${document.querySelector('#cobertura').dataset.value}\n\n` +
+                `*VALOR TOTAL: ${document.getElementById('total-price').textContent}*`;
+            const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+            window.open(whatsappUrl, '_blank');
+        };
+        document.getElementById('whatsapp-btn').addEventListener('click', sendToWhatsApp);
+        window.addEventListener('click', () => document.querySelectorAll('.custom-select-wrapper.open').forEach(s => s.classList.remove('open')));
+        calculateTotal();
+    });
+  </script>
+
+  <script>
     function scrollToSection(id) {
       const element = document.getElementById(id);
       if(element) {
         element.scrollIntoView({ behavior: "smooth" });
       }
     }
-
     document.addEventListener('DOMContentLoaded', () => {
         const navBar = document.querySelector('.top-nav');
         const logo = document.querySelector('.top-nav .logo');
         const underline = document.querySelector('.top-nav .underline');
         const navLinks = document.querySelectorAll('.top-nav a[data-section]');
         const contatoLink = document.querySelector('.top-nav a[data-section="contato"]');
-
         function moveUnderlineTo(element) {
             if (!element) return;
             const elemRect = element.getBoundingClientRect();
             const parentRect = navBar.getBoundingClientRect();
-            
             underline.style.width = `${elemRect.width}px`;
             underline.style.left = `${elemRect.left - parentRect.left}px`;
         }
-        
         navLinks.forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -375,11 +692,9 @@
                 }
             });
         });
-
         contatoLink.addEventListener('click', () => {
             moveUnderlineTo(contatoLink);
         });
-
         const observerCallback = (entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -393,19 +708,15 @@
                 }
             });
         };
-
         const mainObserver = new IntersectionObserver(observerCallback, {
             root: null, rootMargin: '0px 0px -80% 0px', threshold: 0
         });
         document.querySelectorAll('#top-of-page, section[id]').forEach(sec => mainObserver.observe(sec));
-
         const footerObserver = new IntersectionObserver(observerCallback, {
             root: null, rootMargin: '0px 0px -10px 0px', threshold: 0.1
         });
         const footer = document.getElementById('contato');
         if (footer) footerObserver.observe(footer);
-
-
         window.addEventListener('load', () => {
             setTimeout(() => moveUnderlineTo(logo), 100);
         });
